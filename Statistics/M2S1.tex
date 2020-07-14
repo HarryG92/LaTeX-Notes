@@ -1,67 +1,129 @@
 \documentclass[12pt,a4paper]{article}
-%\usepackage[noheadfoot,width=200mm,height=277mm]{geometry}
-%\usepackage[margin=1.5cm]{geometry}
-%\setlength{\topmargin}{-3cm}
+
+
+
+\title{Probability \& Statistics}
+\author{Harry Gulliver}
+\date{}
+
+
+
+
+
+\usepackage{etex}
 \usepackage[
 top    = 2cm,
 bottom = 2cm,
-left   = 2cm,
-right  = 2cm]{geometry}
+left   = 3cm,
+right  = 3cm]{geometry}
+
 \usepackage{latexsym}
 \usepackage{amssymb}
-\usepackage{graphicx,multicol,color}
-\usepackage{graphicx,multicol,color,mathpazo,amsmath}
-\usepackage{graphicx,multicol,color,mathptmx}
-\usepackage{graphicx}
-\usepackage[mathscr]{euscript}
-%\usepackage{mathrsfs}
-\pagestyle{plain}
-\setlength\columnsep{2mm}  %%%% column separation
-\title{M2S1 - Probability and Statistics II}
-\author{Harry Gulliver}
+\usepackage{amsmath,amscd}
+\usepackage{extarrows}
+\usepackage[all,cmtip]{xy}
+\usepackage{amsthm}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
+\patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
+\makeatother
+
+\usepackage{enumerate}
+
+\newcommand{\gap}{\par \vspace{5mm}}
+\renewcommand{\qed}{\hfill$\blacksquare$\gap}
+\newcommand{\imply}{\quad\Rightarrow\quad}
+\let\take\smallsetminus
+
+
+\mathchardef\mhyphen="2D
+\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+\newcommand*{\longtwoheadrightarrow}{\ensuremath{\relbar\joinrel\twoheadrightarrow}}
+
+\let\oprod\otimes
+\let\rarrow\overrightarrow
+\let\lamdba\lambda
+
+
+
+\newtheorem{thm}{Theorem}[subsection]
+\renewcommand{\proof}[1][]{\noindent\textsc{Proof:} \textit{#1}\par}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{qn}{Question}
+
 \newtheorem{postulate}{\textsc{Postulate}}[section]
 \newtheorem{definition}{\textsc{Definition}}[section]
 \newtheorem{proposition}{\textsc{Proposition}}[section]
 \newtheorem{example}{\textsc{Example}}[section]
 \newtheorem{theorem}{\textsc{Theorem}}[section]
-\newcommand{\diff}{\mathrm{d}}
+
+
+\newcommand{\uline}[1]{\underline{\smash{#1}}}
+
+
+
+
+\usepackage{graphicx,multicol,color}
+\usepackage{graphicx,multicol,color,mathpazo,amsmath}
+\usepackage{graphicx,multicol,color,mathptmx}
+\usepackage{graphicx}
+\usepackage[mathscr]{euscript}
+
+
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\setlength\columnsep{2mm}  %%%% column separation
+\title{Probability \& Statistics}
+\author{Harry Gulliver}
+
+\newcommand{\diff}{\;\mathrm{d}}
 \newcommand{\AND}{\quad\wedge\quad}
 \newcommand{\OR}{\quad\vee\quad}
-\newcommand{\imply}{\quad\Rightarrow\quad}
+\renewcommand{\imply}{\quad\Rightarrow\quad}
 
 \begin{document}
+
 \maketitle
 \pagenumbering{arabic}
+\pagestyle{fancyplain}
 
-This document is compiled from my notes from the 2nd year Probability and Statistics course lectured by Professor David van Dyk at Imperial College London in the first term of the 2012-13 academic year. All credit for content goes to him and his sources. The course assumes that students are familiar with the material of the 1st year M1S course as delivered by Dr. Emma McCoy.
+\lhead{Harry Gulliver}
+\rhead{Probability \& Statistics}
+\cfoot{\thepage}
 
-I have changed the order of material to that which I think gives the most logical progression of ideas. I have also omitted some minor examples and comments where I did not feel they added substantially to the material. The explanations given, though inspired by the lectures, are my own and I have attempted to expand on the ideas I felt were harder beyond the explanations offered in lectures.
 
-Although I have made every effort to ensure the accuracy of these notes, no doubt some errors have slipped through. I would greatly appreciate being informed of any and all mistakes, even minor typos, so that I can correct them and release an amended version. I can be contacted via email at harry.gulliver11@imperial.ac.uk
 
-Please feel free to reproduce and distribute these notes, or any part thereof, for any non-com\-mercial, educational purpose.
+This document is compiled from my notes from the 2nd year Probability and Statistics course lectured by Professor David van Dyk at Imperial College London in the first term of the 2012-13 academic year. All credit for content goes to him and his sources. The course assumes that students familiarity with basic concepts of probability, though brief recaps of key points are included.
+
+Although I have made every effort to ensure the accuracy of these notes, no doubt some errors have slipped through. I would greatly appreciate being informed of any and all mistakes, ideally by a pull request with corrections on GitHub, or else by email at gulliver.harry@gmail.com
+
+Please feel free to reproduce and distribute these notes, or any part thereof, for any purpose whatsoever.
+
+
+
+
+
 
 \tableofcontents
 \vspace{50pt}
 
-{\Large\bf Glossary of Abbreviations}
+{\Large\bf Glossary of Abbreviations}  % abbreviations should be reduced as much as possible
 \vspace{12pt}
 
 $$\begin{array}{lr}
-Q.E.D. & \mbox{\textit{Quod Erat Demonstrandum} - which was to be shown}\\
- & \\
-Q.E.I & \mbox{\textit{Quod Erat Inveniendum} - which was to be found}\\
- & \\
-Q.E.F. & \mbox{\textit{Quod Erat Faciendum} - which was to be done}\\
- & \\
-Q.E.A.\qquad\qquad &\qquad\qquad \mbox{\textit{Quod Est Absurdum} - which is absurd (denotes a contradiction)}\\
- & \\
-s.t. & \mbox{such that}\\
- & \\
-r.v. & \mbox{random variable}\\
- & \\
-s.r.s. & \mbox{simple random sample}\\
- & \\
 p.m.f. & \mbox{probability mass function}\\
  & \\
 p.d.f. & \mbox{probability density function}\\
@@ -90,33 +152,33 @@ W.L.L.N. & \mbox{Weak Law of Large Numbers}
 
 \subsection{Introduction}
 
-$\quad$ This section will introduce the concepts of sample spaces, sigma-algebras, the probability function and the Kolmogorov axioms of probability. Some of the concepts overlap with the chapter on Elementary Measure Theory in M2P1 - Real Analysis.
+$\quad$ This section will introduce the concepts of sample spaces, sigma-algebras, the probability function and the Kolmogorov axioms of probability.
 \vspace{12pt}
 
 
-\subsection{Algebras and Sigma-Algebras}$\;$
+\subsection{Algebras and Sigma-Algebras}
 
-\begin{definition}[Sample Space]$\;$\par
+\begin{defn}[Sample Space]$\;$\par
 \vspace{12pt}
 
-In an experiment, the \underline{sample space} is the set of all possible outcomes of the experiment.\end{definition}
+In an experiment, the \underline{sample space} is the set of all possible outcomes of the experiment.\end{defn}
 
-\begin{example}$\;$\par
+\begin{ex}$\;$\par
 \vspace{12pt}
 
-When rolling a standard, 6-faced die, the sample space is the set \{1,\;2,\;3,\;4,\;5,\;6\}\end{example}
+When rolling a standard, 6-faced die, the sample space is the set \{1,\;2,\;3,\;4,\;5,\;6\}\end{ex}
 
-\begin{definition}[Events]$\;$\par
+\begin{defn}[Events]$\;$\par
 \vspace{12pt}
 
-Any subset of the sample space is called an \underline{event}.\end{definition}
+Any subset of the sample space is called an \underline{event}.\end{defn}
 
-\begin{example}$\;$\par
+\begin{ex}$\;$\par
 \vspace{12pt}
 
-When rolling a standard, 6-faced die, the event "rolling an even number" is the subset \{2,\;4,\;6\} of the sample space.\end{example}
+When rolling a standard, 6-faced die, the event "rolling an even number" is the subset \{2,\;4,\;6\} of the sample space.\end{ex}
 
-\begin{definition}[Algebras]$\;$\par
+\begin{defn}[Algebras]$\;$\par
 \vspace{12pt}
 
 An \underline{algebra} or \underline{field}, $\mathcal{F}$ is any set of subsets of the sample space satisfying the following three conditions:\par
@@ -127,7 +189,7 @@ An \underline{algebra} or \underline{field}, $\mathcal{F}$ is any set of subsets
 \vspace{10pt}
 {\bf Closure Under Union:}$\quad A,\,B\in\mathcal{F}\Rightarrow A\cup B\in\mathcal{F}$\par
 \vspace{12pt}
-\end{definition}
+\end{defn}
 
 \noindent It is important to note that the elements of an algebra are themselves sets - events in the sample space.\par
 \vspace{12pt}
@@ -136,19 +198,19 @@ An \underline{algebra} or \underline{field}, $\mathcal{F}$ is any set of subsets
 $$A_i \in\mathcal{F}\:\:\forall i\in\{1,\,2,\;...\;n\}\Rightarrow\bigcup_{i=1}^{n}A_i\in\mathcal{F}$$
 This is easily proved by induction on $n$. However, it cannot be extended to closure under countable union. A set thus closed is called a \underline{sigma-algebra} (or $\sigma$-algebra).
 
-\begin{definition}[$\sigma$-Algebras]$\;$\par
+\begin{defn}[$\sigma$-Algebras]$\;$\par
 \vspace{12pt}
 
 A $\sigma$-algebra is an algebra with the condition of closure under finite union replaced with closure under countable union:
-$$A_i\in\mathcal{F}\:\:\forall i\in\mathbb{N}\Rightarrow\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$$\end{definition}
+$$A_i\in\mathcal{F}\:\:\forall i\in\mathbb{N}\Rightarrow\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$$\end{defn}
 
 \noindent $\sigma$-algebras are sometimes referred to as Borel fields or $\sigma$-fields. We often denote a $\sigma$-algebra $\mathcal{B}$.
 
-\begin{proposition}[Closure Under Countable Intersection]$\;$\par
+\begin{prop}[Closure Under Countable Intersection]$\;$\par
 \vspace{12pt}
 
 Any $\sigma$-algebra $\mathcal{B}$ is closed under countable intersection:
-$$A_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}\Rightarrow\bigcap_{i=1}^{\infty}A_i\in\mathcal{B}$$\end{proposition}
+$$A_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}\Rightarrow\bigcap_{i=1}^{\infty}A_i\in\mathcal{B}$$\end{prop}
 
 \noindent \textsc{Proof:}\par
 \vspace{12pt}
@@ -169,7 +231,7 @@ If the sample space, $S$ is finite or countable, the power set of $S$ is always 
 
 \subsection{Probability}$\;$
 
-\begin{definition}[The Probability Function]$\;$\par
+\begin{defn}[The Probability Function]$\;$\par
 \vspace{12pt}
 
 Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$ to the real line: $P:\;\mathcal{B}\rightarrow\mathbb{R}$, satisfying the following three axioms, called the \underline{Kolmogorov axioms}, where $S$ denotes the sample space:\par
@@ -179,7 +241,7 @@ Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$
 {\bf 2:} $\qquad P(S)=1$\par
 \vspace{10pt}
 {\bf 3:} $\qquad E,\, F\in\mathcal{B}\text{ and }E\cap F=\phi\:\Rightarrow\: P(E\cup F)=P(E)+P(F)$
-\end{definition}
+\end{defn}
 
 Note that when the intersection of two events is the empty set, we say the events are \underline{disjoint} or \underline{mutually exclusive}. If the intersection of any pair of some number of sets is the empty set, we say the sets are \underline{pairwise disjoint} or \underline{pairwise mutually exclusive}. I.e., the events $A_i$ are pairwise disjoint if $\forall \:i\neq j \:\:\:A_i\cap A_j = \varnothing$
 
@@ -220,11 +282,11 @@ Thus, letting $n$ tend to infinity:
 \Rightarrow\qquad P(\bigcup_{i=1}^{\infty}A_i) &= \sum_{i=1}^{\infty}P(A_i)\qquad\text{countable additivity,}
 \end{align*}\hfill $Q.E.D.$
 
-\begin{example}[Finite vs. Countable]$\;$\par
+\begin{ex}[Finite vs. Countable]$\;$\par
 \vspace{12pt}
 
 This example will illustrate the importance of making the probability function countably additive instead of merely finitely additive and using a $\sigma$-algebra instead of just a normal algebra.
-\end{example}
+\end{ex}
 
 Let $S = \mathbb{N}$. Now let $\mathcal{F}$ be the set of finite and cofinite subsets of $S$ (a set is \underline{cofinite} if its complement is finite; note that some sets are neither, e.g., the set of even numbers). Note that here we are including the empty set as a finite set. This convention is not universal. Then $\mathcal{F}$ is an algebra on $S$. For $\phi\in\mathcal{F}$, by construction, $\mathcal{F}$ is closed under complement, again by construction, and $\mathcal{F}$ is also closed under {\bf finite} union; for consider the three cases:\par
 \vspace{10pt}
@@ -246,7 +308,7 @@ Now define:
 $$P(A) = \left\{\begin{array}{ll} 0:\quad & A \text{ finite}\\ 1:\quad & A \text{ cofinite}\end{array}\right.$$
 
 Then $P$ is finitely additive:\par
-Let $\psi_i\in\mathcal{F} \text{ for } i \in \{1,\,2,\,...\,n\} \text{ such that } \psi_i \cap \psi_j = \phi \:\:\forall i\neq j$. 
+Let $\psi_i\in\mathcal{F} \text{ for } i \in \{1,\,2,\,...\,n\} \text{ such that } \psi_i \cap \psi_j = \phi \:\:\forall i\neq j$.
 Let $\Psi = \bigcup\limits_{i=1}^{n}\psi_i$\\
 \indent Then at most one of the $\psi_i$ is cofinite. For suppose otherwise: $\psi_i \text{ and } \psi_j$ are both cofinite for some $i\neq j$. Then: $\psi_i \cap \psi_j = (\psi_i' \cup \psi_j')'$. But $\psi_i' \text{ and } \psi_j'$ are both finite and at least one is non-empty, so their union is finite and non-empty, $\Rightarrow \psi_i \cap \psi_j$ is cofinite and certainly does not equal $\phi$. Contradiction.\par
 
@@ -279,9 +341,9 @@ but $\sum\limits_{i=1}^{\infty}P(\psi_i) = \sum\limits_{i=1}^{\infty}0 = 0 \neq 
 Here we will cover a few basic and important properties of the probability function.\par
 \vspace{12pt}
 
-\begin{proposition}[Probability of a Complement]
+\begin{prop}[Probability of a Complement]
 $$P(E') = 1 - P(E)$$
-\end{proposition}
+\end{prop}
 
 \noindent \textsc{Proof:}\par
 \vspace{12pt}
@@ -293,9 +355,9 @@ $$P(E') = 1 - P(E)$$
 \vspace{12pt}
 \noindent{\bf Corollary:} $P(E) \leq 1$
 
-\begin{proposition}[Non-Disjoint Unions]
+\begin{prop}[Non-Disjoint Unions]
 $$P(E \cup F) = P(E) + P(F) - P(E \cap F)$$
-\end{proposition}
+\end{prop}
 
 \noindent\textsc{Proof:}
 \begin{alignat*}{3}
@@ -335,8 +397,8 @@ This is the first idea of probability formulated and exploits symmetries of expe
 
 Under this approach, probabilities are assigned to events based on "personal belief" or "degree of knowledge" about a situation. It suffers the obvious disadvantage of being potentially totally arbitrary and a very 'wooly' approach - it is difficult to assign an exact value to your degree of personal belief; also, subjective estimates of probability can vary hugely from person to person. However, this is, from a purely mathematical, formalistic approach, a perfectly valid way of assigning a function and, more practically, allows us to solve problems that simply cannot be solved under classical or frequentist probability. An example will help to illustrate this:
 
-\begin{example}[The Envelope Game]\label{envelope}
-\end{example}
+\begin{ex}[The Envelope Game]\label{envelope}
+\end{ex}
 $\quad$Suppose we play a game in which I take two envelopes and place \pounds$\theta$ in one and \pounds$2\theta$ in the other, then offer you a choice of envelopes without allowing you any information about which envelope is which. After you have selected, you may look inside, then decide whether to take the money in that envelope or take the other instead - without looking inside the other first. The problem is that you do not know the value of $\theta$.
 
 Let $x$ be the number of pounds you find in the first envelope when you look inside. Then the other envelope contains either \pounds$2x$ or \pounds$0.5x$, each with probability 1/2. Thus, the expected profit of switching is:
@@ -361,26 +423,26 @@ In the next section, we will study how to obtain the probability that the envelo
 This section introduces the concept of conditional probability, and covers important results such as Bayes' Theorem and the Theorem of Total Probability. Conditional probability is extremely useful in statistics and is vital in the solution of problems like the Envelope Game problem at the end of the last section. It also produces some counter-intuitive results.
 
 \subsection{The Conditional Probability Operator and Independence}\label{conditional and independence}$\;$
-\begin{definition}[The Conditional Probability Function]$\;$\par
+\begin{defn}[The Conditional Probability Function]$\;$\par
 \vspace{12pt}
 
 Given any event F in the $\sigma$-algebra, we define the probability of the event E {\bf given F} by:
 $$P(E|F) = \frac{P(E \cap F)}{P(F)}$$
-\end{definition}
+\end{defn}
 
 This function takes two events and produces a real number. It is trivial to show that it satisfies the Kolmogorov axioms and is thus a valid probability measure. Also, in the frequentist or classical interpretations, it produces results that agree with what our intuitive idea of the probability of an event given another event 'ought to' be. Note, however, that it requires the probability of $F$ to be non-zero. This makes sense, as it is clearly absurd to talk about the probability of an event given something which cannot possibly happen.
 
-\begin{definition}[Independence]$\;$\par
+\begin{defn}[Independence]$\;$\par
 \vspace{12pt}
 
 From the above we can construct a concept of the \underline{independence} of two events. We say $E$ is independent of $F$ if $P(E|F) = P(E)$, that is, if the probability of $E$ is the same regardless of whether or not $F$ has occurred. We can easily see from the definition of the conditional probability operator that an equivalent definition is: $E$ and $F$ are independent if $P(E \cap F) = P(E) \times P(F)$. We say $E$ and $F$ are \underline{conditionally independent given $G$} if $P(E \cap F | G) = P(E|G) \times P(F|G)$.
-\end{definition}
+\end{defn}
 
-\begin{example}[Independence and Conditional Independence]$\;$\par
+\begin{ex}[Independence and Conditional Independence]$\;$\par
 \vspace{12pt}
 
 This example will illustrate the importance of the distinction between independence and conditional independence.
-\end{example}
+\end{ex}
 
 Suppose I have a coin that gives heads with probability $p$. I toss this coin $n$ times. Let $X$ be the number of heads obtained. I then toss the coin one more time; let $Y$ be the number of heads on this final toss (0 or 1). Are $X$ and $Y$ independent?
 
@@ -389,9 +451,9 @@ The answer most students of probability will unthinkingly give to this is "yes",
 
 \subsection{Bayes' Theorem and the Theorem of Total Probability}\label{total prob}$\;$
 
-\begin{theorem}[Bayes' Theorem]
+\begin{thm}[Bayes' Theorem]
 $$P(A|B) \times P(B) = P(B|A) \times P(A)$$
-\end{theorem}
+\end{thm}
 
 \noindent \textsc{Proof:}\par
 \vspace{12pt}
@@ -399,19 +461,19 @@ $$P(A|B) \times P(B) = P(B|A) \times P(A)$$
 
 Bayes' theorem allows us to convert conditional probabilities from conditioning on $A$ to conditioning on $B$. In many problems, one of these will be known or easily obtainable, while the other is of more interest, so Bayes' theorem is an invaluable tool. Another theorem of great use, particularly in conjunction with Bayes' theorem, follows, though first we require a definition:
 
-\begin{definition}[Partitions]$\;$\par
+\begin{defn}[Partitions]$\;$\par
 \vspace{12pt}
 
 A \underline{partition} of a set $X$ is any collection of pairwise disjoint, non-empty sets such that $X$ is contained in their union. E.g., $A$ and $B$ partition $X$ iff $A\neq \phi \neq B$, $A \cap B = \phi \text{ and } X \subseteq A \cup B$. Similarly for partitioning with more than two sets. Technically, the partitioned set should \emph{equal} the union of the partition, not merely be contained therein, but for our purposes, this definition is better.
 
-\end{definition}
+\end{defn}
 
-\begin{theorem}[The Theorem of Total Probability]$\;$\par
+\begin{thm}[The Theorem of Total Probability]$\;$\par
 \vspace{12pt}
 
 Let $A_i \in \mathcal{B}$ be a partition of the event $E$ where $i = 1,\;2,\;...$ (or $i = 1,\;2,\;...\;n$). Then:
 $$P(E) = \sum_{i=1}^{\infty}[P(E|A_i) \times P(A_i)]$$
-\end{theorem}
+\end{thm}
 
 \textsc{Proof:}\par
 \vspace{12pt}
@@ -433,13 +495,13 @@ $$P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum\limits_{i=1}^{\infty}[P(B|A_i) \
 
 \noindent Bayes' theorem is extremely useful, but the results can sometimes be surprising.
 
-\begin{example}[Medical Testing]$\;$\par
+\begin{ex}[Medical Testing]$\;$\par
 \vspace{12pt}
 
 Consider a biopsy used to test for cervical cancer. Let $C$ be the event that a woman has cervical cancer, $B$ the event that a biopsy detects cancer. Suppose 1 in 10 000 women has cervical cancer: $P(C) = 1/10\;000$. Medical tests are rated by their \underline{sensitivity}, or probability of correctly detecting the disease when it is present, and \underline{specificity}, or probability of correctly failing to detect the disease when it is absent. Tests can give false positive results, when they falsely detect the disease in a healthy patient, and false negatives, when they fail to detect the disease in a patient who does, in fact, have the condition. Sensitivity and specificity, then, are measures of how unlikely false negatives and false positives are respectively.
 
 \indent Suppose the biopsy in question has a sensitivity of 0.9 and a specificity of 0.999. Given these figures, if a woman tests positive on her biopsy, what is the probability that she actually has cervical cancer?
-\end{example}
+\end{ex}
 
 From the data given, we know: $P(C) = 1/10\;000$, whence $P(C') = 9\,999/10\;000$ $P(B|C) = 0.9$ (sensitivity),  $P(B'|C') = 999/1000$ (specificity), whence $P(B|C') = 1/1000$ (false positive rate). We wish to ascertain $P(C|B)$, the probability that a woman has cervical cancer given that her biopsy was positive.\par
 \vspace{12pt}
@@ -463,11 +525,11 @@ So despite the high specificity and sensitivity of the test, because of the rari
 
 $\quad$This chapter concerns itself with random variables, an extremely useful and general probabalistic tool for extracting the salient aspects of a variety of experiments and calculating probabilities.
 
-\begin{definition}[Random Variables]$\;$\par
+\begin{defn}[Random Variables]$\;$\par
 \vspace{1cm}
 
 A random variable is a function from the sample space to the real numbers (random variables to the complex plane or higher dimensional vector-spaces are also possible). Note that the key difference between a random variable and the probability function is that random variables take {\bf outcomes} in the sample space to the reals, whereas probability takes {\bf events}, i.e., {\bf subsets} of the sample space (specifically, Borel events) to the reals.
-\end{definition}
+\end{defn}
 
 We can then consider the probability that a random variable takes a particular value. Let $X$ be a random variable (r.v.). Then:
 $$P(X = x) = P(\{s \in S : X(s) = x\})$$
@@ -480,11 +542,11 @@ A Borel set is called \underline{measurable} because there is a measure of proba
 
 \subsection{The Distribution Functions of a Random Variable}$\;$
 
-\begin{definition}[The Cumulative Distribution Function]$\;$\par
+\begin{defn}[The Cumulative Distribution Function]$\;$\par
 \vspace{1cm}
 
 Given a r.v. $X$, the \underline{cumulative} \underline{distribution function} (\underline{c.d.f.}) of $X$ is the function $F_X(x) = P(X \leq x)$
-\end{definition}
+\end{defn}
 
 The c.d.f. has the following basic properties, which follow trivially from its definition and the axioms of probability:
 $$\lim_{x \rightarrow - \infty}[F_X(x)] = 0$$
@@ -497,43 +559,43 @@ If a the c.d.f. is also left-continuous, i.e., it is continuous, we call $X$ a \
 In some sense the most important Borel $\sigma$-algebra is the smallest on the reals that contains all intervals (open, closed or open at one end and closed at the other - though it can be shown that it is sufficient to include all open intervals and the others must be included by the axioms of Borel fields - see M2PM1). Call this Borel field $\mathcal{B}_1$\\
 \indent There is a bijective correspondence between c.d.f.s and r.v.s that are measurable on and only on $\mathcal{B}_1$ The proof of this is beyond the scope of this course.
 
-\begin{definition}[Independent and Identically Distributed]$\;$\par
+\begin{defn}[Independent and Identically Distributed]$\;$\par
 \vspace{1cm}
 
 Two r.v.s, $X$ and $Y$, are said to be \underline{independent and identically distributed} (\underline{i.i.d.}) if they are independent and $P(X \in A) = P(Y \in A)\;\;\forall A \in \mathcal{B}_1$.
-\end{definition}
+\end{defn}
 
-\begin{example}[Independent and identically distributed random variables]$\;$\par
+\begin{ex}[Independent and identically distributed random variables]$\;$\par
 \vspace{1cm}
 
 Flip a fair coin 5 times. Let $X$ be the number of heads, $Y$ the number of tails. Then $X$ and $Y$ are i.i.d. Note, however, that for any outcome $s$ in the sample space, $X(s) \neq Y(s)$ Two variables need not be the same to be i.i.d.
-\end{example}
+\end{ex}
 
-\begin{theorem}$\;$\par
+\begin{thm}$\;$\par
 \vspace{1cm}
 
 $X$ and $Y$ are i.i.d. iff $F_X(x) = F_Y(x) \;\;\forall x$
-\end{theorem}
+\end{thm}
 
 \noindent The proof of this result is beyond the scope of this course, but it may be assumed.\par
 \vspace{1cm}
 \indent It is possible for two r.v.s, $X$ and $Y$ to be i.i.d. with $P(X \in A) \neq P(Y \in A)$ for some $A$ {\it not in the Borel field}. However, the c.d.f.s of the two r.v.s will still be the same - c.d.f.s 'ignore' events outside the Borel field.
 
-\begin{definition}[The Probability Mass Function]$\;$\par
+\begin{defn}[The Probability Mass Function]$\;$\par
 \vspace{1cm}
 
 For a discrete r.v. $X$, the \underline{probability mass function} (\underline{p.m.f.}) of $X$ is the function $f_X(x) = P(X = x)$
-\end{definition}
+\end{defn}
 
 \noindent The p.m.f. of a discrete r.v. is a probability and, as such, satisfies the following:
 $$0 \leq f_X(x) \leq 1 \;\;\forall x$$
 
-\begin{definition}[The Probability Density Function]$\;$\par
+\begin{defn}[The Probability Density Function]$\;$\par
 \vspace{1cm}
 
 The \underline{probability density function} (\underline{p.d.f.}) of a continuous r.v. $X$ is any function $f_X$ such that:
 $$F_X(x) = \int_{-\infty}^x\!\!f_X(t)\;\mathrm{d}t \quad \Leftrightarrow\quad f_X(x) = \frac{\mathrm{d}F_X(x)}{\mathrm{d}x}$$
-\end{definition}
+\end{defn}
 
 Note that the p.d.f. of a continuous r.v. is {\it not} a probability but rather a {\it rate of change of probability} and as such need not satisfy the axioms of probability - in particular, the p.d.f. can take values greater than 1; it does, however, have the following basic properties:
 $$f_X(x) \geq 0 \;\;\forall x$$
@@ -547,11 +609,11 @@ Consider a r.v. $X \; : \; S\rightarrow\mathbb{R}$ and a function $g\; : \; \mat
 $$P(Y \in A) = P(g(X) \in A) = P(X \in g^{-1}(A))$$
 \noindent where $g^{-1}(A)$ denotes the pre\"image of $A$ under $g$; note that $g$ need not be invertible.
 
-\begin{definition}[The Support of a Random Variable]$\;$\par
+\begin{defn}[The Support of a Random Variable]$\;$\par
 \vspace{1cm}
 
 The \underline{support} of a r.v. $X$ is the set $\mathcal{X} = \{x : f_X(x) > 0\}$ Note that here $f_X(x)$ may be a p.m.f. or a p.d.f. - the definition applies to both discrete and continuous r.v.s.
-\end{definition}
+\end{defn}
 
 \noindent We see that the support of $Y$ is $\mathcal{Y} = \{y = g(x) : x \in \mathcal{X}\}$\par
 \vspace{1cm}
@@ -601,7 +663,7 @@ F_Y(y) &= P(g(X)\leq y)\\
 
 Our use of the absolute value bars allows us to write the same result both times, giving us a useful general formula for the transformed p.d.f. We will see later, when studying multivariate transformations, that a similar formula pertains in the mutlivariate case.
 
-\begin{example}[The Cauchy Distribution]\label{Cauchy}$\;$\par
+\begin{ex}[The Cauchy Distribution]\label{Cauchy}$\;$\par
 \vspace{1cm}
 
 Suppose there is a real number line, extending to infinity in both directions. Placed next to it is a spinner (double-headed, so that it always points to a number on the line, never totally away); suppose the centre of the spinner is 1 unit along the normal to the number line at the origin. Let the (continuous) r.v. $\Theta$ be the angle between the head of the spinner and the normal to the number line through the centre of the spinner. Suppose $\Theta \sim \text{Uniform}(-\pi/2, +\pi/2)$; that is, $\Theta$ follows a continuous uniform distribution between $-\pi/2$ and $+\pi/2$ (the continuous uniform distribution has constant p.d.f. between two endpoints; it represents equal probability of any outcome). Let $X$ be the real number pointed to by the spinner. Then $X = tan(\Theta)$. What is the p.d.f. of $X$?
@@ -630,15 +692,15 @@ $$\begin{array}{rll}
 \end{array}$$
 
 \endgroup
-\end{example}
+\end{ex}
 $\qquad$This distribution for $X$ is called the Cauchy distribution. The ratio of two i.i.d. standard Normal r.v.s is Cauchy (not proved here). We gave a derivation from first principles rather than using the above result for injective transformations purely for illustrative purposes. It is easy to check that the same result will be obtained by either method.
 
 What if we wish to apply a non-injective transformation? The standard technique then is to proceed by considering the c.d.f. This is best shown with an example:
 
-\begin{example}[Non-Injective Transformations]$\;$\par
+\begin{ex}[Non-Injective Transformations]$\;$\par
 
 $\quad$Suppose $X \sim Uniform(-1, 3)$ s.t. $f_X(x) = 1/4, \; F_X(x) = (x + 1)/4 \; : -1 < x < 3$. Let $Y = X^2$. Find the p.d.f. of $Y$.
-\end{example}
+\end{ex}
 
 Observe that the transformation function is injective for $x > 1$, so we can simply write $X = \sqrt Y : 1 < Y < 9$. So by the above theorem for injective functions,
 \begin{align*}
@@ -668,7 +730,7 @@ It is often desirable to pr\'ecis the information in a distribution with a singl
 
 \subsection{Expectation}$\;$
 
-\begin{definition}[Expectation]$\;$\par
+\begin{defn}[Expectation]$\;$\par
 \vspace{1cm}
 
 The first and most commonly used moment is the \underline{expectation}, or mean, which gives us a summary of the location of the probability mass of the distribution. It is defined as follows:\par
@@ -679,7 +741,7 @@ $$E_{f_X}(X) = \sum_{\mathcal{X}}x f_X(x)$$
 \noindent For $X$ a continuous r.v.:
 $$E_{f_X}(X) = \int\limits_{\mathcal{X}} x f_X(x)\; \mathrm{d}x$$
 
-\end{definition}
+\end{defn}
 
 Read "the expectation of $X$ under the density $f_X$", or simply "under the density of $X$". This may seem like an unecessary, tautological notation, but when considering multivariate distributions, it can be very useful to keep track of the subscripts on expectations. Although the notation is standard, it can be unwieldy at times, so the subscripts may be omitted when the meaning is clear; for clarity and legibility, we will tend to write expectations here simply as $E_X(X)$, rather than $E_{f_X}(X)$.
 
@@ -695,11 +757,11 @@ $$E_{X}(aX + b) = aE_{X}(X) + b$$
 
 It is often useful when calculating the expectation of a r.v. to find a way to transform the integral and then relate the integrand to the p.d.f. of a known distribution over its support - this allows the integral to be evaluated immediately. The following example illustrates this:
 
-\begin{example}[The Expectation of the Normal Distribution]$\;$\par
+\begin{ex}[The Expectation of the Normal Distribution]$\;$\par
 \vspace{1cm}
 
 $\quad$Let $X \sim N(\mu, \sigma^2)$, s.t $f_X(x) = 1/\sqrt{2 \pi \sigma^2} exp[-(x - \mu)^2/\sigma^2]$. Find the expectation of $X$.
-\end{example}
+\end{ex}
 
 \begin{align*}
 E_{X}(X) &= \int\limits_{\mathbb{R}}\!\! \frac{x}{\sqrt{2 \pi \sigma^2}} e^{-(x - \mu)^2/2\sigma^2}\;\mathrm{d}x\\
@@ -714,11 +776,11 @@ $$\Rightarrow \quad E_{X}(X) = \mu$$
 
 \noindent Similarly, in the discrete case:
 
-\begin{example}[The Expectation of a Binomial R.V.]$\;$\par
+\begin{ex}[The Expectation of a Binomial R.V.]$\;$\par
 \vspace{1cm}
 
 $\quad X \sim Binomial(n, p)$ s.t.$f_X(x) =$ $^nC_x p^x (1 - p)^{n - x}$ Find the expectation of $X$.
-\end{example}
+\end{ex}
 
 \begin{align*}
 E_{X}(X) &= \sum_{x = 0}^n \frac{n!}{x! (n - x)!} x p^x (1 - p)^{n - x}\\
@@ -769,13 +831,13 @@ In Figure \ref{importance sampling}, there are three regions of interest noted, 
 
 Expectation is not the only useful quantity in describing a distribution. In general, the \underline{$\mathrm{k^{th}}$ moment} is defined as the expectation of $X^k$:
 
-\begin{definition}[The $\mathbf{k^{th}}$ Moment]
+\begin{defn}[The $\mathbf{k^{th}}$ Moment]
 $$E_{X}(X^k) = \int\limits_{\mathcal{X}}\! x^k f_X(x) \;\mathrm{d}x$$
 With an equivalent definition in terms of summation for the discrete case.
 It is often more useful to consider the \underline{$\mathrm{k^{th}}$ central moment}, defined as:
 $$E_{X}[(X - \mu)^k] = \int\limits_{\mathcal{X}}\! (x - \mu)^k f_X(x)\;\mathrm{d}X$$
 where $\mu$ is the expectation (the $\mathrm{1^{st}}$ moment).
-\end{definition}
+\end{defn}
 
 Most useful of these is the \emph{variance}, the $\mathrm{2^{nd}}$ central moment, which gives a measure of the spread of the data. The following result, using the linearity property of expectation, is often extremely useful in evaluating the variance:
 \begin{align*}
@@ -935,11 +997,11 @@ $$Var_{X}(X) = \frac{1}{\lambda^2}$$
 
 The exponential distribution exhibits an interesting and useful property called \underline{lack of memory}. It is the only continuous distribution with this property.
 
-\begin{proposition}[The Lack of Memory Property]$\quad$\par
+\begin{prop}[The Lack of Memory Property]$\quad$\par
 \vspace{1cm}
 
 For $X \sim Exp(\lambda)$, $P(X>x\; | \; X>x_0) = P(X>x-x_0)$
-\end{proposition}
+\end{prop}
 
 \noindent\textsc{Proof:}
 \begin{align*}
@@ -957,18 +1019,18 @@ P(X>x\; | \; X>x_0) &= P(X > x_0 + a\; | \; X > x_0) \; : \; a>0\\
 
 Before considering this distribution, we require a new function:
 
-\begin{definition}[The Gamma Function]
+\begin{defn}[The Gamma Function]
 $$\Gamma(x) = \int_0^{\infty}\!\!t^{x-1}e^{-t}\;\mathrm{d}t \; : \; x>0$$
-\end{definition}
+\end{defn}
 
 \noindent The Gamma function has several useful properties:
 
-\begin{proposition}[Properties of the Gamma function]$\quad$\par
+\begin{prop}[Properties of the Gamma function]$\quad$\par
 {\bf 1:}  $\Gamma(x) = (x-1)\Gamma(x-1)$\par
 {\bf 2:} $\Gamma(1) = 1$\par
 {\bf 3:} $\Gamma(n) = (n-1)! \; : \; n \in \mathbb{N}$\par
 {\bf 4:} $\Gamma(1/2) = \sqrt \pi$\par
-\end{proposition}
+\end{prop}
 
 \noindent\textsc{Proof:}\par
 {\bf 1:}
@@ -1064,7 +1126,7 @@ $\quad$The Central Limit Theorem (to be covered later) allows us to approximate 
 $$X \sim_{approx} N(n\theta,n\theta(1-\theta))$$
 for large $n$. As a general rule-of-thumb, the Normal approximation of a binomial r.v. is useful for\\$min\{n\theta,n\theta(1-\theta)\} \geq 10$.
 
-\begin{example}$\;$\par
+\begin{ex}$\;$\par
 \vspace{1cm}
 
 Suppose $X \sim Binomial(100,0.1)$. Then $\mu = 10$, $\sigma^2 = 9$:
@@ -1075,7 +1137,7 @@ P(X \leq 9) &\approx P\left(Z \leq \frac{9-10}{3}\right)\\
 &= 1-\Phi\left(\frac{1}{3}\right)\\
 &\approx 37.07\%
 \end{align*}
-\end{example}
+\end{ex}
 
 The exact answer can be calculated from the binomial distribution as roughly 45.13\%. Here, the Normal approximation is fairly poor. We can improve it with the \underline{continuity correction}. Figure \ref{normal approximation} illustrates the reason for the error.
 
@@ -1131,7 +1193,7 @@ where $\vec{\theta}$ is a vector of parameters.
 
 We call $w_1(\vec{\theta}),\; w_2(\vec{\theta}),\; ...\; w_k(\vec{\theta})$ the \underline{canonical parameterisation} or \underline{natural parameterisation}.
 
-\begin{example}[The Gamma Distribution]$\;$\par
+\begin{ex}[The Gamma Distribution]$\;$\par
 \vspace{1cm}
 
 Let $X \sim \Gamma(\alpha, \beta)$. Then:
@@ -1142,9 +1204,9 @@ f_X(x) &= \frac{1}{\Gamma(\alpha) \beta^\alpha} x^{\alpha-1}e^{-x/\beta}\\
 
 Let $\vec{\theta} = (\alpha,\beta)$, $h(x) = 1$, $c(\alpha,\beta) = 1/(\Gamma(\alpha)\beta^\alpha)$, $w_1(\alpha,\beta) = (\alpha-1)$, $t_1(x) = log(x)$,\\ $w_2(\alpha, \beta) = 1/\beta$ and $t_2(x) = -x$. Then we see that the Gamma distribution is a member of the exponential family and has canonical parameterisation $(\alpha-1),\; 1/\beta$.
 
-\end{example}
+\end{ex}
 
-\begin{example}[A Cautionary Non-Example]$\;$\par
+\begin{ex}[A Cautionary Non-Example]$\;$\par
 \vspace{1cm}
 
 Let $f_X(x) = 1/\theta e^{1-x/\theta}\; : \; 0<\theta<x$. Then $f_X(x)$ is \textbf{not} a member of the exponential family, because although the p.d.f. has an appropriate form, the support is in terms of the parameter $\theta$; because of this, we can define an 'indicator function':
@@ -1153,7 +1215,7 @@ and then write:
 $$f_X(x) = \frac{e}{\theta}e^{-\frac{1}{\theta}x}I\{\theta < x\}\; : \; x>0$$
 And, though the first part is in the form for a member of the exponential family, the indicator function cannot be split into functions purely in $x$ and purely in $\theta$.
 
-\end{example}
+\end{ex}
 
 \subsubsection{Location-Scale Families}
 
@@ -1171,7 +1233,7 @@ This means that if we can evaluate probabilities for $Z$, we can evaluate them f
 
 In this section, we will study how to model two (or more) r.v.s together with a single, multidimensional distribution. This will give us new tools for considering independence and the relationship between dependent variables. We will focus on bivariate distributions, but the ideas generalise easily to larger numbers of r.v.s.
 
-\begin{definition}[Joint Distribution Functions]$\;$\par
+\begin{defn}[Joint Distribution Functions]$\;$\par
 \vspace{1cm}
 
 Let $X$ and $Y$ be discrete r.v.s. Then the \underline{joint mass function} of $X$ and $Y$ is:
@@ -1188,7 +1250,7 @@ F_{X,Y}(x,y) &= P(X\leq x \text{ and } Y\leq y)\\
 &= \left\{ \begin{array}{cl} \int\limits_{-\infty}^y\int\limits_{-\infty}^x\!\! f_{X,Y}(s,t)\;\mathrm{d}s\mathrm{d}t\quad & : \; \text{continuous case}\\ \sum\limits_{t=0}^y\sum\limits_{s=0}^x f_{X,Y}(s,t)\quad & : \; \text{discrete case} \end{array} \right.
 \end{align*}
 
-\end{definition}
+\end{defn}
 
 \subsubsection{Moments of Multivariate Distributions}
 
@@ -1200,7 +1262,7 @@ where the integrals are replaced with summations in the discrete case.
 
 $\quad$Given $f_{X,Y}(x,y)$, we can find $f_X(x)$ and $f_Y(y)$; these are called the \underline{marginal distributions} of $X$ and $Y$. Consider first an example in the discrete case:
 
-\begin{example}[Sex and Age of U.S. College Students]$\;$\par
+\begin{ex}[Sex and Age of U.S. College Students]$\;$\par
 \vspace{1cm}
 
 The following table summarises the sex- and age-distribution of college students in the U.S.A. in 1985:
@@ -1214,14 +1276,14 @@ $$\begin{array}{|c|c|c|c|c|c|} \hline
 \end{array}$$
 \end{center}
 
-\end{example}
+\end{ex}
 $\quad$In the margins of the table, the sums of each row and column have been included. These margins represent the marginal distributions of sex (in the final column) and age (in the bottom row), hence the term "marginal distribution". By the theorem of total probability (see section \ref{total prob}), we know that:
 $$P(female) = \sum\limits_i [P(\{female\} \cap \{age = i\})]$$
 and similarly for the prior probability of being male. Furthermore,
 $$P(age = i) = P(age = i \text{ and } male) +P(age = i \text{ and } female)$$
 Thus, by summing along a row or down a column, we find the prior probability of a given sex or age respectively. This leads to the following:
 
-\begin{theorem}[Marginal Distributions]$\quad$\par
+\begin{thm}[Marginal Distributions]$\quad$\par
 \vspace{1cm}
 
 $\quad$For $X$, $Y$ discrete r.v.s with joint mass function $f_{X,Y}(x,y)$, the marginal distributions of $X$ and $Y$ are given by:
@@ -1230,7 +1292,7 @@ $$f_X(x) = \sum\limits_{\mathcal{Y}} f_{X,Y}(x,y) \qquad\qquad f_Y(y) = \sum\lim
 For $X$ and $Y$ continuous r.v.s with joint density function $f_{X,Y}(x,y)$, the marginal distributions are:
 $$f_X(x) = \int\limits_{\mathcal{Y}}\!\! f_{X,Y}(x,y)\; \diff y \qquad\qquad f_Y(y) = \int\limits_{\mathcal{X}} \!\! f_{X,Y}(x,y)\; \diff x$$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\\
 \indent Trivial, based on the above discussion, so not included here. Simply show that the function given satsifies the properties with respect to probability required of a mass/density function.
@@ -1266,7 +1328,7 @@ by our definition of the conditional density function, so the conditional densit
 
 Recall the notion of \underline{independence} (section \ref{conditional and independence}). We can easily extend this to see that two r.v.s (whether discrete or continuous) are independent iff $f_{X|Y}(x|y) = f_X(x) \; \Leftrightarrow \; f_{X,Y}(x,y) = f_X(x)f_Y(y)$ \textbf{and} the support of $(X,Y)$ is not 'mixed' - e.g., is of a form such as $x>0,\; y>0$ rather than $x>y>0$. In the latter case, we can use indicator functions such as I\{x>y\} to rewrite the joint mass/density function in a form that does not factorise into the marginal distributions, so $X$ and $Y$ are \textbf{not} independent. This is an important point to remember.
 
-\begin{example}[Independent and Non-Independent Bivariate R.V.s]
+\begin{ex}[Independent and Non-Independent Bivariate R.V.s]
 
 \begin{align*}
 \mathbf{1\!: }\; f_{X,Y}(x,y) &= \frac{1}{\beta^2}e^{-\frac{x+y}{\beta}}\quad : x,y>0\\
@@ -1280,19 +1342,19 @@ $$\Rightarrow X,\;Y \text{are independent.}$$
 &\neq f_X(x)f_Y(y)\; \Rightarrow\; X,\; Y \text{ are not independent.}
 \end{align*}
 
-\end{example}
+\end{ex}
 
 \subsubsection{Covariance and Correlation}
 
-\begin{definition}[Covariance and Correlation]$\;$\par\vspace{1cm}
+\begin{defn}[Covariance and Correlation]$\;$\par\vspace{1cm}
 
 Given two r.v.s $X$ and $Y$ with means $\mu_X,\; \mu_Y$ and variances $\sigma_X^2,\; \sigma_Y^2$ respectively, the \underline{covariance} of $X$ and $Y$ is defined by:
 $$Cov(X,Y) = E_{X,Y}[(X-\mu_X)(Y-\mu_Y)]$$
 The \underline{correlation} is defined by:
 $$\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}$$
-\end{definition}
+\end{defn}
 
-\begin{theorem}[Basic Properties of Covariance and Correlation]$\;$\par\vspace{1cm}
+\begin{thm}[Basic Properties of Covariance and Correlation]$\;$\par\vspace{1cm}
 
 \noindent\textbf{1: } the sign of $Cov$ (and $\rho$) indicates the sense of the relationship between $X$ and $Y$ - positive correlation means that as one variable increases, the other tends to increase too, and negative correlation the converse
 
@@ -1305,7 +1367,7 @@ $$\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}$$
 \noindent\textbf{5: } $$-1 \leq \rho_{X,Y} \leq +1$$
 
 \noindent\textbf{6: } $$|\rho_{X,Y}| = 1 \; \Leftrightarrow\; \exists a,b \; : \; P(Y=a+bX) = 1,\; b\neq 0,\; sgn(b) = sgn(\rho_{X,Y})$$
-\end{theorem}
+\end{thm}
 where $sgn(x)$ is the signum function, giving the sign of a number:
 $$sgn(x) = \left\{\begin{array}{cl} -1\quad& : \; x<0\\ 0\quad& : \; x=0\\ +1\quad& :\; x >0\end{array}\right.$$
 
@@ -1348,7 +1410,7 @@ with equality only if $X = cY$ for some constant $c$.
 \end{align*}
 with equality only if $X-\mu_X = c(Y-\mu_Y)$, whence \textbf{6} follows \hfill$Q.E.D.$
 
-\begin{example}[Uncorrelated but Dependent Variables]\label{uncorrelated, dependent}$\;$\par\vspace{1cm}
+\begin{ex}[Uncorrelated but Dependent Variables]\label{uncorrelated, dependent}$\;$\par\vspace{1cm}
 
 Let $X \sim Unif(-1,+1)$, $Z \sim Unif(0,0.1)$, $X$, $Z$ independent. Define $Y=X^2 + Z$. Then $(X,Y)$ is uniform on the region $R$ depicted in figure \ref{figure uncorrelated, dependent}. So $Y|X \sim Unif(x^2,x^2+0.1)$. Hence:
 \begin{align*}
@@ -1375,7 +1437,7 @@ Cov(X,Y) &= E(X^3)\\
 \end{align*}
 
 So $X$ and $Y$ are not independent, but their covariance is zero, as claimed. This counterexample proves part \textbf{4} of the above theorem.
-\end{example}
+\end{ex}
 
 \begin{figure}[h]
 \begin{center}
@@ -1386,7 +1448,7 @@ So $X$ and $Y$ are not independent, but their covariance is zero, as claimed. Th
 
 \subsection{Multivariate Transformations}$\;$
 
-\begin{theorem}[The Convolution Theorem]$\quad$\par\vspace{1cm}
+\begin{thm}[The Convolution Theorem]$\quad$\par\vspace{1cm}
 
 \noindent{\bf 1: } Let $X$, $Y$ be discrete r.v.s with joint mass function $f_{X,Y}(x,y)$. Define $Z=X+Y$. Then:
 $$f_Z(z) = \sum\limits_{\overline{\mathcal{X}}} f_{X,Y}(x,z-x)$$
@@ -1396,7 +1458,7 @@ $$f_Z(z) = \int\limits_{\overline{\mathcal{X}}}\!\! f_{X,Y}(x,z-x)\;\diff x$$
 
 \noindent where, in both the discrete and continuous cases, $\overline{\mathcal{X}}\subseteq\mathcal{X}$ is the set of values that $X$ can take such that $Y$ can take the value $X-z$.
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 \indent Trivial. Partition the event $\{X+Y=z\}$ into events $\{X=x\}\cap\{Y=z-x\}$, then apply the theorem of total probability.\par\vspace{1cm}
@@ -1425,11 +1487,11 @@ Note that the jacobian is itself the determinant of a matrix and so $|J|$ is the
 
 $$|J| = \left| \frac{\partial x}{\partial u}\frac{\partial y}{\partial v} - \frac{\partial y}{\partial u}\frac{\partial x}{\partial v}\right|$$
 
-\begin{example}$\;$\par
+\begin{ex}$\;$\par
 \vspace{1cm}
 
 Let $X \sim \Gamma(r,1),\; Y \sim \Gamma(s,1)$ independent. Define $Z_1=X+Y,\; Z_2=X/(X+Y)$. Find the distribution of $(Z_1,Z_2)$ and the marginals of $Z_1$ and $Z_2$.
-\end{example}
+\end{ex}
 
 \noindent First we note that, from the independence of $X$ and $Y$ and the definitions of $Z_1$ and $Z_2$,
 $$0<Z_1<\infty\qquad\qquad 0<Z_2<1$$
@@ -1462,16 +1524,16 @@ $$f_{Z_1}(z) = \frac{1}{\Gamma(r+s)}z^{r-1}e^{-z}\qquad\qquad f_{Z_2}(z) = \frac
 
 \subsection{Moments of Sums of Random Variables}\label{moments of sums}$\;$
 
-\begin{definition}[Mean and Variance-Covariance Matrix of a Random Vector]$\;$\par\vspace{1cm}
+\begin{defn}[Mean and Variance-Covariance Matrix of a Random Vector]$\;$\par\vspace{1cm}
 
-We can conveniently represent sums (and, more generally, weighted sums) of r.v.s using vector notation. 
+We can conveniently represent sums (and, more generally, weighted sums) of r.v.s using vector notation.
 Let $\vec{X} = (X_1,\; X_2,\; ...\; X_n)^T$ be a \underline{vector-valued} r.v. - that is, a random vector, so that each of its entries, $X_i$ are themselves random variables. Then the mean of $\vec{X}$ is:
 $$\vec{\mu_X} = \left(\begin{array}{c}\overline{X_1}\\ \overline{X_2}\\ \vdots\\ \overline{X_n} \end{array}\right)$$
 and the \underline{variance-covariance matrix} of $\vec{X}$ is:
 $$\Sigma = \left( \begin{array}{cccc} Var(X_1)\quad& Cov(X_1,X_2)\quad& \hdots\quad& Cov(X_1,X_n)\\Cov(X_1,X_2)\quad& Var(X_2)\quad& \hdots\quad& Cov(X_2,X_n)\\ \vdots\quad& \vdots & \vdots\quad & \vdots\\ Cov(X_1,X_n) & Cov(X_2,X_n)\quad& \hdots& Var(X_n) \end{array}\right)$$
 that is, the matrix whose i-j element is the covariance of $X_i$ and $X_j$ - noting that the covariance of $X_i$ with itself is simply the variance.
 
-\end{definition}
+\end{defn}
 
 
 $\quad$Let $\vec{X}$ be a random $n$-vector with mean $\vec{\mu_X}$ and variance-covariance matrix $\Sigma$. Let $\vec{b}$ be a constant vector, $a$ a scalar constant. Then:
@@ -1513,11 +1575,11 @@ $$f_{\vec{X}}(\vec{x}) = \frac{1}{\sqrt{2 \pi |\Sigma|}}e^{-\frac{1}{2}(\vec{x}-
 \clearpage
 \section{Order Statistics}\label{order stats}$\;$
 
-\begin{definition}[Order Statistics]$\;$\par\vspace{1cm}
+\begin{defn}[Order Statistics]$\;$\par\vspace{1cm}
 
 Suppose we wish to find the distribution of the maximum, minimum or median of a random sample. Given a random sample $X_1,\; X_2,\; ...\; X_n$ i.i.d., we define the \underline{order statistics} $X_{(i)}$ of that sample to be the sample values put in ascending order. That is:
 $$\{X_{(1)},\; X_{(2)},\; ...\; X_{(n)}\} = \{X_1,\; X_2,\; ...\; X_n\} \text{ where } X_{(1)}<X_{(2)}< ... < X_{(n)}$$
-\end{definition}
+\end{defn}
 
 Note that here we have assumed that $X_i \neq X_j \; \forall i \neq j$. For continuous distributions, the probability of any individual point is actually 0, so this assumption is reasonable. For discrete distributions, it is not a reasonable assumption. However, we will not consider this issue here. For the purposes of this course, we will assume that all elements of the sample are distinct.
 
@@ -1543,7 +1605,7 @@ By the definition of conditional mass/density fucntions, we can write:
 $$f_{X,Y,Z}(x,y,z) = f_{X|Y,Z}(x|y,z) f_{Y|Z}(y|z) f_Z(z)$$
 and similar expressions for larger numbers of r.v.s. This allows us to combine models to derive a variety of "multi-level" models. This is best illustrated by example:
 
-\begin{example}[Sizes of Fish]$\quad$\par\vspace{1cm}
+\begin{ex}[Sizes of Fish]$\quad$\par\vspace{1cm}
 
 Suppose we wish to model the sizes of fish of a particular species in a lake. The Normal distribution is normally a good model for sizes of animals, with a slight catch. Most animals, including fish, mate seasonally. Therefore, there will be a subpopulation of fish conceived in the most recent mating cycle, whose ages will all be very close and whose sizes we expect to follow a Normal distribution with a particular mean and variance, another subpopulation one year older, whose sizes will be Normally distributed \emph{with a different mean and variance}, and so on, the number of subpopulations being equal to the maximum number of years one of these fish can live. Because of this segregation of the population into discrete subpopulations with different size distributions, a Normal model for the whole population will not be accurate. Note that this problem is present to a lesser extent in humans because although, as a species, we mate all year round, the difference in size of the two sexes prevents a Normal model from fitting the whole population appropriately.
 
@@ -1568,17 +1630,17 @@ This is effectively a weighted average of Normal distributions. This is an examp
 
 We can also, of course, derive $f_{A|X}(a|x)$, should we so desire.
 
-\end{example}
+\end{ex}
 
 Generally, \underline{mixture models} like the above model populations consisting of a mixture of subpopulations, each of which follows its own distribution for a particular r.v. They are a particular case of \underline{hierarchical models}, which model r.v.s whose parameters are themselves r.v.s (this is extremely useful for modelling uncertainty or measurement error in parameters).
 
-\begin{theorem}[Calculating Moments in Hierarchical Models]\label{iterated expectation}$\;$\par\vspace{1cm}
+\begin{thm}[Calculating Moments in Hierarchical Models]\label{iterated expectation}$\;$\par\vspace{1cm}
 
 \noindent{\bf1: } $E_{X}(X) = E_{Y}[E_{{X|Y}}(X|Y)]$
 
 \noindent{\bf2: } $Var_{X}(X) = E_{Y}[Var_{{X|Y}}(X|Y)] + Var_{Y}[E_{{X|Y}}(X|Y)]$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
@@ -1608,7 +1670,7 @@ Var_{X}(X) &= E_{{X}}(X^2) - [E_{X}(X)]^2\\
 
 Note that all the lines with the integrals in the second part could have been omitted by using {\bf 1}. They are included to illustrate that the iterated expectation formula {\bf 1} need not ever be used - it is always possible to solve problems from the definition of expectation - but that to do so can easily double the length of working.
 
-\begin{example}[Normal-Normal Hierarchical Models]$\quad$\par\vspace{1cm}
+\begin{ex}[Normal-Normal Hierarchical Models]$\quad$\par\vspace{1cm}
 
 Suppose $Y|(\mu,\xi) \sim N(\mu,\sigma^2\xi)$ and $\mu \sim N(\alpha,\tau^2)$, $\xi \sim \chi^2_\nu$, with $\vec{\theta} = (\sigma^2, \alpha, \tau^2, \nu)$ known. Then:
 \begin{align*}
@@ -1623,23 +1685,23 @@ Var_Y(Y) &= E_{(\mu,\xi)}[Var_{Y|(\mu,\xi)}(Y|(\mu,\xi))] + Var_{(\mu,\xi)}[E_{Y
 
 This is much easier than finding the moments by integrating, as we would normally need to do.
 
-\end{example}
+\end{ex}
 
 \clearpage
 \section{Statistics and their Sampling Distributions}$\;$
 
-\begin{definition}[Simple Random Samples]$\;$\par\vspace{1cm}
+\begin{defn}[Simple Random Samples]$\;$\par\vspace{1cm}
 
 A \underline{simple random sample} (or \underline{s.r.s.}) is a number of i.i.d. r.v.s from a given distribution:\\ $X_1,\;X_2,\; ...\; X_n \overset{\text{i.i.d.}}{\sim} f_X(x)$.
-\end{definition}
+\end{defn}
 
-\begin{definition}[Statistics and Sampling Distributions]$\;$\par\vspace{1cm}
+\begin{defn}[Statistics and Sampling Distributions]$\;$\par\vspace{1cm}
 
 A \underline{statistic} is any real-valued function of a s.r.s. A statistic may not involve the parameters of the distribution from which the sample is drawn, but may involve the size of the sample and its values. As a statistic is a function of r.v.s, it is itself a r.v. It's distribution is called the \underline{sampling distribution} for the statistic.
 
-\end{definition}
+\end{defn}
 
-\begin{example}[2 Common Statistics]$\;$\par\vspace{1cm}
+\begin{ex}[2 Common Statistics]$\;$\par\vspace{1cm}
 
 \noindent{\bf The sample mean:}
 $$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i$$
@@ -1648,9 +1710,9 @@ $$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i$$
 $$S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2$$
 From the sample variance we can define the sample standard deviation, $S=\sqrt{S^2}$.
 
-\end{example}
+\end{ex}
 
-\begin{proposition}[Properties of Sample Mean and Variance]\label{sample moments}$\;$\par\vspace{1cm}
+\begin{prop}[Properties of Sample Mean and Variance]\label{sample moments}$\;$\par\vspace{1cm}
 
 Let $X_1,\;\hdots\; X_n$ be a s.r.s. from a distribution with mean $\mu$ and variance $\sigma^2$. Then:
 
@@ -1666,7 +1728,7 @@ $$Var(\overline{X}) = \frac{\sigma^2}{n}$$
 {\bf 4:}
 $$E(S^2) = \sigma^2$$
 
-\end{proposition}
+\end{prop}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
@@ -1707,19 +1769,19 @@ E(S^2) &= E\left[\frac{1}{n-1}\left(\sum_{i=1}^n X_i^2 -n\overline{X}^2\right)\r
 
 \subsection{Parameter Estimation}$\;$
 
-\begin{definition}[Estimators and Estimates]$\;$\par\vspace{1cm}
+\begin{defn}[Estimators and Estimates]$\;$\par\vspace{1cm}
 
 An \underline{estimator} of a parameter is a statistic used to estimate that parameter. As it is a statistic, it is a random variable. An \underline{estimate} is a value taken by an estimator.
 
-\end{definition}
+\end{defn}
 
 $\overline{X}$ is an estimator of the mean $\mu$ and $S^2$ an estimator of the variance $\sigma^2$. Estimates of these quantities would be the mean, $\overline{x}$, and variance, $s^2$, of a \emph{particular} random sample.
 
-\begin{definition}[The Bias of an Estimator]$\;$\par\vspace{1cm}
+\begin{defn}[The Bias of an Estimator]$\;$\par\vspace{1cm}
 
 Let there be a s.r.s. drawn from a distribution with some unknown parameter $\theta$. Let $T$ be an estimator of $\theta$. Then the \underline{bias} of $T$ is defined to be $E(T) - \theta$. If $E(T) = \theta$, we say that $T$ is an \underline{unbiased} estimator.
 
-\end{definition}
+\end{defn}
 
 From proposition \ref{sample moments}, we see that $\overline{X}$ and $S^2$ are unbiased estimators of mean and variance respectively. Generally, an unbiased estimator is to be preferred to a biased one, but there are times when an estimator, though biased, might be preferable to an unbiased alternative for some other reason. For instance, if $T$ is an unbiased estimator of $\theta$ with some variance $\sigma_T^2$ and $S$ is a biased estimator with variance $\sigma_S^2\ll \sigma^"_T$, then $S$ might be preferable to $T$ as an estimator if its bias is sufficiently small, as $T$, by virtue of its large variance, might give a value far away from the true value of $\theta$, whereas $S$, though biased, is at least likely to give a value \emph{close to} the true value, even if it is less likely to give the true value exactly. Bias, then, is not the only factor to consider in an estimator.
 
@@ -1735,7 +1797,7 @@ $\quad$Suppose we have a s.r.s. $X_1,\;\hdots\; X_n$ from a distribution with un
 
 As the expectations on the right-hand side can be expressed in terms of the $\theta_i$ and the statistics on the left-hand side are all readily calculable from the sample, we have $k$ equations in $k$ unknowns, so we can generally solve for all of the $\theta_i$. This will let us express each of the $\theta_i$ as a function of the above statistics, thus giving us an estimator for each $\theta_i$. This technique is called the \underline{Method of Moments} (M.o.M.).
 
-\begin{example}[The Method of Moments]$\;$\par\vspace{1cm}
+\begin{ex}[The Method of Moments]$\;$\par\vspace{1cm}
 
 Let $X_i \overset{\text{i.i.d.}}{\sim} Binomial(k,p)$ be a s.r.s., $i = 1,\;\hdots\;n$. Our two M.o.M. equations are:
 $$\overline{X}=\frac{1}{n}\sum_{i=1}^n X_i = kp \quad\mbox{ and }\quad \frac{1}{n}\sum_{i=1}^n X_i^2 = kp(1-p) + k^2p^2$$
@@ -1750,7 +1812,7 @@ $$\overline{X}=\frac{1}{n}\sum_{i=1}^n X_i = kp \quad\mbox{ and }\quad \frac{1}{
 & & &= \frac{\overline{X} - \frac{1}{n}\sum\limits_{i=1}^n \left[(X_i - \overline{X})^2\right]}{\overline{X}}
 \end{alignat*}
 
-\end{example}
+\end{ex}
 
 The main advantage of the Method of Moments estimates is that they are relatively quick and easy to compute, making them useful for "back-of-the-envelope" calculations, or for obtaining an initial estimate for an iterative estimating technique. However, it is not always very accurate (note that the estimators used for all moments but the first are biased) and does not respect parameter spaces - occasionally it can give an impossible value for a parameter, such as a negative estimate for a parameter that is constrained to be positive.
 
@@ -1760,7 +1822,7 @@ $\quad$Our objective in parameter estimation is to obtain the "best" estimate fo
 
 A piece of notation: in the following we speak of the $argmax$ of a function. This is simply the value of the argument which globally maximises the function (of course, this need not be a unique value, or even well-defined). For instance, $argmax_x (1-x^2) = 0$, as the maximum of the function $1 - x^2$ occurs at $x=0$. Similarly, we may, of course, consider the $argmin$. Simply, $argmax_x[f(x)] = a$ where $f(a) = max\{f(x)\}$.
 
-\begin{definition}[The Likelihood Function]$\;$\par\vspace{1cm}
+\begin{defn}[The Likelihood Function]$\;$\par\vspace{1cm}
 
 Given a s.r.s. $\vec{X} = (X_1,\; \hdots\; X_n)$ drawn from a distribution with unknown parameters \\$\vec{\theta}=(\theta_1,\;\hdots\; \theta_k)$, the \underline{likelihood} of $\theta$ given the sample is the function:
 
@@ -1779,9 +1841,9 @@ l(\vec{\theta} | \vec{X}) &=\log[\mathcal{L}(x)]\\
 &= \sum_{i=1}^n \log\left[P\left(X_i | \vec{\theta}\right)\right]
 \end{align*}
 
-\end{definition}
+\end{defn}
 
-\begin{definition}[Maximum Likelihood Estimation]$\;$\par\vspace{1cm}
+\begin{defn}[Maximum Likelihood Estimation]$\;$\par\vspace{1cm}
 
 Given a s.r.s., the \underline{maximum likelihood estimate} (\underline{m.l.e.}), $\hat{\theta}$, of a parameter $\theta$ of the sampling distribution is the value that maximises the probability of drawing the sample that was, in fact, obtained:
 
@@ -1793,11 +1855,11 @@ $$\hat{\theta} = argmax_\theta \left[l\left(\vec{\theta} | \vec{X}\right)\right]
 
 Of course, when attempting to maximise this, we will typically differentiate; sums are much easier to differentiate than products, so this is why the loglikelihood function is far more convenient than the simple likelihood.
 
-\end{definition}
+\end{defn}
 
 This, then, gives us a method for estimating a parameter from a sample. We express the probability of getting the given sample given a value of the parameter as if it were instead a function of the parameter given the sample values, then find the value of the parameter which maximises this probability (usually by considering its logarithm). In a certain sense, this value can be considered the "best" estimate for the parameter, as it is the one which makes the sample we have maximally likely. Its downfall comes when the sample is unlikely under \emph{any} reasonable value for the parameter; but, by definition, this happens but rarely.
 
-\begin{example}[Maximum Likelihood Estimation for a Continuous Parameter Space]$\;$\par\vspace{1cm}
+\begin{ex}[Maximum Likelihood Estimation for a Continuous Parameter Space]$\;$\par\vspace{1cm}
 
 Let $X_i \overset{\text{i.i.d.}}{\sim} N(\mu, \sigma^2)$ for $i = 1,\;\hdots\; n$ be a s.r.s. We wish to estimate $\vec{\theta} = (\mu,\sigma^2)$.
 
@@ -1817,11 +1879,11 @@ Let $X_i \overset{\text{i.i.d.}}{\sim} N(\mu, \sigma^2)$ for $i = 1,\;\hdots\; n
 
 We must now confirm that this stationary point is indeed a maximum. This may be done by considering second partial derivatives and is omitted for brevity.
 
-\end{example}
+\end{ex}
 
 When the parameter can take any value in a continuous range, as above, we typically maximise by differentiating and setting the derivative equal to zero; when the parameter's values are constrained to a finite or countable set, some more subtle methods are required. It is often convenient to consider the \underline{forward difference operator} (see M1M2), which acts like a discrete analogue of the derivative, or a \underline{forward} \underline{quotient operator}, which can be more tractable in maximum likelihood problems because of cancellations. This is best illustrated by example.
 
-\begin{definition}[The Forward Difference and Quotient Operators]$\;$\par\vspace{1cm}
+\begin{defn}[The Forward Difference and Quotient Operators]$\;$\par\vspace{1cm}
 
 Given any ordered (finite or countable) sequence of values $a_n$, the \underline{forward difference operator} $\Delta$ is defined by:
 $$\Delta(n) = a_{n+1}-a_n$$
@@ -1829,11 +1891,11 @@ $$\Delta(n) = a_{n+1}-a_n$$
 Similarly, the \underline{forward quotient operator} (or forward ratio operator) $R$ is defined by:
 $$R(n) = \frac{a_{n+1}}{a_n}$$
 
-\end{definition}
+\end{defn}
 
 These two operators can, like the differential operator, give us information about the rate of change of a function. If $\Delta(n) < 0$, the sequence is decreasing at the $n^{th}$ term; if $\Delta(n) > 0$, the sequence is increasing at the $n^{th}$ term. If $\Delta(n) = 0$, then $a_n = a_{n+1}$ and the sequence can be viewed as having a stationary point at the $n^{th}$ term. The same results hold for $R(n)$, but with 1 substituted for 0.
 
-\begin{example}[Maximum Likelihood Estimation for a Countable Parameter Space]$\;$\par\vspace{1cm}
+\begin{ex}[Maximum Likelihood Estimation for a Countable Parameter Space]$\;$\par\vspace{1cm}
 
 Let $X_i \overset{\text{i.i.d.}}{\sim} Binomial(k,p)$, with $p$ known, $k$ unknown (this is highly unrealistic, but we will make this assumption for illustrative purposes). $k \in \mathbb{Z}_+$, so differentiating w.r.t. $k$ is not a permissible approach, in general. Of course, it might be that the maximum found by differentiating will occur at an integer value, in which case the problem is solved, but generally this will not be the case. First, we find the likelihood function:
 
@@ -1868,13 +1930,13 @@ Note that as $z \rightarrow 0$, the right-hand side of the above expression tend
 
 We can see from the sketch that the function plotted is decreasing in the range of interest, so we can expect a unique solution to $(1-p)^n = \prod_{i=1}^n (1-zx_i)$, which was the necessary and sufficient condition for the forward quotient to be unity, which occurs at the maximum of the likelihood. So we solve this equation for $z$ (perhaps by numerical methods), and then take the reciprocal, which is the value of $k$ such that $R(k-1) = 1$. Of course, this might not be an integer value, but we should expect that the maximum should occur at either of the integers adjacent to this value. So we then manually check the comparative sizes of the likelihood at these two values and the largest is therefore the maximum likelihood. The value of $k$ for which this occurs is thus the m.l.e. of $k$.
 
-\end{example}
+\end{ex}
 
 
 
 Sometimes, we might not have the complete data available to calculate the expectation. This is often the case for continuous distributions due to measurement errors; it can also arise due to participant non-responsiveness in surveys. We therefore use the expectation of the data and iteratively approach an estimate. This is best illustrated by example.
 
-\begin{example}[The Expectation-Maximisation Algorithm]$\;$\par\vspace{1cm}
+\begin{ex}[The Expectation-Maximisation Algorithm]$\;$\par\vspace{1cm}
 
 Let $X_i \overset{\text{i.i.d.}}{\sim} N(\mu, 1)$ be a s.r.s. Due to measurement errors (rounding), we observe $\{(a_i,b_i)\}\; : \; a_i < X_i < b_i$. With the complete data, maximum likelihood estimation would be easy:
 
@@ -1929,15 +1991,15 @@ $$\mu_1 = \frac{1}{n} \sum_{i=1}^n \frac{\phi(a_i-\mu_0)-\phi(b_i-\mu_0)}{\Phi(b
 
 We can then use this revised estimate to obtain $X_i^{(2)}$, the expected loglikelihood given the observed (incomplete) data and $\mu_1$, whence we can find $\mu_2$. Iterating in this manner, we can converge to an estimate for $\mu$ \hfill$Q.E.F.$
 
-\end{example}
+\end{ex}
 
 \subsubsection{Bayesian Inference}
 
-\begin{definition}[Prior and Posterior Distributions]$\;$\par\vspace{1cm}
+\begin{defn}[Prior and Posterior Distributions]$\;$\par\vspace{1cm}
 
 The \underline{prior distribution}, $f_\Theta(\theta)$ summarises our state of knowledge/belief about a parameter $\theta$ before we observe the data (from a sample). The \underline{posterior distribution} $f_{\Theta \mid X}(\theta \mid x)$ summarises our revised state of knowledge after observing the data.
 
-\end{definition}
+\end{defn}
 
 By Bayes' theorem:
 $$f_{\Theta \mid X}(\theta\mid x) = \frac{f_{X\mid\Theta}(x\mid \theta) \times f_{\Theta}(\theta)}{f_X(x)}$$
@@ -1946,7 +2008,7 @@ We can use the \underline{posterior mean}, $E_{\Theta|X}(\Theta | X)$ as an esti
 
 There is an important difference in philosophy between Bayesian inference and the two methods of parameter estimation covered above (M.o.M. and M.L.E.). In the two previous methods, the parameter to be estimated is regarded as an unknown constant. In Bayesian parameter estimation, it is instead treated as if it itself were a random variable. By using the uncertainty in the value of the parameter to model the parameter as a r.v., we can apply the techniques of probability, but this requires us to specify a prior distribution for the parameter, which can be problematic, and to use the more general, subjective interpretation of probability.
 
-\begin{example}[Bayesian Inference in a Binomial Distribution]$\;$\par\vspace{1cm}
+\begin{ex}[Bayesian Inference in a Binomial Distribution]$\;$\par\vspace{1cm}
 
 Suppose $Y\mid\Theta \sim Binomial(n,\theta)$, where $n$ is known and we have a prior distribution for $\theta$: $\Theta \sim Beta(\alpha,\beta)$ (the Beta distribution is often useful for modelling probabilities, as its support is the interval $(0,1)$). $\alpha$ and $\beta$ are referred to as \underline{hyperparameters}. Given $\alpha$ and $\beta$, find the marginal distribution of $Y$ and its mean and variance.
 
@@ -1993,7 +2055,7 @@ Var_Y(Y) &= E_\Theta[Var_{Y\mid\Theta}(Y\mid\Theta)] + Var_\Theta[E_{Y\mid\Theta
 &=  \frac{n\alpha\beta(\alpha+\beta+n)}{(\alpha+\beta)^2(\alpha+\beta+1)}
 \end{align*}\hfill$Q.E.I.$
 
-\end{example}
+\end{ex}
 
 Note that, in the above example, the prior and posterior distributions of $\Theta$ are the same distribution, simply with different parameters. This is a particular relationship between the Binomial distribution (of $Y$) and the Beta distribution; we say that the Beta distribution is the \underline{conjugate prior} of the Binomial. For this reason, the marginal distribution of $Y$ is called a "Beta-Binomial distribution".
 
@@ -2001,11 +2063,11 @@ In the special case where $\alpha = \beta = 1$, the Beta distribution is the sam
 
 $$E_Y(Y) = \frac{n}{2} \qquad Var_Y(Y) = \frac{n}{12}(n+2)$$
 
-\begin{definition}[Conjugate Prior Distributions]$\;$\par\vspace{1cm}
+\begin{defn}[Conjugate Prior Distributions]$\;$\par\vspace{1cm}
 
 If the prior and posterior distributions of a parameter of a particular sampling distribution are of the same family, we say that the prior distribution is the \underline{conjugate prior} to that sampling distribution.
 
-\end{definition}
+\end{defn}
 
 \subsection{Confidence Intervals}$\;$
 
@@ -2058,13 +2120,13 @@ Clearly, this method can easily be adapted for computing intervals at confidence
 
 The quantity $(\bar{X}-\mu)\sqrt{n}/\sigma$ used above has a known distribution and is in terms of known quantities ($\bar{X}$ and $\sigma$) and the parameter $\mu$ for which we seek a C.I. Such a quantity is called a \emph{pivot}.\par\vspace{1cm}
 
-\begin{definition}[Pivots]$\;$\par\vspace{1cm}
+\begin{defn}[Pivots]$\;$\par\vspace{1cm}
 
 A \underline{pivot} is a function of a random sample, known population parameters, and precisely one unknown parameter, for which it is desired to find a C.I., which has a known distribution.
 
-\end{definition}
+\end{defn}
 
-\begin{example}[Using Pivots when Multiple Parameters are Unknown]$\;$\par\vspace{1cm}
+\begin{ex}[Using Pivots when Multiple Parameters are Unknown]$\;$\par\vspace{1cm}
 
 Suppose $X_i \overset{\text{i.i.d.}}{\sim} N(\mu,\sigma^2)$, as before, except that this time, we know neither $\mu$ nor $\sigma^2$. Again, suppose we seek a C.I. for $\mu$.
 
@@ -2087,11 +2149,11 @@ $$\Rightarrow\quad T \sim t_{n-1}$$
 
 So $T$ is a function of $\mu$ and known values only and follows a known distribution. Hence $T$ is a pivot for $\mu$ and can be used to find a C.I.
 
-\end{example}
+\end{ex}
 
 \subsection{Jensen's Inequality and Bias}$\;$
 
-\begin{definition}[Convex and Concave Functions]$\;$\par\vspace{1cm}
+\begin{defn}[Convex and Concave Functions]$\;$\par\vspace{1cm}
 
 A function $f$ is said to be \underline{convex} on an interval $I$ if:
 $$\forall x\in I\;f''(x) \geq 0$$\par\vspace{1cm}
@@ -2099,9 +2161,9 @@ $$\forall x\in I\;f''(x) \geq 0$$\par\vspace{1cm}
 Conversely $f$ is said to be \underline{concave} on $I$ if:
 $$\forall x \in I \; f''(x) \leq 0$$\par\vspace{1cm}
 
-\end{definition}
+\end{defn}
 
-\begin{theorem}[Jensen's Inequalities]$\;$\par\vspace{1cm}
+\begin{thm}[Jensen's Inequalities]$\;$\par\vspace{1cm}
 
 {\bf 1: } if $g$ is a convex function on the support of $X$, then:
 $$E_X[g(X)] \geq g[E_X(X)]$$\par\vspace{1cm}
@@ -2111,7 +2173,7 @@ $$E_X[g(X)] \leq g[E_X(X)]$$\par\vspace{1cm}
 
 In both cases, equality holds iff $P[g(X) = a+bX] = 1$ for some $a$ and $b$; i.e., if $g$ is linear on the support of $X$.
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Graphical Proof:}\par\vspace{1cm}
 
@@ -2131,7 +2193,7 @@ E_X[g(X)] &\geq E_X(a+bX)\\
 
 And similarly for $g$ concave.
 
-\begin{example}
+\begin{ex}
 
 Let $X\sim Binomial(n,p)$. Define $\hat{p} = X/n$ is an estimator of $p$.
 \begin{align*}
@@ -2160,7 +2222,7 @@ E_X\left(\hat{\xi}\right) &> g[E_X(\hat{p})]\\
 
 So we see that $\hat{\xi}$ is an (upwardly) biased estimator - it tends to overestimate the odds ratio. This is despite the fact that it is derived from an unbiased estimator.
 
-\end{example}
+\end{ex}
 
 Generally speaking, bias is \emph{not} invariant under transformation. The exception is for linear transformations, which preserve bias, as can be seen from the necessary and sufficient condition for equality in Jensen's inequalities.
 
@@ -2170,33 +2232,33 @@ Generally speaking, bias is \emph{not} invariant under transformation. The excep
 
 \subsection{Convergence in Distribution}$\;$
 
-\begin{definition}[Convergence in Distribution]$\;$\par\vspace{1cm}
+\begin{defn}[Convergence in Distribution]$\;$\par\vspace{1cm}
 
 A sequence of r.v.s $X_i$ is said to \underline{converge in distribution} to the r.v. $Y$ if:
 $$\lim_{n\to\infty}\left[F_{X_n}(x)\right] = F_Y(x) \;\mbox{$\forall x$ at which $F_Y$ is continuous}$$
 
 We write: $X_n \xrightarrow{\mathscr{D}}Y$
 
-\end{definition}
+\end{defn}
 
-\begin{definition}[Degeneracy]$\;$\par\vspace{1cm}
+\begin{defn}[Degeneracy]$\;$\par\vspace{1cm}
 
 If $X_n \xrightarrow{\mathscr{D}} Y$ and $P(Y=c) = 1$ for some constant $c$, s.t.:
 $$F_Y(y) = \left\{\begin{array}{cc} 0\quad &:\quad x<c\\ 1\quad&:\quad x\geq c \end{array}\right.$$
 then we say that the limiting distribution of $X_n$ is \underline{degenerate} at $c$ and write $X_n \xrightarrow{\mathscr{D}} c$
 
-\end{definition}
+\end{defn}
 
-\begin{definition}[Moment Generating Functions]$\;$\par\vspace{1cm}
+\begin{defn}[Moment Generating Functions]$\;$\par\vspace{1cm}
 
 Recall from M1S that the \underline{moment generatign function} (\underline{m.g.f.}) of the r.v. $X$ is:
 $$M_X(t) = E_X(e^{tX})$$
 
 provided that this expectation exists in some neighbourhood of zero.
 
-\end{definition}
+\end{defn}
 
-\begin{theorem}[Calculating Moments from M.G.F.s]$\;$\par\vspace{1cm}
+\begin{thm}[Calculating Moments from M.G.F.s]$\;$\par\vspace{1cm}
 
 Recall from M1S: if $X$ has a m.g.f., then:
 \begin{align*}
@@ -2204,7 +2266,7 @@ E_X(X^n) &= M_X^{(n)}(0)\\
 &= \left.\frac{\diff^n M_X(t)}{\diff t^n}\right|_{t=0}
 \end{align*}
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Sketch Proof:}\par\vspace{1cm}
 
@@ -2220,7 +2282,7 @@ E_X(X^n) &= M_X^{(n)}(0)\\
 
 and similarly for higher moments.
 
-\begin{theorem}[Properties of M.G.F.s]\label{mgf properties}$\;$\par\vspace{1cm}
+\begin{thm}[Properties of M.G.F.s]\label{mgf properties}$\;$\par\vspace{1cm}
 
 {\bf 1: }
 $$M_{aX+b}(t) = e^{bt}M_X(at)$$\par\vspace{1cm}
@@ -2243,7 +2305,7 @@ $$\lim_{i\to\infty}\left[M_{X_i}(t)\right] = M_X(t)$$
 $$\lim_{i\to\infty}\left[F_{X_i}(x)\right] = F_X(x)$$
 \indent\indent for all $x$ at which $F_X(x)$ is continuous. I.e., $X_n\xrightarrow{\mathscr{D}}X$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Partial Proof:}\par\vspace{1cm}
 
@@ -2273,7 +2335,7 @@ $$F_X(u) \equiv F_Y(u)\quad\Leftrightarrow\quad E_X(X^r) \equiv E_Y(Y^r)$$
 
 \subsection{The Central Limit Theorem}$\;$
 
-\begin{theorem}[The Central Limit Theorem]$\;$\par\vspace{1cm}
+\begin{thm}[The Central Limit Theorem]$\;$\par\vspace{1cm}
 
 Let $X_1,\;\hdots$ be a sequence of i.i.d. r.v.s, each with m.g.f. $M_X(t)$. Define $\bar{X}_n$ to be the sample mean of the first $n$ $X$'s; i.e.:
 $$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$$
@@ -2286,7 +2348,7 @@ Hence define $G_n(x)$ to be the c.d.f. of $\sqrt{n}(\bar{X}_n -\mu)/\sigma$, whe
 \text{i.e., } \frac{\sqrt{n}\left(\bar{X}_n -\mu\right)}{\sigma} &\xrightarrow{\mathscr{D}} N(0,1)
 \end{align*}
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
@@ -2354,7 +2416,7 @@ Recall section \ref{normal approx to bin}, in which we used the Normal distribut
 
 In fact, the requirement of an m.g.f. is not needed, but the proof in the more general case is prohibitively long and difficult for this course. The C.L.T. may, however, be assumed, even for distributions whose m.g.f. does not exist. Be careful, however, as the requirement of finite mean and variance cannot be relaxed. The Cauchy distribution, for example, does not have finite variance and so it \emph{does not} obey the C.L.T. This next example will show us a partial way around this obstacle.
 
-\begin{example}$\;$\par\vspace{1cm}
+\begin{ex}$\;$\par\vspace{1cm}
 
 Suppose $X_i \overset{\text{i.i.d.}}{\sim} Unif(0,1)$. Let:
 $$M_n = X_{(r)}\; :\; r=\frac{n+1}{2}$$
@@ -2409,13 +2471,13 @@ c_n &= \frac{\frac{1}{2}-s\sqrt{n}}{\sqrt{\frac{n}{4}-s^2}}\\
 \Rightarrow\quad 2\sqrt{n}\left(M_n - \frac{1}{2}\right) &\xrightarrow{\mathscr{D}} N(0,1)
 \end{align*}\hfill$Q.E.I.$
 
-\end{example}
+\end{ex}
 
 This example illustrates an important property of the median; that for a s.r.s. from \emph{any} distribution, the distribution of the standardised median converges to a Normal distribution. So, although the C.L.T. requires the sampling distribution to have a finite mean and variance for the mean to converge to the Normal distribution, the median will converge to Normal for absolutely any distribution, even pathological examples like the Cauchy distribution.
 
 \subsection{Convergence in Probability}$\;$
 
-\begin{definition}[Convergence in Probability]$\;$\par\vspace{1cm}
+\begin{defn}[Convergence in Probability]$\;$\par\vspace{1cm}
 
 A sequence $X_1,\;X_2,\;\hdots$ of r.v.s is said to \underline{converge in probability} to the distribution of the r.v. $X$ if:
 $$\forall\epsilon>0\;\lim_{n\to\infty} \left[P\left(\left|X_n-X\right|<\epsilon\right)\right] = 1$$
@@ -2425,13 +2487,13 @@ $$\forall\epsilon >0\;\lim_{n\to\infty}\left[P\left(\left|X_n-X\right|\geq\epsil
 
 We write $X_n \xrightarrow{\mathscr{P}} X$.
 
-\end{definition}
+\end{defn}
 
-\begin{theorem}[Convergence in Probability and in Distribution]$\;$\par\vspace{1cm}
+\begin{thm}[Convergence in Probability and in Distribution]$\;$\par\vspace{1cm}
 
 $$X_n\xrightarrow{\mathscr{P}} X \quad\Rightarrow\quad X_n\xrightarrow{\mathscr{D}} X$$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof (continuous case):}\par\vspace{1cm}
 
@@ -2467,12 +2529,12 @@ P(X_n\leq t) &\to P(X\leq t)\\
 Note that the converse is not true. Convergence in distribution generally \emph{does not imply} convergence in probability. However, degenerate convergence in distribution \emph{does} imply convergence in probability:
 $$X_n\xrightarrow{\mathscr{D}} c \imply X_n \xrightarrow{\mathscr{P}} c$$
 
-\begin{theorem}[Slutsky's Theorem]$\;$\par\vspace{1cm}
+\begin{thm}[Slutsky's Theorem]$\;$\par\vspace{1cm}
 
 If $X_n\xrightarrow{\mathscr{D}} X$ and $Y_n\xrightarrow{\mathscr{D}}c$, then:
 $$X_nY_n\xrightarrow{\mathscr{D}} cX \mbox{ and } X_n+Y_n\xrightarrow{\mathscr{D}} X+c$$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
@@ -2480,12 +2542,12 @@ Beyond the scope of this course. Result may be assumed.\par\vspace{1cm}
 
 \subsection{The Weak Law of Large Numbers}$\;$
 
-\begin{theorem}[Chebyshev's Inequality]$\;$\par\vspace{1cm}
+\begin{thm}[Chebyshev's Inequality]$\;$\par\vspace{1cm}
 
 Let $X$ be a r.v. and g(X) a non-negative function thereof. Then:
 $$\forall r>0\; P\left[g(X)\geq r\right] \leq \frac{E_X\left[g(X)\right]}{r}$$
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
@@ -2500,13 +2562,13 @@ E_X\left[g(X)\right] &= \int\limits_{\mathcal{X}}\!\! g(x)f_X(x)\;\diff x\\
 \end{align*}\hfill$Q.E.D.$\par\vspace{1cm}
 
 
-\begin{definition}[Consistent Estimators]$\;$\par\vspace{1cm}
+\begin{defn}[Consistent Estimators]$\;$\par\vspace{1cm}
 
 If $T_n$ is a statistic used to estimate some parameter $\theta$, we say $T_n$ is a \underline{consistent estimator} if $T_n\xrightarrow{\mathscr{P}}\theta$
 
-\end{definition}
+\end{defn}
 
-\begin{theorem}[The Weak Law of Large Numbers (W.L.L.N.)]$\;$\par\vspace{1cm}
+\begin{thm}[The Weak Law of Large Numbers (W.L.L.N.)]$\;$\par\vspace{1cm}
 
 Suppose $X_1,\;X_2,\;\hdots \overset{\text{i.i.d.}}{\sim} f_X(x)$ is a sequence of i.i.d. r.v.s with:
 $$E_X(X_i) = \mu\quad \text{ and }\quad Var_X(X_i) = \sigma^2 < \infty$$
@@ -2519,7 +2581,7 @@ $$\forall \epsilon > 0 \;\lim_{n\to\infty}\left[P\left(\left|\bar{X}_n-\mu\right
 
 That is, the sample mean is a consistent estimator of the population mean.
 
-\end{theorem}
+\end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
