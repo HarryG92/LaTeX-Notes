@@ -103,7 +103,7 @@ Please feel free to reproduce and distribute these notes, or any part thereof, f
 \tableofcontents
 \vspace{50pt}
 
-{\Large\bf Glossary of Abbreviations}  % abbreviations should be reduced as much as possible
+{\Large \textbf{Glossary of Abbreviations}}  % abbreviations should be reduced as much as possible
 \vspace{12pt}
 
 $$\begin{array}{lr}
@@ -161,11 +161,11 @@ When rolling a standard, 6-faced die, the event ``rolling an even number'' is th
 
 An \underline{algebra} or \underline{field}, $\mathcal{F}$ is any set of subsets of the sample space satisfying the following three conditions:\par
 \vspace{10pt}
-{\bf The Empty Set:}$\quad\phi\in\mathcal{F}$\par
+\textbf{The Empty Set:}$\quad\phi\in\mathcal{F}$\par
 \vspace{10pt}
-{\bf Closure Under Complement:}$\quad A\in\mathcal{F}\Rightarrow A'\in\mathcal{F}$, where $A'$ denotes the complement of A\par
+\textbf{Closure Under Complement:}$\quad A\in\mathcal{F}\Rightarrow A'\in\mathcal{F}$, where $A'$ denotes the complement of A\par
 \vspace{10pt}
-{\bf Closure Under Union:}$\quad A,\,B\in\mathcal{F}\Rightarrow A\cup B\in\mathcal{F}$\par
+\textbf{Closure Under Union:}$\quad A,\,B\in\mathcal{F}\Rightarrow A\cup B\in\mathcal{F}$\par
 \vspace{12pt}
 \end{defn}
 
@@ -211,18 +211,18 @@ If the sample space, $S$ is finite or countable, the power set of $S$ is always 
 
 Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$ to the real line: $P:\;\mathcal{B}\rightarrow\mathbb{R}$, satisfying the following three axioms, called the \underline{Kolmogorov axioms}, where $S$ denotes the sample space:\par
 \vspace{1pt}
-{\bf 1:} $\qquad\forall A\in\mathcal{B}\quad P(A)\geq 0$\par
+\textbf{1:} $\qquad\forall A\in\mathcal{B}\quad P(A)\geq 0$\par
 \vspace{10pt}
-{\bf 2:} $\qquad P(S)=1$\par
+\textbf{2:} $\qquad P(S)=1$\par
 \vspace{10pt}
-{\bf 3:} $\qquad E,\, F\in\mathcal{B}\text{ and }E\cap F=\phi\:\Rightarrow\: P(E\cup F)=P(E)+P(F)$
+\textbf{3:} $\qquad E,\, F\in\mathcal{B}\text{ and }E\cap F=\phi\:\Rightarrow\: P(E\cup F)=P(E)+P(F)$
 \end{defn}
 
 Note that when the intersection of two events is the empty set, we say the events are \underline{disjoint} or \underline{mutually exclusive}. If the intersection of any pair of some number of sets is the empty set, we say the sets are \underline{pairwise disjoint} or \underline{pairwise mutually exclusive}. I.e., the events $A_i$ are pairwise disjoint if $\forall \:i\neq j \:\:\:A_i\cap A_j = \varnothing$
 
 Actually, it turns out that these axioms are not quite sufficient for all purposes, so we extend the third axiom to give ``countable additivity'' instead of just ``finite additivity.'' That is to say, we replace it with:\par
 \vspace{10pt}
-{\bf 3:} $\qquad E_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}\text{ and }E_i\cap E_j=\phi\:\:\forall i\neq j\:\Rightarrow\:P(\bigcup_{i=1}^{\infty}E_i)=\sum_{i=1}^{\infty}P(E_i)$\par
+\textbf{3:} $\qquad E_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}\text{ and }E_i\cap E_j=\phi\:\:\forall i\neq j\:\Rightarrow\:P(\bigcup_{i=1}^{\infty}E_i)=\sum_{i=1}^{\infty}P(E_i)$\par
 \vspace{10pt}
 
 This is similar to the extension from an algebra to a $\sigma$-algebra by extending closure under finite union to closure under countable union. As in that case, the countable additivity of the probability function implies finite additivity, but not {\it vice versa}.
@@ -230,7 +230,7 @@ This is similar to the extension from an algebra to a $\sigma$-algebra by extend
 Axioms are generally statements that are trivially obvious and seem to require no proof or justification. The axiom of finite additivity has this property, as it seems intuitively correct that if two events are mutually exclusive then the probability of either one of them ocurring is simply the sum of their individual probabilities. It is not, however, so obvious that countable additivity should hold. For this reason, it is sometimes regarded as 'better' to use the axiom of finite additivity and an extra axiom, the axiom of continuity, which together imply countable additivity.\par
 \vspace{12pt}
 
-\noindent{\bf The Axiom of Continuity:} Let $B_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}:\:\:B_n\supset B_{n+1}\:\:\forall n \text{ and }\bigcap\limits_{i=1}^{\infty}B_i=\varnothing$ Then $\lim\limits_{n\rightarrow\infty}[P(B_n)]=0$\par
+\noindent\textbf{The Axiom of Continuity:} Let $B_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}:\:\:B_n\supset B_{n+1}\:\:\forall n \text{ and }\bigcap\limits_{i=1}^{\infty}B_i=\varnothing$ Then $\lim\limits_{n\rightarrow\infty}[P(B_n)]=0$\par
 \vspace{12pt}
 
 This axiom is perhaps slightly more intuitively acceptable than countable additivity, as we can think of it as though the $B_i$ must shrink arbitrarily in order to satisfy the conditions, so it seems reasonable that their probability tend to zero.
@@ -262,17 +262,17 @@ Thus, letting $n$ tend to infinity:
 This example will illustrate the importance of making the probability function countably additive instead of merely finitely additive and using a $\sigma$-algebra instead of just a normal algebra.
 \end{ex}
 
-Let $S = \mathbb{N}$. Now let $\mathcal{F}$ be the set of finite and cofinite subsets of $S$ (a set is \underline{cofinite} if its complement is finite; note that some sets are neither, e.g., the set of even numbers). Note that here we are including the empty set as a finite set. This convention is not universal. Then $\mathcal{F}$ is an algebra on $S$. For $\phi\in\mathcal{F}$, by construction, $\mathcal{F}$ is closed under complement, again by construction, and $\mathcal{F}$ is also closed under {\bf finite} union; for consider the three cases:\par
+Let $S = \mathbb{N}$. Now let $\mathcal{F}$ be the set of finite and cofinite subsets of $S$ (a set is \underline{cofinite} if its complement is finite; note that some sets are neither, e.g., the set of even numbers). Note that here we are including the empty set as a finite set. This convention is not universal. Then $\mathcal{F}$ is an algebra on $S$. For $\phi\in\mathcal{F}$, by construction, $\mathcal{F}$ is closed under complement, again by construction, and $\mathcal{F}$ is also closed under \textbf{finite} union; for consider the three cases:\par
 \vspace{10pt}
-{\bf 1 }  $A,\;B$ finite elements of $\mathcal{F}$:\par
+\textbf{1 }  $A,\;B$ finite elements of $\mathcal{F}$:\par
 \vspace{10pt}
 \indent $\Rightarrow A\cup B$ is finite.\par
 \vspace{10pt}
-{\bf 2 }  $A,\;B$ cofinite elements of $\mathcal{F}$:\par
+\textbf{2 }  $A,\;B$ cofinite elements of $\mathcal{F}$:\par
 \vspace{10pt}
 \indent $\Rightarrow A\cup B = (A'\cap B')'$, but $A'$ and $B'$ are finite, so $A'\cap B'$ is finite, so $A\cup B$ is cofinite, hence in $\mathcal{F}.$\par
 \vspace{10pt}
-{\bf 3 }  One of $A,\;B$ is finite, one cofinite; w.l.o.g., say $A$ is finite:\par
+\textbf{3 }  One of $A,\;B$ is finite, one cofinite; w.l.o.g., say $A$ is finite:\par
 \vspace{10pt}
 \indent $\Rightarrow A\cup B = (A'\cap B')'$, but $B'$ is finite, so its intersection with anything is finite, so $A\cup B$ is cofinite, hence in $\mathcal{F}.$
 
@@ -288,12 +288,12 @@ Let $\Psi = \bigcup\limits_{i=1}^{n}\psi_i$\\
 
 \noindent Now, we consider two cases:\par
 \vspace{10pt}
-{\bf 1: } all $\psi_i$ are finite\par
+\textbf{1: } all $\psi_i$ are finite\par
 \indent\indent $\Rightarrow \quad\Psi$ is finite.\par
 \indent\indent $\Rightarrow \quad P(\psi_i) = 0 \:\:\forall i \text{ and } P(\Psi) = 0$\par
 \indent\indent $\Rightarrow \quad\sum\limits_{i=1}^{n}P(\psi_i) = P(\bigcup_{i=1}^{n}\psi_i)$\par
 \vspace{10pt}
-{\bf 2: } one set is cofinite, call it $\psi_k$\par
+\textbf{2: } one set is cofinite, call it $\psi_k$\par
 \indent\indent $\Rightarrow\quad \Psi$ is cofinite; for $\Psi' = \bigcap_{i=1}^n\psi_i'$ is finite, as it is an intersection including finite sets\par
 \indent\indent $\Rightarrow\quad P(\Psi)=1$\par
 \indent\indent $\sum\limits_{i=1}^nP(\psi_i) = P(\psi_k) + \sum\limits_{i\neq k}P(\psi_i)$\par
@@ -327,7 +327,7 @@ $$P(E') = 1 - P(E)$$
 \indent $\Rightarrow \; P(E') = 1 - P(E)$ \hfill $Q.E.D.$\par
 
 \vspace{12pt}
-\noindent{\bf Corollary:} $P(E) \leq 1$
+\noindent\textbf{Corollary:} $P(E) \leq 1$
 
 \begin{prop}[Non-Disjoint Unions]
 $$P(E \cup F) = P(E) + P(F) - P(E \cap F)$$
@@ -352,21 +352,21 @@ The above tells us that probability is a function taking events in the $\sigma$-
 There are three paradigms for assigning probability:\par
 
 \vspace{12pt}
-\noindent{\bf Frequentist Probability:}\par
+\noindent\textbf{Frequentist Probability:}\par
 \vspace{12pt}
 
 Under this paradigm, the probability of an event is determined experimentally by repeating the experiment multiple times. The ratio of number of occurrences of a given event to total number of experimental trials is taken and the probability of that event is defined to be the limit of that ratio as the number of trials tends to infinity.\\
 \indent The advantage of this approach is that it gives numbers with a clear, real-life significance. It has a certain intuitive appeal and satisfies our ideas of what probability 'should be' like to give useful results. The drawbacks are that it is not always possible to perform identical repeat trials of an experiment a large number of times to obtain values for the probabilities and it is not even clear that the ratios in question will tend to a well-defined limit at all. In particular, it can be difficult to obtain accurate probabilities for very rare events.\par
 \vspace{12pt}
 
-\noindent{\bf Classical Probability:}\par
+\noindent\textbf{Classical Probability:}\par
 \vspace{12pt}
 
 This is the first idea of probability formulated and exploits symmetries of experiments. In events with finitely many outcomes, each outcome is declared equally likely ('equiprobable') and the probability of an event is then found to be simply the ratio of the number of outcomes in that event to the total number of outcomes. This can be extended to infinite problems by considering, for instance, the ratios of areas, declaring each unit of area to be equally likely.\\
-\indent The advantages of this system are that it gives a simple way of calculating probabilities for an experiment {\it a priori}, without even having to run the experiment and, again, that it agrees with our intuition in simple cases. The disadvantages are that it simply cannot account for problems in which there is an asymmetry (e.g., there is no way to establish a classical probability for a biased coin where we have some reason to believe that heads and tails are {\bf not} equiprobable) and, more subtly, it can be hard to establish whether or not the apparent symmetries of a problem will in fact correspond to equally frequent occurrences in real life. For instance, consider tossing a fair coin twice. If we are not concerned with the order of the tosses, there are 3 possible outcomes: 2 heads, 2 tails and 1 of each. We could thus assign equal probabilities of 1/3 to each of these, but, clearly, this would not correspond to reality if we tried tossing the coin. This seems like a silly example, as `obviously' it is `correct' to regard ``heads, tails'' as distinct from ``tails, heads;'' however, there is no good reason for this based in classical probability. Our reason for thinking this comes from frequentist probability, which makes it subject to all the problems of that paradigm. If we wish to maintain a purely classical approach, which might be necessary in more complicated situations where performing multiple trials to obtain frequencies could be impractical, we have no way of distinguishing between the validity of either approach and thus no way of saying whether the probability of one head and one tail is `really' 1/3 or 1/2.\par
+\indent The advantages of this system are that it gives a simple way of calculating probabilities for an experiment {\it a priori}, without even having to run the experiment and, again, that it agrees with our intuition in simple cases. The disadvantages are that it simply cannot account for problems in which there is an asymmetry (e.g., there is no way to establish a classical probability for a biased coin where we have some reason to believe that heads and tails are \textbf{not} equiprobable) and, more subtly, it can be hard to establish whether or not the apparent symmetries of a problem will in fact correspond to equally frequent occurrences in real life. For instance, consider tossing a fair coin twice. If we are not concerned with the order of the tosses, there are 3 possible outcomes: 2 heads, 2 tails and 1 of each. We could thus assign equal probabilities of 1/3 to each of these, but, clearly, this would not correspond to reality if we tried tossing the coin. This seems like a silly example, as `obviously' it is `correct' to regard ``heads, tails'' as distinct from ``tails, heads;'' however, there is no good reason for this based in classical probability. Our reason for thinking this comes from frequentist probability, which makes it subject to all the problems of that paradigm. If we wish to maintain a purely classical approach, which might be necessary in more complicated situations where performing multiple trials to obtain frequencies could be impractical, we have no way of distinguishing between the validity of either approach and thus no way of saying whether the probability of one head and one tail is `really' 1/3 or 1/2.\par
 \vspace{12pt}
 
-\noindent{\bf Subjective Probability:}\par
+\noindent\textbf{Subjective Probability:}\par
 \vspace{12pt}
 
 Under this approach, probabilities are assigned to events based on ``personal belief'' or ``degree of knowledge'' about a situation. It suffers the obvious disadvantage of being potentially totally arbitrary and a very `wooly' approach - it is difficult to assign an exact value to your degree of personal belief; also, subjective estimates of probability can vary hugely from person to person. However, this is, from a purely mathematical, formalistic approach, a perfectly valid way of assigning a function and, more practically, allows us to solve problems that simply cannot be solved under classical or frequentist probability. An example will help to illustrate this:
@@ -379,7 +379,7 @@ Let $x$ be the number of pounds you find in the first envelope when you look ins
 
 $$\left(\frac{1}{2}\times 2x\right) + \left(\frac{1}{2} \times \frac{x}{2}\right) = \frac{5}{4}x$$
 
-\indent So whatever the amount you observe in the first envelope, your optimum strategy is to switch. But suppose we play a variant of the game in which you now may not look inside either envelope before making your decision. You must either keep the first you choose or switch it and keep the other 'blind'. Clearly, it should not matter which envelope you choose. But the above analysis did not actually use the fact that you knew the value of $x$, so letting $x$ now denote the {\bf unknown} value in the first envelope, the same calculation gives the expected profit of switching to be 5/4 the expected profit of sticking with the first envelope. Clearly, this is absurd - it implies that whichever envelope you hold, the other is always more likely to contain more money, so you should keep switching forever, always trying to get the other envelope. So where is the mistake in our analysis?
+\indent So whatever the amount you observe in the first envelope, your optimum strategy is to switch. But suppose we play a variant of the game in which you now may not look inside either envelope before making your decision. You must either keep the first you choose or switch it and keep the other 'blind'. Clearly, it should not matter which envelope you choose. But the above analysis did not actually use the fact that you knew the value of $x$, so letting $x$ now denote the \textbf{unknown} value in the first envelope, the same calculation gives the expected profit of switching to be 5/4 the expected profit of sticking with the first envelope. Clearly, this is absurd - it implies that whichever envelope you hold, the other is always more likely to contain more money, so you should keep switching forever, always trying to get the other envelope. So where is the mistake in our analysis?
 
 In fact, there is no 'mistake' {\it per se}; the problem, as given, cannot be solved - there is simply no way to determine which envelope contains more money, so it doesn't matter which you pick. But, in a practical situation, subjective probability can be used to help you maximise your profit.
 
@@ -399,7 +399,7 @@ This section introduces the concept of conditional probability, and covers impor
 \subsection{The Conditional Probability Operator and Independence}\label{conditional and independence}$\;$
 \begin{defn}[The Conditional Probability Function]
 
-Given any event F in the $\sigma$-algebra, we define the probability of the event E {\bf given F} by:
+Given any event F in the $\sigma$-algebra, we define the probability of the event E \textbf{given F} by:
 $$P(E|F) = \frac{P(E \cap F)}{P(F)}$$
 \end{defn}
 
@@ -496,7 +496,7 @@ $\quad$This chapter concerns itself with random variables, an extremely useful a
 \begin{defn}[Random Variables]
 \vspace{1cm}
 
-A random variable is a function from the sample space to the real numbers (random variables to the complex plane or higher dimensional vector-spaces are also possible). Note that the key difference between a random variable and the probability function is that random variables take {\bf outcomes} in the sample space to the reals, whereas probability takes {\bf events}, i.e., {\bf subsets} of the sample space (specifically, Borel events) to the reals.
+A random variable is a function from the sample space to the real numbers (random variables to the complex plane or higher dimensional vector-spaces are also possible). Note that the key difference between a random variable and the probability function is that random variables take \textbf{outcomes} in the sample space to the reals, whereas probability takes \textbf{events}, i.e., \textbf{subsets} of the sample space (specifically, Borel events) to the reals.
 \end{defn}
 
 We can then consider the probability that a random variable takes a particular value. Let $X$ be a random variable (r.v.). Then:
@@ -994,14 +994,14 @@ $$\Gamma(x) = \int_0^{\infty}\!\!t^{x-1}e^{-t}\;\mathrm{d}t \; : \; x>0$$
 \noindent The Gamma function has several useful properties:
 
 \begin{prop}[Properties of the Gamma function]$\quad$\par
-{\bf 1:}  $\Gamma(x) = (x-1)\Gamma(x-1)$\par
-{\bf 2:} $\Gamma(1) = 1$\par
-{\bf 3:} $\Gamma(n) = (n-1)! \; : \; n \in \mathbb{N}$\par
-{\bf 4:} $\Gamma(1/2) = \sqrt \pi$\par
+\textbf{1:}  $\Gamma(x) = (x-1)\Gamma(x-1)$\par
+\textbf{2:} $\Gamma(1) = 1$\par
+\textbf{3:} $\Gamma(n) = (n-1)! \; : \; n \in \mathbb{N}$\par
+\textbf{4:} $\Gamma(1/2) = \sqrt \pi$\par
 \end{prop}
 
 \noindent\textsc{Proof:}\par
-{\bf 1:}
+\textbf{1:}
 \begin{align*}
 \Gamma(x) &= \int_0^\infty \!\! t^{x-1}e^{-t}\;\mathrm{d}t\\
 &=\left[ -t^{x-1}e^{-t}\right]_0^\infty + (x-1)\int_0^\infty\!\! t^{x-2}e^{-tx}\;\mathrm{d}t\\
@@ -1009,7 +1009,7 @@ $$\Gamma(x) = \int_0^{\infty}\!\!t^{x-1}e^{-t}\;\mathrm{d}t \; : \; x>0$$
 \end{align*}
 \hfill$Q.E.D.$
 
-\noindent {\bf 2:}
+\noindent \textbf{2:}
 \begin{align*}
 \Gamma(1) &= \int_0^\infty \!\! e^{-t}\;\mathrm{d}t\\
 &= \left[-e^{-t}\right]_0^\infty\\
@@ -1017,16 +1017,16 @@ $$\Gamma(x) = \int_0^{\infty}\!\!t^{x-1}e^{-t}\;\mathrm{d}t \; : \; x>0$$
 \end{align*}
 \hfill$Q.E.D.$
 
-\noindent {\bf 3:}
+\noindent \textbf{3:}
 \begin{center}
-by {\bf 2}, $\Gamma(1) = 1 = 0!$, so true for $n=1$\\
-by {\bf 1}, $\Gamma(n+1) = n\Gamma(n)$\\
+by \textbf{2}, $\Gamma(1) = 1 = 0!$, so true for $n=1$\\
+by \textbf{1}, $\Gamma(n+1) = n\Gamma(n)$\\
 hence if $\Gamma(n)=(n-1)!$, then $\Gamma(n+1) = n!$\\
 hence, by induction, $\Gamma(n) = (n-1)! \;\; \forall n \in \mathbb{N}$
 \end{center}
 \hfill$Q.E.D.$
 
-\noindent {\bf 4:}\par
+\noindent \textbf{4:}\par
 \indent Proof beyond the scope of this course. The result may be assumed.
 \hfill $\blacksquare$\par
 \vspace{1cm}
@@ -1237,10 +1237,10 @@ The following table summarises the sex- and age-distribution of college students
 
 \begin{center}
 $$\begin{array}{|c|c|c|c|c|c|} \hline
-\quad & \textbf{14 - 17} \; & \textbf{18 - 24} \; & \textbf{25-34} \; & \textbf{35+}\; & \mbox{{\bf Any age}}\\ \hline
-\text{{\bf Male}}\; & 0.01\; & 0.3\; & 0.12\; & 0.04\; & \mathbf{0.47} \\ \hline
-\mbox{{\bf Female}}\; & 0.01\; & 0.3\; & 0.13\; & 0.09 & \mathbf{0.53}\\ \hline
-\mbox{{\bf Either sex}}\; & \mathbf{0.02}\; & \mathbf{0.6}\; & \mathbf{0.25} \; & \mathbf{0.13}\; & \mathbf{1}\\ \hline
+\quad & \textbf{14 - 17} \; & \textbf{18 - 24} \; & \textbf{25-34} \; & \textbf{35+}\; & \mbox{\textbf{Any age}}\\ \hline
+\text{\textbf{Male}}\; & 0.01\; & 0.3\; & 0.12\; & 0.04\; & \mathbf{0.47} \\ \hline
+\mbox{\textbf{Female}}\; & 0.01\; & 0.3\; & 0.13\; & 0.09 & \mathbf{0.53}\\ \hline
+\mbox{\textbf{Either sex}}\; & \mathbf{0.02}\; & \mathbf{0.6}\; & \mathbf{0.25} \; & \mathbf{0.13}\; & \mathbf{1}\\ \hline
 \end{array}$$
 \end{center}
 
@@ -1358,7 +1358,7 @@ Cov_{X,Y} &= E_{{X,Y}}[(X-\mu_X)(Y-\mu_Y)]\\
 E_{X,Y}(XY) &= \iint\limits_{\mathcal{X}\mathcal{Y}} xyf_{X,Y}(x,y)\;\diff y\diff x\\
 &= \int\limits_{\mathcal{X}} xf_X(x) \int\limits_{\mathcal{Y}} yf_Y(y) \;\diff y \diff x\\
 &= E_X(X)E_Y(Y)\\
-\overset{\mbox{\bf 2}}{\imply} Cov(X,Y) &= 0
+\overset{2}{\imply} Cov(X,Y) &= 0
 \end{align*}
 
 \noindent\textbf{4: } See example \ref{uncorrelated, dependent}.
@@ -1418,10 +1418,10 @@ So $X$ and $Y$ are not independent, but their covariance is zero, as claimed. Th
 
 \begin{thm}[The Convolution Theorem]$\quad$\par\vspace{1cm}
 
-\noindent{\bf 1: } Let $X$, $Y$ be discrete r.v.s with joint mass function $f_{X,Y}(x,y)$. Define $Z=X+Y$. Then:
+\noindent\textbf{1: } Let $X$, $Y$ be discrete r.v.s with joint mass function $f_{X,Y}(x,y)$. Define $Z=X+Y$. Then:
 $$f_Z(z) = \sum\limits_{\overline{\mathcal{X}}} f_{X,Y}(x,z-x)$$
 
-\noindent{\bf 2: } Let $X$, $Y$ be continuous r.v.s with joint density function $f_{X,Y}(x,y)$. Define $Z=X+Y$ as before. Then:
+\noindent\textbf{2: } Let $X$, $Y$ be continuous r.v.s with joint density function $f_{X,Y}(x,y)$. Define $Z=X+Y$ as before. Then:
 $$f_Z(z) = \int\limits_{\overline{\mathcal{X}}}\!\! f_{X,Y}(x,z-x)\;\diff x$$
 
 \noindent where, in both the discrete and continuous cases, $\overline{\mathcal{X}}\subseteq\mathcal{X}$ is the set of values that $X$ can take such that $Y$ can take the value $X-z$.
@@ -1604,15 +1604,15 @@ Generally, \underline{mixture models} like the above model populations consistin
 
 \begin{thm}[Calculating Moments in Hierarchical Models]\label{iterated expectation}\vspace{1cm}
 
-\noindent{\bf1: } $E_{X}(X) = E_{Y}[E_{{X|Y}}(X|Y)]$
+\noindent\textbf{1: } $E_{X}(X) = E_{Y}[E_{{X|Y}}(X|Y)]$
 
-\noindent{\bf2: } $Var_{X}(X) = E_{Y}[Var_{{X|Y}}(X|Y)] + Var_{Y}[E_{{X|Y}}(X|Y)]$
+\noindent\textbf{2: } $Var_{X}(X) = E_{Y}[Var_{{X|Y}}(X|Y)] + Var_{Y}[E_{{X|Y}}(X|Y)]$
 
 \end{thm}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
-{\bf1: }
+\textbf{1: }
 \begin{align*}
 E_{X}(X) &= \int\limits_{\mathcal{X}}\!\! xf_X(x)\;\diff x\\
 &= \iint\limits_{\mathcal{X}\times\mathcal{Y}}\!\! xf_{X,Y}(x,y)\;\diff x \diff y\\
@@ -1622,7 +1622,7 @@ E_{X}(X) &= \int\limits_{\mathcal{X}}\!\! xf_X(x)\;\diff x\\
 &= E_{Y}[E_{X|Y}(X|Y)]
 \end{align*} \hfill$\blacksquare$
 
-{\bf2: }
+\textbf{2: }
 \begin{align*}
 Var_{X}(X) &= E_{{X}}(X^2) - [E_{X}(X)]^2\\
 &= \int\limits_{\mathcal{X}}\!\! x^2 f_X(x)\;\diff x - \left[\;\int\limits_{\mathcal{X}}\!\! x f_X(x)\;\diff x\right]^2\\
@@ -1636,7 +1636,7 @@ Var_{X}(X) &= E_{{X}}(X^2) - [E_{X}(X)]^2\\
 &= E_{Y}[Var_{{X|Y}}(X|Y)] + Var_{Y}[E_{{X|Y}}(X|Y)]
 \end{align*}\hfill$Q.E.D.$
 
-Note that all the lines with the integrals in the second part could have been omitted by using {\bf 1}. They are included to illustrate that the iterated expectation formula {\bf 1} need not ever be used - it is always possible to solve problems from the definition of expectation - but that to do so can easily double the length of working.
+Note that all the lines with the integrals in the second part could have been omitted by using \textbf{1}. They are included to illustrate that the iterated expectation formula \textbf{1} need not ever be used - it is always possible to solve problems from the definition of expectation - but that to do so can easily double the length of working.
 
 \begin{ex}[Normal-Normal Hierarchical Models]$\quad$\par\vspace{1cm}
 
@@ -1671,10 +1671,10 @@ A \underline{statistic} is any real-valued function of a s.r.s. A statistic may 
 
 \begin{ex}[2 Common Statistics]\vspace{1cm}
 
-\noindent{\bf The sample mean:}
+\noindent\textbf{The sample mean:}
 $$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i$$
 
-\noindent{\bf The sample variance:}
+\noindent\textbf{The sample variance:}
 $$S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X})^2$$
 From the sample variance we can define the sample standard deviation, $S=\sqrt{S^2}$.
 
@@ -1684,30 +1684,30 @@ From the sample variance we can define the sample standard deviation, $S=\sqrt{S
 
 Let $X_1,\;\hdots\; X_n$ be a s.r.s. from a distribution with mean $\mu$ and variance $\sigma^2$. Then:
 
-{\bf 1: }
+\textbf{1: }
 $$(n-1)S^2 = \sum_{i=1}^n X_i^2 - n\overline{X}^2$$
 
-{\bf 2:}
+\textbf{2:}
 $$E(\overline{X}) = \mu$$
 
-{\bf 3:}
+\textbf{3:}
 $$Var(\overline{X}) = \frac{\sigma^2}{n}$$
 
-{\bf 4:}
+\textbf{4:}
 $$E(S^2) = \sigma^2$$
 
 \end{prop}
 
 \noindent\textsc{Proof:}\par\vspace{1cm}
 
-{\bf 1: }
+\textbf{1: }
 \begin{align*}
 (n-1)S^2 &= \sum_{i=1}^n (X_i-\overline{X})^2\\
 &= \sum_{i=1}^n X_i^2 - \sum_{i=1}^n \overline{X}^2\\
 &= \sum_{i=1}^n X_i^2 - n\overline{X}^2
 \end{align*}\hfill$\blacksquare$
 
-{\bf 2:}
+\textbf{2:}
 \begin{align*}
 E(\overline{X}) &= E(\frac{1}{n}\sum_{i=1}^n X_i)\\
 &= \frac{1}{n}\sum_{i=1}^n E(X_i)\\
@@ -1715,7 +1715,7 @@ E(\overline{X}) &= E(\frac{1}{n}\sum_{i=1}^n X_i)\\
 &= \mu
 \end{align*}\hfill$\blacksquare$
 
-{\bf 3:} Let $\vec{X} = (X_1,\; \hdots\; X_n)^T,\; \vec{1} = (1,1,\; \hdots\; 1)^T,\; \Sigma$ the variance-covariance matrix of $\vec{X}$. Then:
+\textbf{3:} Let $\vec{X} = (X_1,\; \hdots\; X_n)^T,\; \vec{1} = (1,1,\; \hdots\; 1)^T,\; \Sigma$ the variance-covariance matrix of $\vec{X}$. Then:
 \begin{align*}
 \Sigma &= \left(\begin{array}{ccc} Var(X_1)\quad& \hdots\quad& Cov(X_1,X_n)\\ \vdots\quad & \ddots\quad & \vdots\\ Cov(X_n,X_1)\quad& \hdots\quad& Var(X_n)\end{array}\right)\\
 &= \left(\begin{array}{ccc} \sigma^2\quad& \hdots\quad& 0\\ \vdots\quad & \ddots\quad & \vdots\\ 0\quad &\hdots\quad &\sigma^2\end{array}\right)\quad\mbox{as $X_i$ are i.i.d.}\\
@@ -1726,11 +1726,11 @@ Var(\overline{X}) &= Var(\frac{1}{n}\sum_{i=1}^n X_i)\\
 &= \frac{\sigma^2}{n}
 \end{align*}\hfill$\blacksquare$
 
-{\bf 4:}
+\textbf{4:}
 \begin{align*}
-E(S^2) &= E\left[\frac{1}{n-1}\left(\sum_{i=1}^n X_i^2 -n\overline{X}^2\right)\right]\quad\mbox{by {\bf 1}}\\
+E(S^2) &= E\left[\frac{1}{n-1}\left(\sum_{i=1}^n X_i^2 -n\overline{X}^2\right)\right]\quad\mbox{by \textbf{1}}\\
 &= \frac{1}{n-1}\left[\sum_{i=1}^n E(X_i^2) - nE(\overline{X}^2)\right]\\
-&= \frac{1}{n-1}\left[n(\sigma^2 + \mu^2) - n\left(\frac{\sigma^2}{n} + \mu^2\right)\right]\quad\mbox{by {\bf 2} and {\bf 3}}\\
+&= \frac{1}{n-1}\left[n(\sigma^2 + \mu^2) - n\left(\frac{\sigma^2}{n} + \mu^2\right)\right]\quad\mbox{by \textbf{2} and \textbf{3}}\\
 &= \frac{1}{n-1}(n\sigma^2 + n\mu^2 - \sigma^2 -n\mu^2)\\
 &= \sigma^2
 \end{align*}\hfill$Q.E.D.$
@@ -2133,10 +2133,10 @@ $$\forall x \in I \; f''(x) \leq 0$$\par\vspace{1cm}
 
 \begin{thm}[Jensen's Inequalities]\vspace{1cm}
 
-{\bf 1: } if $g$ is a convex function on the support of $X$, then:
+\textbf{1: } if $g$ is a convex function on the support of $X$, then:
 $$E_X[g(X)] \geq g[E_X(X)]$$\par\vspace{1cm}
 
-{\bf 2: } if $g$ is concave on the support of $X$, then:
+\textbf{2: } if $g$ is concave on the support of $X$, then:
 $$E_X[g(X)] \leq g[E_X(X)]$$\par\vspace{1cm}
 
 In both cases, equality holds iff $P[g(X) = a+bX] = 1$ for some $a$ and $b$; i.e., if $g$ is linear on the support of $X$.
@@ -2252,22 +2252,22 @@ and similarly for higher moments.
 
 \begin{thm}[Properties of M.G.F.s]\label{mgf properties}\vspace{1cm}
 
-{\bf 1: }
+\textbf{1: }
 $$M_{aX+b}(t) = e^{bt}M_X(at)$$\par\vspace{1cm}
 
-{\bf 2: } let $X_1,\;\hdots\;X_n$ be a sequence of independent r.v.s with m.g.f.s $M_{X_1}(t),\;\hdots\;M_{X_n}(t)$ respectively.\\ \indent\indent Let $Z= X_1 + \hdots + X_n$. Then:
+\textbf{2: } let $X_1,\;\hdots\;X_n$ be a sequence of independent r.v.s with m.g.f.s $M_{X_1}(t),\;\hdots\;M_{X_n}(t)$ respectively.\\ \indent\indent Let $Z= X_1 + \hdots + X_n$. Then:
 $$M_Z(t) = \prod_{i=1}^n M_{X_i}(t)$$\par\vspace{1cm}
 
-{\bf 3: } let $(X_1,\;\hdots\;X_n)$ be i.i.d. r.v.s, each with m.g.f. $M_X(t)$. Then:
+\textbf{3: } let $(X_1,\;\hdots\;X_n)$ be i.i.d. r.v.s, each with m.g.f. $M_X(t)$. Then:
 $$M_{\bar{X}}(t) = \left[M_X\left(\frac{t}{n}\right)\right]^n$$\par\vspace{1cm}
 
-{\bf 4: } if $M_X(t)$ exists (in a neighbourhood of zero), then for $r=0,\;1,\;2,\;\hdots$:\par
-\indent\indent {\bf (I) }  $\;\,M_X^{(r)}(t)$ exists near zero\par
-\indent\indent {\bf (II) }  $E\left(\left|X^r\right|\right) < \infty$\par
+\textbf{4: } if $M_X(t)$ exists (in a neighbourhood of zero), then for $r=0,\;1,\;2,\;\hdots$:\par
+\indent\indent \textbf{(I) }  $\;\,M_X^{(r)}(t)$ exists near zero\par
+\indent\indent \textbf{(II) }  $E\left(\left|X^r\right|\right) < \infty$\par
 
-{\bf 5 (Characterisation): } if $X$ and $Y$ have m.g.f.s and $M_X(t) = M_Y(t)$ in a neighbourhood of zero,\\ \indent\indent then $F_X(u) = F_Y(u)\;\forall u$. I.e., m.g.f.s are sufficient to characterise distributions.\par\vspace{1cm}
+\textbf{5 (Characterisation): } if $X$ and $Y$ have m.g.f.s and $M_X(t) = M_Y(t)$ in a neighbourhood of zero,\\ \indent\indent then $F_X(u) = F_Y(u)\;\forall u$. I.e., m.g.f.s are sufficient to characterise distributions.\par\vspace{1cm}
 
-{\bf 6 (Convergence of m.g.f.s): } Let $X_1,\;X_2,\;\hdots$ be a countable sequence of r.v.s with m.g.f.s $M_{X_i}(t)$\\ \indent\indent s.t.:
+\textbf{6 (Convergence of m.g.f.s): } Let $X_1,\;X_2,\;\hdots$ be a countable sequence of r.v.s with m.g.f.s $M_{X_i}(t)$\\ \indent\indent s.t.:
 $$\lim_{i\to\infty}\left[M_{X_i}(t)\right] = M_X(t)$$
 \indent\indent for $t$ in a neighbourhood of zero, $M_X(t)$ an m.g.f. Then there is a unique c.d.f. $F_X(x)$ with\\ \indent\indent moments determined by $M_X(t)$ and for which:
 $$\lim_{i\to\infty}\left[F_{X_i}(x)\right] = F_X(x)$$
@@ -2277,14 +2277,14 @@ $$\lim_{i\to\infty}\left[F_{X_i}(x)\right] = F_X(x)$$
 
 \noindent\textsc{Partial Proof:}\par\vspace{1cm}
 
-{\bf 1: }
+\textbf{1: }
 \begin{align*}
 M_{aX+b}(t) &= E_X\left[e^{(aX+b)t}\right]\\
 &= E_X\left[e^{aXt}\right]e^{bt}\\
 &= e^{bt}M_X(at)\qquad\square
 \end{align*}
 
-{\bf 2: }
+\textbf{2: }
 \begin{align*}
 M_Z(t) &= E_Z\left[e^{\left(X_1+\hdots + X_n\right) t}\right]\\
 &= E_Z\left[\prod_{i=1}^n e^{X_i t}\right]\\
@@ -2292,11 +2292,11 @@ M_Z(t) &= E_Z\left[e^{\left(X_1+\hdots + X_n\right) t}\right]\\
 &= \prod_{i=1}^n M_{X_i}(t)\qquad\square
 \end{align*}
 
-{\bf 3: } follows directly from {\bf 1} and {\bf 2}\par\vspace{1cm}
+\textbf{3: } follows directly from \textbf{1} and \textbf{2}\par\vspace{1cm}
 
-{\bf 4-6:} beyond the scope of this course. Proof requires the study of Laplace transforms.\par\vspace{1cm}
+\textbf{4-6:} beyond the scope of this course. Proof requires the study of Laplace transforms.\par\vspace{1cm}
 
-The above theorem (in particular, part {\bf 6}) allows us to show convergence in distribution by showing convergence of m.g.f.s in a neighbourhood of zero. Although convergence of m.g.f.s is a sufficient condition for convergence in distribution, it is not necessary (after all, the m.g.f. might not even exist). There is a more general strategy, involving \underline{characteristic functions} of the form $\phi_X(t) = E_X\left(e^{itX}\right)$. This is beyond the scope of this course.
+The above theorem (in particular, part \textbf{6}) allows us to show convergence in distribution by showing convergence of m.g.f.s in a neighbourhood of zero. Although convergence of m.g.f.s is a sufficient condition for convergence in distribution, it is not necessary (after all, the m.g.f. might not even exist). There is a more general strategy, involving \underline{characteristic functions} of the form $\phi_X(t) = E_X\left(e^{itX}\right)$. This is beyond the scope of this course.
 
 Note that moments alone do not characterise distributions. Two r.v.s can have identical moments but not be identically distributed. Identity of m.g.f.s is stronger than identity of all moments. However, if $X$ and $Y$ have \emph{finite support}, then they are identically distributed iff their moments are identical. I.e.,:
 $$F_X(u) \equiv F_Y(u)\quad\Leftrightarrow\quad E_X(X^r) \equiv E_Y(Y^r)$$
