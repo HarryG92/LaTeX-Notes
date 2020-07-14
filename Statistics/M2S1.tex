@@ -155,7 +155,7 @@ Any subset of the sample space is called an \underline{event}.\end{defn}
 
 \begin{ex}
 
-When rolling a standard, 6-faced die, the event "rolling an even number" is the subset \{2,\;4,\;6\} of the sample space.\end{ex}
+When rolling a standard, 6-faced die, the event ``rolling an even number'' is the subset \{2,\;4,\;6\} of the sample space.\end{ex}
 
 \begin{defn}[Algebras]
 
@@ -220,7 +220,7 @@ Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$
 
 Note that when the intersection of two events is the empty set, we say the events are \underline{disjoint} or \underline{mutually exclusive}. If the intersection of any pair of some number of sets is the empty set, we say the sets are \underline{pairwise disjoint} or \underline{pairwise mutually exclusive}. I.e., the events $A_i$ are pairwise disjoint if $\forall \:i\neq j \:\:\:A_i\cap A_j = \varnothing$
 
-Actually, it turns out that these axioms are not quite sufficient for all purposes, so we extend the third axiom to give "countable additivity" instead of just "finite additivity". That is to say, we replace it with:\par
+Actually, it turns out that these axioms are not quite sufficient for all purposes, so we extend the third axiom to give ``countable additivity'' instead of just ``finite additivity.'' That is to say, we replace it with:\par
 \vspace{10pt}
 {\bf 3:} $\qquad E_i\in\mathcal{B}\:\:\forall i\in\mathbb{N}\text{ and }E_i\cap E_j=\phi\:\:\forall i\neq j\:\Rightarrow\:P(\bigcup_{i=1}^{\infty}E_i)=\sum_{i=1}^{\infty}P(E_i)$\par
 \vspace{10pt}
@@ -363,13 +363,13 @@ Under this paradigm, the probability of an event is determined experimentally by
 \vspace{12pt}
 
 This is the first idea of probability formulated and exploits symmetries of experiments. In events with finitely many outcomes, each outcome is declared equally likely ('equiprobable') and the probability of an event is then found to be simply the ratio of the number of outcomes in that event to the total number of outcomes. This can be extended to infinite problems by considering, for instance, the ratios of areas, declaring each unit of area to be equally likely.\\
-\indent The advantages of this system are that it gives a simple way of calculating probabilities for an experiment {\it a priori}, without even having to run the experiment and, again, that it agrees with our intuition in simple cases. The disadvantages are that it simply cannot account for problems in which there is an asymmetry (e.g., there is no way to establish a classical probability for a biased coin where we have some reason to believe that heads and tails are {\bf not} equiprobable) and, more subtly, it can be hard to establish whether or not the apparent symmetries of a problem will in fact correspond to equally frequent occurrences in real life. For instance, consider tossing a fair coin twice. If we are not concerned with the order of the tosses, there are 3 possible outcomes: 2 heads, 2 tails and 1 of each. We could thus assign equal probabilities of 1/3 to each of these, but, clearly, this would not correspond to reality if we tried tossing the coin. This seems like a silly example, as 'obviously' it is 'correct' to regard "heads, tails" as distinct from "tails, heads"; however, there is no good reason for this based in classical probability. Our reason for thinking this comes from frequentist probability, which makes it subject to all the problems of that paradigm. If we wish to maintain a purely classical approach, which might be necessary in more complicated situations where performing multiple trials to obtain frequencies could be impractical, we have no way of distinguishing between the validity of either approach and thus no way of saying whether the probability of one head and one tail is 'really' 1/3 or 1/2.\par
+\indent The advantages of this system are that it gives a simple way of calculating probabilities for an experiment {\it a priori}, without even having to run the experiment and, again, that it agrees with our intuition in simple cases. The disadvantages are that it simply cannot account for problems in which there is an asymmetry (e.g., there is no way to establish a classical probability for a biased coin where we have some reason to believe that heads and tails are {\bf not} equiprobable) and, more subtly, it can be hard to establish whether or not the apparent symmetries of a problem will in fact correspond to equally frequent occurrences in real life. For instance, consider tossing a fair coin twice. If we are not concerned with the order of the tosses, there are 3 possible outcomes: 2 heads, 2 tails and 1 of each. We could thus assign equal probabilities of 1/3 to each of these, but, clearly, this would not correspond to reality if we tried tossing the coin. This seems like a silly example, as `obviously' it is `correct' to regard ``heads, tails'' as distinct from ``tails, heads;'' however, there is no good reason for this based in classical probability. Our reason for thinking this comes from frequentist probability, which makes it subject to all the problems of that paradigm. If we wish to maintain a purely classical approach, which might be necessary in more complicated situations where performing multiple trials to obtain frequencies could be impractical, we have no way of distinguishing between the validity of either approach and thus no way of saying whether the probability of one head and one tail is `really' 1/3 or 1/2.\par
 \vspace{12pt}
 
 \noindent{\bf Subjective Probability:}\par
 \vspace{12pt}
 
-Under this approach, probabilities are assigned to events based on "personal belief" or "degree of knowledge" about a situation. It suffers the obvious disadvantage of being potentially totally arbitrary and a very 'wooly' approach - it is difficult to assign an exact value to your degree of personal belief; also, subjective estimates of probability can vary hugely from person to person. However, this is, from a purely mathematical, formalistic approach, a perfectly valid way of assigning a function and, more practically, allows us to solve problems that simply cannot be solved under classical or frequentist probability. An example will help to illustrate this:
+Under this approach, probabilities are assigned to events based on ``personal belief'' or ``degree of knowledge'' about a situation. It suffers the obvious disadvantage of being potentially totally arbitrary and a very `wooly' approach - it is difficult to assign an exact value to your degree of personal belief; also, subjective estimates of probability can vary hugely from person to person. However, this is, from a purely mathematical, formalistic approach, a perfectly valid way of assigning a function and, more practically, allows us to solve problems that simply cannot be solved under classical or frequentist probability. An example will help to illustrate this:
 
 \begin{ex}[The Envelope Game]\label{envelope}
 \end{ex}
@@ -417,7 +417,7 @@ This example will illustrate the importance of the distinction between independe
 
 Suppose I have a coin that gives heads with probability $p$. I toss this coin $n$ times. Let $X$ be the number of heads obtained. I then toss the coin one more time; let $Y$ be the number of heads on this final toss (0 or 1). Are $X$ and $Y$ independent?
 
-The answer most students of probability will unthinkingly give to this is "yes", but this is actually wrong. $X$ and $Y$ are {\it conditionally} independent {\it given} $p$. If we know the value of $p$, then of course separate tosses are independent, but if $p$ is unknown, then $X$, that is, the number of heads on the first $n$ tosses, gives us information about $p$ that can help us predict $Y$. Clearly, if I were to produce a coin, toss it 100 times and get a head every time, you would be a fool not to bet that it would land heads on the next toss - it would seem highly likely that my coin was biased or even double-headed. It is very important to establish in a problem whether independence is conditional or not.
+The answer most students of probability will unthinkingly give to this is ``yes,'' but this is actually wrong. $X$ and $Y$ are {\it conditionally} independent {\it given} $p$. If we know the value of $p$, then of course separate tosses are independent, but if $p$ is unknown, then $X$, that is, the number of heads on the first $n$ tosses, gives us information about $p$ that can help us predict $Y$. Clearly, if I were to produce a coin, toss it 100 times and get a head every time, you would be a fool not to bet that it would land heads on the next toss - it would seem highly likely that my coin was biased or even double-headed. It is very important to establish in a problem whether independence is conditional or not.
 
 
 \subsection{Bayes' Theorem and the Theorem of Total Probability}\label{total prob}$\;$
@@ -458,7 +458,7 @@ $$P(E) = \sum_{i=1}^{\infty}[P(E|A_i) \times P(A_i)]$$
 We often use $A_i$ partitioning all of the sample space, as this is usually relatively easy to find and guarantees that they partition any event. We rarely use infinite partitions, more often finite ones, but the theorem holds in the (countable) infinite case (again, reliant on the countable additivity property). In the simplest case, the partition can be simply an event and its complement, giving:
 $$P(E) =[ P(E|A) \times P(A)] + [P(E|A') \times P(A')]$$
 
-One of the reasons this is such a useful result is that it gives us a way of calculating the so-called "prior probabilities" $P(A) \text{ and } P(B)$ in Bayes' theorem. This gives the following useful form of Bayes' theorem:
+One of the reasons this is such a useful result is that it gives us a way of calculating the so-called ``prior probabilities'' $P(A) \text{ and } P(B)$ in Bayes' theorem. This gives the following useful form of Bayes' theorem:
 $$P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum\limits_{i=1}^{\infty}[P(B|A_i) \times P(A_i)]}$$\par
 \vspace{12pt}
 
@@ -711,7 +711,7 @@ $$E_{f_X}(X) = \int\limits_{\mathcal{X}} x f_X(x)\; \mathrm{d}x$$
 
 \end{defn}
 
-Read "the expectation of $X$ under the density $f_X$", or simply "under the density of $X$". This may seem like an unecessary, tautological notation, but when considering multivariate distributions, it can be very useful to keep track of the subscripts on expectations. Although the notation is standard, it can be unwieldy at times, so the subscripts may be omitted when the meaning is clear; for clarity and legibility, we will tend to write expectations here simply as $E_X(X)$, rather than $E_{f_X}(X)$.
+Read ``the expectation of $X$ under the density $f_X$,'' or simply ``under the density of $X$.'' This may seem like an unecessary, tautological notation, but when considering multivariate distributions, it can be very useful to keep track of the subscripts on expectations. Although the notation is standard, it can be unwieldy at times, so the subscripts may be omitted when the meaning is clear; for clarity and legibility, we will tend to write expectations here simply as $E_X(X)$, rather than $E_{f_X}(X)$.
 
 It is also possible to find the expectation of a function of a r.v.:
 
@@ -784,7 +784,7 @@ We then sample $h_X$: $X_1, \; ... \; X_n \sim h_X(x)$ i.i.d. and approximate th
 $$\frac{k}{n} \sum_{i = 1}^n w(X_i)f(X_i) \approx \int\limits_G \!f(x) g(x)\; \mathrm{d}x$$
 This technique is known as \emph{importance sampling.}
 
-Importance sampling works best when the weights are all roughly equal. This requires the bulk of the probability density of $g_X$ to be entirely within the bulk of $h_X$'s density. Otherwise samples which occur but rarely can have enormous weight, skewing the estimate substantially. Figure \ref{importance sampling} illustrates this. For this reason, it is usually best to choose $h_X$ with "heavy tails" or with a support extending far beyond that of $g$ in both directions.
+Importance sampling works best when the weights are all roughly equal. This requires the bulk of the probability density of $g_X$ to be entirely within the bulk of $h_X$'s density. Otherwise samples which occur but rarely can have enormous weight, skewing the estimate substantially. Figure \ref{importance sampling} illustrates this. For this reason, it is usually best to choose $h_X$ with ``heavy tails'' or with a support extending far beyond that of $g$ in both directions.
 
 In Figure \ref{importance sampling}, there are three regions of interest noted, A, B and C. In A, values occur fairly frequently (most of the probability mass of $h$, the sampling distribution, is in this region, but the samples here have a very low importance weight, so are suppressed. A moderate number of sample points are likely to occur in B and they will have a reasonable weight attached. In C, although samples are extremely rare, their weights are so high that they will skew the estimate substantially. In this case, then, $h$ would be a very bad sampling distribution to use to obtain a Monte Carlo estimate of the integral.
 
@@ -840,9 +840,9 @@ F_X(x) &= \frac{\lfloor x \rfloor}{n} \; \mbox{where $\lfloor x \rfloor$ here de
 
 \subsubsection{The Bernoulli Distribution: $X \sim Bernoulli(\theta)$}
 
-$\quad$Another almost trivial distribution, but this one is useful for building up larger distributions. A Bernoulli distribution has a single event with two possible outcomes (often referred to as "success" and "failure") with known probabilities. In fact, a Bernoulli trial may have more than two outcomes, so long as we are only interested in two mutually exclusive and exhaustive \emph{events}; for instance, if we roll a (normal) die, there are six possible outcomes, but if we are only interested in whether or not we roll a six, then we may group the other five outcomes together as a single event and model the roll as a Bernoulli trial.
+$\quad$Another almost trivial distribution, but this one is useful for building up larger distributions. A Bernoulli distribution has a single event with two possible outcomes (often referred to as ``success'' and ``failure'') with known probabilities. In fact, a Bernoulli trial may have more than two outcomes, so long as we are only interested in two mutually exclusive and exhaustive \emph{events}; for instance, if we roll a (normal) die, there are six possible outcomes, but if we are only interested in whether or not we roll a six, then we may group the other five outcomes together as a single event and model the roll as a Bernoulli trial.
 
-Letting $X=1$ denote "success" and $X=0$ "failure", the distribution functions and first two (central) moments for a Bernoulli r.v. are:
+Letting $X=1$ denote ``success'' and $X=0$ ``failure,'' the distribution functions and first two (central) moments for a Bernoulli r.v. are:
 \begin{align*}
 f_X(x) &= \left\{ \begin{array}{cl} \theta \quad & : \; x = 1\\ 1-\theta \quad & : \; x = 0 \end{array} \right. = \theta^x(1-\theta)^{1-x} \; : x \in \mathcal{X}\\
 F_X(x) &= \left\{ \begin{array}{cl} 0 \quad & : \; x < 0\\ 1-\theta \quad & : \; 0 \leq x < 1\\ 1 \quad & : \; x \geq 1 \end{array} \right.\\
@@ -853,7 +853,7 @@ Var_{X}(X) &= \theta(1-\theta)\\
 
 \subsubsection{The Binomial Distribution: $X \sim Binomial(n,\theta)$}
 
-$\quad$Suppose $X_i \sim Bernoulli(\theta) \; : i = 1,\; 2,\; ... n$ are $n$ i.i.d. Bernoulli r.v.s with probability $\theta$. Define $X = \sum_{i=1}^n X_i$. Then $X \sim Binomial(n, \theta)$ is a binomial r.v. with $n$ trials and probability $\theta$. That is to say that a binomial r.v. records the number of "successes" in $n$ independent, identically distributed Bernoulli trials.
+$\quad$Suppose $X_i \sim Bernoulli(\theta) \; : i = 1,\; 2,\; ... n$ are $n$ i.i.d. Bernoulli r.v.s with probability $\theta$. Define $X = \sum_{i=1}^n X_i$. Then $X \sim Binomial(n, \theta)$ is a binomial r.v. with $n$ trials and probability $\theta$. That is to say that a binomial r.v. records the number of ``successes'' in $n$ independent, identically distributed Bernoulli trials.
 
 It is easy to derive the p.m.f., c.d.f., mean and variance of a binomial r.v. from the Bernoulli distribution. They are:
 \begin{align*}
@@ -899,7 +899,7 @@ $$\left(\!\!\!\begin{array}{c} n\\x\end{array}\!\!\!\right) = \frac{n!}{x! (n-x)
 
 \subsubsection{The Hypergeometric Distribution: $X \sim Hypergeo(N,R,n)$}
 
-$\quad$Consider a population of $N$ objects/people/\&c., of which $R$ are of "type I" and the remaining $N-R$ of "type II". Suppose we take a random sample of size $n$ and let $X$ be the number of type I's in the sample. By combinatorial reasoning, considering the number of ways of choosing the sample, it is clear that:
+$\quad$Consider a population of $N$ objects/people/\&c., of which $R$ are of ``type I'' and the remaining $N-R$ of ``type II.'' Suppose we take a random sample of size $n$ and let $X$ be the number of type I's in the sample. By combinatorial reasoning, considering the number of ways of choosing the sample, it is clear that:
 \begin{align*}
 f_X(x) &= \frac{\left(\!\!\! \begin{array}{c} R\\ x\end{array}\!\!\!\right) \left(\!\!\!\begin{array}{c} N-R\\ n-x \end{array}\!\!\!\right)}{\left(\!\!\!\begin{array}{c} N\\ n\end{array}\!\!\!\right)}\\
 \mathcal{X} &= [max\{0,n-(N-R)\},min\{n,r\}]
@@ -1081,7 +1081,7 @@ $$F_Z(z) = \Phi(z) = \int_{-\infty}^{z} \!\phi(t)\; \mathrm{d}t$$
 
 The c.d.f., $\Phi(z)$, is not available in closed form, but is calculable to arbitrary accuracy by numerical methods.
 
-It is useful to remember the "68 - 95 - 99" rule: the probability of a normal r.v. taking a value within 1, 2 or 3 standard deviations respectively of the mean is roughly 68\%, 95\%, 99\% respectively:
+It is useful to remember the ``68 - 95 - 99'' rule: the probability of a normal r.v. taking a value within 1, 2 or 3 standard deviations respectively of the mean is roughly 68\%, 95\%, 99\% respectively:
 $$P\left( \frac{|X-\mu|}{\sigma}< 1\right) \approx 68\%$$
 $$P\left( \frac{|X-\mu|}{\sigma} < 2\right) \approx 95\%$$
 $$P\left( \frac{|X-\mu|}{\sigma} < 3\right) \approx 99\%$$
@@ -1151,7 +1151,7 @@ F_X(x) &\rightarrow \Phi(x) \;\; \text{as }\; n\rightarrow \infty
 
 \subsection{Families of Distributions}$\;$
 
-Some distributions form "families", which can be usefully considered together.
+Some distributions form ``families,'' which can be usefully considered together.
 
 \subsubsection{The Exponential Family}
 
@@ -1245,7 +1245,7 @@ $$\begin{array}{|c|c|c|c|c|c|} \hline
 \end{center}
 
 \end{ex}
-$\quad$In the margins of the table, the sums of each row and column have been included. These margins represent the marginal distributions of sex (in the final column) and age (in the bottom row), hence the term "marginal distribution". By the theorem of total probability (see section \ref{total prob}), we know that:
+$\quad$In the margins of the table, the sums of each row and column have been included. These margins represent the marginal distributions of sex (in the final column) and age (in the bottom row), hence the term ``marginal distribution.'' By the theorem of total probability (see section \ref{total prob}), we know that:
 $$P(female) = \sum\limits_i [P(\{female\} \cap \{age = i\})]$$
 and similarly for the prior probability of being male. Furthermore,
 $$P(age = i) = P(age = i \text{ and } male) +P(age = i \text{ and } female)$$
@@ -1571,7 +1571,7 @@ Note that although the presence of a sum makes this look like a discrete c.d.f.,
 
 By the definition of conditional mass/density fucntions, we can write:
 $$f_{X,Y,Z}(x,y,z) = f_{X|Y,Z}(x|y,z) f_{Y|Z}(y|z) f_Z(z)$$
-and similar expressions for larger numbers of r.v.s. This allows us to combine models to derive a variety of "multi-level" models. This is best illustrated by example:
+and similar expressions for larger numbers of r.v.s. This allows us to combine models to derive a variety of ``multi-level'' models. This is best illustrated by example:
 
 \begin{ex}[Sizes of Fish]$\quad$\par\vspace{1cm}
 
@@ -1782,11 +1782,11 @@ $$\overline{X}=\frac{1}{n}\sum_{i=1}^n X_i = kp \quad\mbox{ and }\quad \frac{1}{
 
 \end{ex}
 
-The main advantage of the Method of Moments estimates is that they are relatively quick and easy to compute, making them useful for "back-of-the-envelope" calculations, or for obtaining an initial estimate for an iterative estimating technique. However, it is not always very accurate (note that the estimators used for all moments but the first are biased) and does not respect parameter spaces - occasionally it can give an impossible value for a parameter, such as a negative estimate for a parameter that is constrained to be positive.
+The main advantage of the Method of Moments estimates is that they are relatively quick and easy to compute, making them useful for ``back-of-the-envelope'' calculations, or for obtaining an initial estimate for an iterative estimating technique. However, it is not always very accurate (note that the estimators used for all moments but the first are biased) and does not respect parameter spaces - occasionally it can give an impossible value for a parameter, such as a negative estimate for a parameter that is constrained to be positive.
 
 \subsubsection{Maximum Likelihood Estimation}
 
-$\quad$Our objective in parameter estimation is to obtain the "best" estimate for unknown parameters. Consider what we mean by "best". If we wish to find the mean height of adult humans, say, and draw a s.r.s. of people, getting heights of 1.78m, 1.56m and 1.63m, it is clearly absurd to postulate a value for the population mean of 2m. This is obvious, but, if you think about it, the \emph{reason} this is such a bad estimate is that if the population mean really were 2m, the probability of obtaining the sample we did would be very low. On the other hand, if the population mean were around 1.66m (the sample mean), then the probability of getting the sample we did would be relatively high. In this way, we can sensibly define the "best" estimate of a parameter given a sample to be the value that maximises the probability of obtaining the given sample.
+$\quad$Our objective in parameter estimation is to obtain the ``best'' estimate for unknown parameters. Consider what we mean by ``best.'' If we wish to find the mean height of adult humans, say, and draw a s.r.s. of people, getting heights of 1.78m, 1.56m and 1.63m, it is clearly absurd to postulate a value for the population mean of 2m. This is obvious, but, if you think about it, the \emph{reason} this is such a bad estimate is that if the population mean really were 2m, the probability of obtaining the sample we did would be very low. On the other hand, if the population mean were around 1.66m (the sample mean), then the probability of getting the sample we did would be relatively high. In this way, we can sensibly define the ``best'' estimate of a parameter given a sample to be the value that maximises the probability of obtaining the given sample.
 
 A piece of notation: in the following we speak of the $argmax$ of a function. This is simply the value of the argument which globally maximises the function (of course, this need not be a unique value, or even well-defined). For instance, $argmax_x (1-x^2) = 0$, as the maximum of the function $1 - x^2$ occurs at $x=0$. Similarly, we may, of course, consider the $argmin$. Simply, $argmax_x[f(x)] = a$ where $f(a) = max\{f(x)\}$.
 
@@ -1825,7 +1825,7 @@ Of course, when attempting to maximise this, we will typically differentiate; su
 
 \end{defn}
 
-This, then, gives us a method for estimating a parameter from a sample. We express the probability of getting the given sample given a value of the parameter as if it were instead a function of the parameter given the sample values, then find the value of the parameter which maximises this probability (usually by considering its logarithm). In a certain sense, this value can be considered the "best" estimate for the parameter, as it is the one which makes the sample we have maximally likely. Its downfall comes when the sample is unlikely under \emph{any} reasonable value for the parameter; but, by definition, this happens but rarely.
+This, then, gives us a method for estimating a parameter from a sample. We express the probability of getting the given sample given a value of the parameter as if it were instead a function of the parameter given the sample values, then find the value of the parameter which maximises this probability (usually by considering its logarithm). In a certain sense, this value can be considered the ``best'' estimate for the parameter, as it is the one which makes the sample we have maximally likely. Its downfall comes when the sample is unlikely under \emph{any} reasonable value for the parameter; but, by definition, this happens but rarely.
 
 \begin{ex}[Maximum Likelihood Estimation for a Continuous Parameter Space]\vspace{1cm}
 
@@ -2025,7 +2025,7 @@ Var_Y(Y) &= E_\Theta[Var_{Y\mid\Theta}(Y\mid\Theta)] + Var_\Theta[E_{Y\mid\Theta
 
 \end{ex}
 
-Note that, in the above example, the prior and posterior distributions of $\Theta$ are the same distribution, simply with different parameters. This is a particular relationship between the Binomial distribution (of $Y$) and the Beta distribution; we say that the Beta distribution is the \underline{conjugate prior} of the Binomial. For this reason, the marginal distribution of $Y$ is called a "Beta-Binomial distribution".
+Note that, in the above example, the prior and posterior distributions of $\Theta$ are the same distribution, simply with different parameters. This is a particular relationship between the Binomial distribution (of $Y$) and the Beta distribution; we say that the Beta distribution is the \underline{conjugate prior} of the Binomial. For this reason, the marginal distribution of $Y$ is called a ``Beta-Binomial distribution.''
 
 In the special case where $\alpha = \beta = 1$, the Beta distribution is the same as the standard Uniform distribution, so $\Theta \sim Unif(0,1)$, which models absolute uncertainty about $\theta$, allowing it to take any value in its permitted range with equal probability. In this case, the mean and variance of the marginal distribution of $Y$ are found to be:
 
@@ -2049,7 +2049,7 @@ We are interested in when the interval $\mathscr{J}(X)$ contains $\mu$. Define $
 \Rightarrow\quad &P[\mu\in \mathscr{J}(X)] = 95\%
 \end{align*}
 
-95\% of the intervals thus calculated will therefore contain $\mu$. This gives us a measure, then, of our certainty of the value of $\mu$. If the interval is wide, there is a large range of values which $\mu$ could take; conversely, a small interval means we know $\mu$ very precisely. Such an interval is called a \underline{95\% confidence interval}. Other sizes of interval are, of course, possible, but 95\% is the accepted standard; it is called the \underline{confidence level}. It is common practice in scientific papers to give results with a 95\% confidence interval; for instance, a value obtained in an experiment might be reported as "$12.4 \pm 0.9$" or "$7.3\; {}^{+2.1}\!\!/\!\!{}_{-0.3}$", say (note that the interval need not be centred around the estimate). When it is not specifically stated what confidence level is used, 95\% may be assumed.
+95\% of the intervals thus calculated will therefore contain $\mu$. This gives us a measure, then, of our certainty of the value of $\mu$. If the interval is wide, there is a large range of values which $\mu$ could take; conversely, a small interval means we know $\mu$ very precisely. Such an interval is called a \underline{95\% confidence interval}. Other sizes of interval are, of course, possible, but 95\% is the accepted standard; it is called the \underline{confidence level}. It is common practice in scientific papers to give results with a 95\% confidence interval; for instance, a value obtained in an experiment might be reported as ``$12.4 \pm 0.9$'' or ``$7.3\; {}^{+2.1}\!\!/\!\!{}_{-0.3}$,'' say (note that the interval need not be centred around the estimate). When it is not specifically stated what confidence level is used, 95\% may be assumed.
 
 We use confidence intervals (C.I.s) to show our certainty of estimates of parameters including, but not limited to, the mean.
 
