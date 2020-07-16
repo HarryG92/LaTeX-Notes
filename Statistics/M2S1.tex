@@ -151,7 +151,7 @@ When rolling a standard, 6-faced die, the sample space is the set \{1,\;2,\;3,\;
 
 \begin{defn}[Events]
 
-Any subset of the sample space is called an \uline{event}.\end{defn}
+Any subset of the sample space is called an \underline{event}.\end{defn}
 
 \begin{ex}
 
@@ -159,11 +159,7 @@ When rolling a standard, 6-faced die, the event ``rolling an even number'' is th
 
 \begin{defn}[Algebras]
 
-<<<<<<< Updated upstream
 An \underline{algebra} or \underline{field}, $\mathcal{F}$ is any set of subsets of the sample space satisfying the following three conditions:\par
-=======
-An \uline{algebra} or \uline{field}, $\mathcal{F}$ is any set of subsets of the sample space satisfying the following three conditions:\par
->>>>>>> Stashed changes
 \vspace{10pt}
 \textbf{The Empty Set:}$\quad\phi\in\mathcal{F}$\par
 \vspace{10pt}
@@ -178,11 +174,7 @@ An \uline{algebra} or \uline{field}, $\mathcal{F}$ is any set of subsets of the 
 
 \noindent In fact, the final condition can be extended to closure under finite union. That is:
 $$A_i \in\mathcal{F}\:\:\forall i\in\{1,\,2,\;...\;n\}\Rightarrow\bigcup_{i=1}^{n}A_i\in\mathcal{F}$$
-<<<<<<< Updated upstream
 This is easily proved by induction on $n$. However, it cannot be extended to closure under countable union. A set thus closed is called a \underline{sigma-algebra} (or $\sigma$-algebra).
-=======
-This is easily proved by induction on $n$. However, it cannot be extended to closure under countable union. A set thus closed is called a \uline{sigma-algebra} (or $\sigma$-algebra).
->>>>>>> Stashed changes
 
 \begin{defn}[$\sigma$-Algebras]
 
@@ -217,11 +209,7 @@ If the sample space, $S$ is finite or countable, the power set of $S$ is always 
 
 \begin{defn}[The Probability Function]
 
-<<<<<<< Updated upstream
 Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$ to the real line: $P:\;\mathcal{B}\rightarrow\mathbb{R}$, satisfying the following three axioms, called the \underline{Kolmogorov axioms}, where $S$ denotes the sample space:\par
-=======
-Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$ to the real line: $P:\;\mathcal{B}\rightarrow\mathbb{R}$, satisfying the following three axioms, called the \uline{Kolmogorov axioms}, where $S$ denotes the sample space:\par
->>>>>>> Stashed changes
 \vspace{1pt}
 \textbf{1:} $\qquad\forall A\in\mathcal{B}\quad P(A)\geq 0$\par
 \vspace{10pt}
@@ -230,11 +218,7 @@ Probability is a real-valued set function from a $\sigma$-algebra, $\mathcal{B}$
 \textbf{3:} $\qquad E,\, F\in\mathcal{B}\text{ and }E\cap F=\phi\:\Rightarrow\: P(E\cup F)=P(E)+P(F)$
 \end{defn}
 
-<<<<<<< Updated upstream
 Note that when the intersection of two events is the empty set, we say the events are \underline{disjoint} or \underline{mutually exclusive}. If the intersection of any pair of some number of sets is the empty set, we say the sets are \underline{pairwise disjoint} or \underline{pairwise mutually exclusive}. I.e., the events $A_i$ are pairwise disjoint if $\forall \:i\neq j \:\:\:A_i\cap A_j = \varnothing$
-=======
-Note that when the intersection of two events is the empty set, we say the events are \uline{disjoint} or \uline{mutually exclusive}. If the intersection of any pair of some number of sets is the empty set, we say the sets are \uline{pairwise disjoint} or \uline{pairwise mutually exclusive}. I.e., the events $A_i$ are pairwise disjoint if $\forall \:i\neq j \:\:\:A_i\cap A_j = \varnothing$
->>>>>>> Stashed changes
 
 Actually, it turns out that these axioms are not quite sufficient for all purposes, so we extend the third axiom to give ``countable additivity'' instead of just ``finite additivity.'' That is to say, we replace it with:\par
 \vspace{10pt}
@@ -423,11 +407,7 @@ This function takes two events and produces a real number. It is trivial to show
 
 \begin{defn}[Independence]
 
-<<<<<<< Updated upstream
 From the above we can construct a concept of the \underline{independence} of two events. We say $E$ is independent of $F$ if $P(E|F) = P(E)$, that is, if the probability of $E$ is the same regardless of whether or not $F$ has occurred. We can easily see from the definition of the conditional probability operator that an equivalent definition is: $E$ and $F$ are independent if $P(E \cap F) = P(E) \times P(F)$. We say $E$ and $F$ are \underline{conditionally independent given $G$} if $P(E \cap F | G) = P(E|G) \times P(F|G)$.
-=======
-From the above we can construct a concept of the \uline{independence} of two events. We say $E$ is independent of $F$ if $P(E|F) = P(E)$, that is, if the probability of $E$ is the same regardless of whether or not $F$ has occurred. We can easily see from the definition of the conditional probability operator that an equivalent definition is: $E$ and $F$ are independent if $P(E \cap F) = P(E) \times P(F)$. We say $E$ and $F$ are \uline{conditionally independent given $G$} if $P(E \cap F | G) = P(E|G) \times P(F|G)$.
->>>>>>> Stashed changes
 \end{defn}
 
 \begin{ex}[Independence and Conditional Independence]
@@ -454,11 +434,7 @@ Bayes' theorem allows us to convert conditional probabilities from conditioning 
 
 \begin{defn}[Partitions]
 
-<<<<<<< Updated upstream
 A \underline{partition} of a set $X$ is any collection of pairwise disjoint, non-empty sets such that $X$ is contained in their union. E.g., $A$ and $B$ partition $X$ iff $A\neq \phi \neq B$, $A \cap B = \phi \text{ and } X \subseteq A \cup B$. Similarly for partitioning with more than two sets. Technically, the partitioned set should \emph{equal} the union of the partition, not merely be contained therein, but for our purposes, this definition is better.
-=======
-A \uline{partition} of a set $X$ is any collection of pairwise disjoint, non-empty sets such that $X$ is contained in their union. E.g., $A$ and $B$ partition $X$ iff $A\neq \phi \neq B$, $A \cap B = \phi \text{ and } X \subseteq A \cup B$. Similarly for partitioning with more than two sets. Technically, the partitioned set should \emph{equal} the union of the partition, not merely be contained therein, but for our purposes, this definition is better.
->>>>>>> Stashed changes
 
 \end{defn}
 
@@ -490,11 +466,7 @@ $$P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum\limits_{i=1}^{\infty}[P(B|A_i) \
 
 \begin{ex}[Medical Testing]
 
-<<<<<<< Updated upstream
 Consider a biopsy used to test for cervical cancer. Let $C$ be the event that a woman has cervical cancer, $B$ the event that a biopsy detects cancer. Suppose 1 in 10 000 women has cervical cancer: $P(C) = 1/10\;000$. Medical tests are rated by their \underline{sensitivity}, or probability of correctly detecting the disease when it is present, and \underline{specificity}, or probability of correctly failing to detect the disease when it is absent. Tests can give false positive results, when they falsely detect the disease in a healthy patient, and false negatives, when they fail to detect the disease in a patient who does, in fact, have the condition. Sensitivity and specificity, then, are measures of how unlikely false negatives and false positives are respectively.
-=======
-Consider a biopsy used to test for cervical cancer. Let $C$ be the event that a woman has cervical cancer, $B$ the event that a biopsy detects cancer. Suppose 1 in 10 000 women has cervical cancer: $P(C) = 1/10\;000$. Medical tests are rated by their \uline{sensitivity}, or probability of correctly detecting the disease when it is present, and \uline{specificity}, or probability of correctly failing to detect the disease when it is absent. Tests can give false positive results, when they falsely detect the disease in a healthy patient, and false negatives, when they fail to detect the disease in a patient who does, in fact, have the condition. Sensitivity and specificity, then, are measures of how unlikely false negatives and false positives are respectively.
->>>>>>> Stashed changes
 
 \indent Suppose the biopsy in question has a sensitivity of 0.9 and a specificity of 0.999. Given these figures, if a woman tests positive on her biopsy, what is the probability that she actually has cervical cancer?
 \end{ex}
@@ -534,22 +506,14 @@ The notation used above is conventional: upper case letters are normally used fo
 \indent We can define not only the probability that a r.v. takes a particular value, but also the probability that it takes any value within an interval (or any other subset of the reals):
 $$P(X \in I \subseteq \mathbb{R}) = P(\{s \in S : X(s) \in I\})$$
 
-<<<<<<< Updated upstream
 A Borel set is called \underline{measurable} because there is a measure of probability associated with it. A r.v. $X$ is called measurable with respect to a particular Borel field, $\mathcal{B}$ if $\forall \alpha \in \mathbb{R} \; \{s \in S : X(s) < \alpha\} \in \mathcal{B}$ This requirement, combined with the axioms of a Borel field, means that we can take probabilities of a measurable r.v. lying within any interval on the real line, along with countable unions and intersections of intervals. This covers any set we might reasonably wish to consider.
-=======
-A Borel set is called \uline{measurable} because there is a measure of probability associated with it. A r.v. $X$ is called measurable with respect to a particular Borel field, $\mathcal{B}$ if $\forall \alpha \in \mathbb{R} \; \{s \in S : X(s) < \alpha\} \in \mathcal{B}$ This requirement, combined with the axioms of a Borel field, means that we can take probabilities of a measurable r.v. lying within any interval on the real line, along with countable unions and intersections of intervals. This covers any set we might reasonably wish to consider.
->>>>>>> Stashed changes
 
 \subsection{The Distribution Functions of a Random Variable}$\;$
 
 \begin{defn}[The Cumulative Distribution Function]
 \vspace{1cm}
 
-<<<<<<< Updated upstream
 Given a r.v. $X$, the \underline{cumulative} \underline{distribution function} (\underline{c.d.f.}) of $X$ is the function $F_X(x) = P(X \leq x)$
-=======
-Given a r.v. $X$, the \uline{cumulative} \uline{distribution function} (\uline{c.d.f.}) of $X$ is the function $F_X(x) = P(X \leq x)$
->>>>>>> Stashed changes
 \end{defn}
 
 The c.d.f. has the following basic properties, which follow trivially from its definition and the axioms of probability:
@@ -558,11 +522,7 @@ $$\lim_{x \rightarrow + \infty}[F_X(x)] = 1$$
 $F_X(x)$ is non-decreasing: $$F_X(x + a) \geq F_X(x)\; \forall a > 0$$
 $F_X(x)$ is right-continuous: $$\lim_{x \rightarrow x_0^+}[F_X(x)] = F_X(x_0)$$
 
-<<<<<<< Updated upstream
 If a the c.d.f. is also left-continuous, i.e., it is continuous, we call $X$ a \underline{continuous random variable}. If the c.d.f. is a step function, we call $X$ a \underline{discrete random variable}. Note that these two cases are not exhaustive - there are random variables that are neither discrete nor continuous - but the majority of r.v.s commonly used are one or the other of these.
-=======
-If a the c.d.f. is also left-continuous, i.e., it is continuous, we call $X$ a \uline{continuous random variable}. If the c.d.f. is a step function, we call $X$ a \uline{discrete random variable}. Note that these two cases are not exhaustive - there are random variables that are neither discrete nor continuous - but the majority of r.v.s commonly used are one or the other of these.
->>>>>>> Stashed changes
 
 In some sense the most important Borel $\sigma$-algebra is the smallest on the reals that contains all intervals (open, closed or open at one end and closed at the other - though it can be shown that it is sufficient to include all open intervals and the others must be included by the axioms of Borel fields - see M2PM1). Call this Borel field $\mathcal{B}_1$\\
 \indent There is a bijective correspondence between c.d.f.s and r.v.s that are measurable on and only on $\mathcal{B}_1$ The proof of this is beyond the scope of this course.
@@ -570,11 +530,7 @@ In some sense the most important Borel $\sigma$-algebra is the smallest on the r
 \begin{defn}[Independent and Identically Distributed]
 \vspace{1cm}
 
-<<<<<<< Updated upstream
 Two r.v.s, $X$ and $Y$, are said to be \underline{independent and identically distributed} (\underline{i.i.d.}) if they are independent and $P(X \in A) = P(Y \in A)\;\;\forall A \in \mathcal{B}_1$.
-=======
-Two r.v.s, $X$ and $Y$, are said to be \uline{independent and identically distributed} (\uline{i.i.d.}) if they are independent and $P(X \in A) = P(Y \in A)\;\;\forall A \in \mathcal{B}_1$.
->>>>>>> Stashed changes
 \end{defn}
 
 \begin{ex}[Independent and identically distributed random variables]
@@ -596,11 +552,7 @@ $X$ and $Y$ are i.i.d. iff $F_X(x) = F_Y(x) \;\;\forall x$
 \begin{defn}[The Probability Mass Function]
 \vspace{1cm}
 
-<<<<<<< Updated upstream
 For a discrete r.v. $X$, the \underline{probability mass function} (\underline{p.m.f.}) of $X$ is the function $f_X(x) = P(X = x)$
-=======
-For a discrete r.v. $X$, the \uline{probability mass function} (\uline{p.m.f.}) of $X$ is the function $f_X(x) = P(X = x)$
->>>>>>> Stashed changes
 \end{defn}
 
 \noindent The p.m.f. of a discrete r.v. is a probability and, as such, satisfies the following:
@@ -609,11 +561,7 @@ $$0 \leq f_X(x) \leq 1 \;\;\forall x$$
 \begin{defn}[The Probability Density Function]
 \vspace{1cm}
 
-<<<<<<< Updated upstream
 The \underline{probability density function} (\underline{p.d.f.}) of a continuous r.v. $X$ is any function $f_X$ such that:
-=======
-The \uline{probability density function} (\uline{p.d.f.}) of a continuous r.v. $X$ is any function $f_X$ such that:
->>>>>>> Stashed changes
 $$F_X(x) = \int_{-\infty}^x\!\!f_X(t)\;\mathrm{d}t \quad \Leftrightarrow\quad f_X(x) = \frac{\mathrm{d}F_X(x)}{\mathrm{d}x}$$
 \end{defn}
 
@@ -625,22 +573,14 @@ There are pathological examples of continuous r.v.s for which the p.d.f. does no
 
 \subsection{Transformations of Random Variables}$\;$
 
-<<<<<<< Updated upstream
 Consider a r.v. $X \; : \; S\rightarrow\mathbb{R}$ and a function $g\; : \; \mathbb{R}\rightarrow\mathbb{R}$. Define $Y = g \circ X \; : \; S\rightarrow\mathbb{R}$. Then as $Y$ is a function from the sample space to the reals, it is a random variable. We say $Y$ is a \underline{transformation} of the r.v. $X$. Clearly:
-=======
-Consider a r.v. $X \; : \; S\rightarrow\mathbb{R}$ and a function $g\; : \; \mathbb{R}\rightarrow\mathbb{R}$. Define $Y = g \circ X \; : \; S\rightarrow\mathbb{R}$. Then as $Y$ is a function from the sample space to the reals, it is a random variable. We say $Y$ is a \uline{transformation} of the r.v. $X$. Clearly:
->>>>>>> Stashed changes
 $$P(Y \in A) = P(g(X) \in A) = P(X \in g^{-1}(A))$$
 \noindent where $g^{-1}(A)$ denotes the pre\"image of $A$ under $g$; note that $g$ need not be invertible.
 
 \begin{defn}[The Support of a Random Variable]
 \vspace{1cm}
 
-<<<<<<< Updated upstream
 The \underline{support} of a r.v. $X$ is the set $\mathcal{X} = \{x : f_X(x) > 0\}$ Note that here $f_X(x)$ may be a p.m.f. or a p.d.f. - the definition applies to both discrete and continuous r.v.s.
-=======
-The \uline{support} of a r.v. $X$ is the set $\mathcal{X} = \{x : f_X(x) > 0\}$ Note that here $f_X(x)$ may be a p.m.f. or a p.d.f. - the definition applies to both discrete and continuous r.v.s.
->>>>>>> Stashed changes
 \end{defn}
 
 \noindent We see that the support of $Y$ is $\mathcal{Y} = \{y = g(x) : x \in \mathcal{X}\}$\par
@@ -754,18 +694,14 @@ $$f_Y(y) = \left\{ \begin{array}{ccl} \frac{1}{4 \sqrt y} \;\; &: \;\; &0 \leq y
 \clearpage
 \section{Expectation and Higher Moments}$\;$
 
-<<<<<<< Updated upstream
 It is often desirable to pr\'ecis the information in a distribution with a single number or a few numbers. A useful way of doing this is via the \underline{moments} of the r.v.
-=======
-It is often desirable to pr\'ecis the information in a distribution with a single number or a few numbers. A useful way of doing this is via the \uline{moments} of the r.v.
->>>>>>> Stashed changes
 
 \subsection{Expectation}$\;$
 
 \begin{defn}[Expectation]
 \vspace{1cm}
 
-The first and most commonly used moment is the \uline{expectation}, or mean, which gives us a summary of the location of the probability mass of the distribution. It is defined as follows:\par
+The first and most commonly used moment is the \underline{expectation}, or mean, which gives us a summary of the location of the probability mass of the distribution. It is defined as follows:\par
 \vspace{1cm}
 \noindent For $X$ a discrete r.v.:
 $$E_{f_X}(X) = \sum_{\mathcal{X}}x f_X(x)$$
@@ -861,20 +797,12 @@ In Figure \ref{importance sampling}, there are three regions of interest noted, 
 
 \subsection{Higher Moments}$\;$
 
-<<<<<<< Updated upstream
 Expectation is not the only useful quantity in describing a distribution. In general, the \underline{$\mathrm{k^{th}}$ moment} is defined as the expectation of $X^k$:
-=======
-Expectation is not the only useful quantity in describing a distribution. In general, the \uline{$\mathrm{k^{th}}$ moment} is defined as the expectation of $X^k$:
->>>>>>> Stashed changes
 
 \begin{defn}[The $\mathbf{k^{th}}$ Moment]
 $$E_{X}(X^k) = \int\limits_{\mathcal{X}}\! x^k f_X(x) \;\mathrm{d}x$$
 With an equivalent definition in terms of summation for the discrete case.
-<<<<<<< Updated upstream
 It is often more useful to consider the \underline{$\mathrm{k^{th}}$ central moment}, defined as:
-=======
-It is often more useful to consider the \uline{$\mathrm{k^{th}}$ central moment}, defined as:
->>>>>>> Stashed changes
 $$E_{X}[(X - \mu)^k] = \int\limits_{\mathcal{X}}\! (x - \mu)^k f_X(x)\;\mathrm{d}X$$
 where $\mu$ is the expectation (the $\mathrm{1^{st}}$ moment).
 \end{defn}
@@ -891,11 +819,7 @@ Var_{X}(X) &= E_{X}[(X - \mu)^2]\\
 It is easy to show that variance has the property that:
 $$Var_{X}(aX + b) = a^2 Var_{f_X}$$
 
-<<<<<<< Updated upstream
 Because the units of the variance are the square of the units of the variable itself, it is often convenient to consider the \underline{standard deviation} (\underline{s.d.}), which is defined to be the square root of the variance and given the symbol $\sigma$:
-=======
-Because the units of the variance are the square of the units of the variable itself, it is often convenient to consider the \uline{standard deviation} (\uline{s.d.}), which is defined to be the square root of the variance and given the symbol $\sigma$:
->>>>>>> Stashed changes
 $$\sigma = \sqrt{Var_{f_X}(X)}$$
 Just as $\mu$ is often used to denote the mean, variance is often denoted $\sigma^2$.
 
@@ -1039,11 +963,7 @@ This is the p.d.f. of an exponential r.v. Its c.d.f., as found in the derivation
 $$E_{X}(X) = \frac{1}{\lambda}$$
 $$Var_{X}(X) = \frac{1}{\lambda^2}$$
 
-<<<<<<< Updated upstream
 The exponential distribution exhibits an interesting and useful property called \underline{lack of memory}. It is the only continuous distribution with this property.
-=======
-The exponential distribution exhibits an interesting and useful property called \uline{lack of memory}. It is the only continuous distribution with this property.
->>>>>>> Stashed changes
 
 \begin{prop}[The Lack of Memory Property]$\quad$\par
 \vspace{1cm}
@@ -1138,11 +1058,7 @@ $$\sum_{i=1}^n Y_i \sim Gamma(n,\lambda)$$
 
 \subsubsection{The Continuous Uniform Distribution: $X \sim Unif(\alpha,\beta)$}
 
-<<<<<<< Updated upstream
 $\quad$A trivial distribution, for a r.v. with equal probability density between two endpoints, $\alpha$ and $\beta$. The \underline{standard uniform distribution} has $\alpha = 0$, $\beta = 1$.
-=======
-$\quad$A trivial distribution, for a r.v. with equal probability density between two endpoints, $\alpha$ and $\beta$. The \uline{standard uniform distribution} has $\alpha = 0$, $\beta = 1$.
->>>>>>> Stashed changes
 
 $$f_X(x) = \frac{1}{\beta-\alpha}$$
 $$F_X(x) = \frac{x-\alpha}{\beta-\alpha}$$
@@ -1159,11 +1075,7 @@ Var_{X}(X) &= \sigma^2\\
 \mathcal{X} &= \mathbb{R}
 \end{align*}
 
-<<<<<<< Updated upstream
 Of particular interest is the \underline{standard normal distribution}, with mean 0 and variance 1. This distribution is of such importance that it has its own notation; standard normal r.v.s are conventionally denoted $Z$ and the p.d.f. and c.d.f. of the standard normal distribution are denoted $\phi(z)$ and $\Phi(z)$ respectively. $Z \sim N(0,1)$:
-=======
-Of particular interest is the \uline{standard normal distribution}, with mean 0 and variance 1. This distribution is of such importance that it has its own notation; standard normal r.v.s are conventionally denoted $Z$ and the p.d.f. and c.d.f. of the standard normal distribution are denoted $\phi(z)$ and $\Phi(z)$ respectively. $Z \sim N(0,1)$:
->>>>>>> Stashed changes
 $$f_Z(z) = \phi(z) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$
 $$F_Z(z) = \Phi(z) = \int_{-\infty}^{z} \!\phi(t)\; \mathrm{d}t$$
 
@@ -1195,11 +1107,7 @@ P(X \leq 9) &\approx P\left(Z \leq \frac{9-10}{3}\right)\\
 \end{align*}
 \end{ex}
 
-<<<<<<< Updated upstream
 The exact answer can be calculated from the binomial distribution as roughly 45.13\%. Here, the Normal approximation is fairly poor. We can improve it with the \underline{continuity correction}. Figure \ref{normal approximation} illustrates the reason for the error.
-=======
-The exact answer can be calculated from the binomial distribution as roughly 45.13\%. Here, the Normal approximation is fairly poor. We can improve it with the \uline{continuity correction}. Figure \ref{normal approximation} illustrates the reason for the error.
->>>>>>> Stashed changes
 
 \begin{figure}[h]
 \begin{center}
@@ -1222,11 +1130,7 @@ Var_{X}(X) &= \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}\\
 
 \subsubsection{The Chi-Squared Distribution: $X \sim \chi^2_n$}
 
-<<<<<<< Updated upstream
 $\quad$Conventionally, the parameter for the $\chi^2$ distribution, $n$, called the \underline{degrees of freedom} of the r.v., is denoted by a subscript rather than in parentheses, as with most distributions.
-=======
-$\quad$Conventionally, the parameter for the $\chi^2$ distribution, $n$, called the \uline{degrees of freedom} of the r.v., is denoted by a subscript rather than in parentheses, as with most distributions.
->>>>>>> Stashed changes
 
 Suppose $Z \sim N(0,1)$. Let $X = Z^2$. Then $X \sim Gamma(1\!/\!2,1\!/\!2) \sim \chi^2_1$. The chi-squared distribution is actually a special case of the Gamma distribution. More generally, if $Z_i \sim N(0,1)$ i.i.d., $X = \sum\limits_{i=1}^n Z_i^2$, then $X \sim Gamma(n\!/\!2,1\!/\!2) \sim \chi^2_n$
 \begin{align*}
@@ -1255,11 +1159,7 @@ A family of p.d.f.s (or p.m.f.s) is called an exponential family if
 $$f_X(x\; | \; \vec{\theta}) = h(x) c(\vec{\theta}) e^{\sum\limits_{i=1}^k w_i(\vec{\theta}) t_i(x)}$$
 where $\vec{\theta}$ is a vector of parameters.
 
-<<<<<<< Updated upstream
 We call $w_1(\vec{\theta}),\; w_2(\vec{\theta}),\; ...\; w_k(\vec{\theta})$ the \underline{canonical parameterisation} or \underline{natural parameterisation}.
-=======
-We call $w_1(\vec{\theta}),\; w_2(\vec{\theta}),\; ...\; w_k(\vec{\theta})$ the \uline{canonical parameterisation} or \uline{natural parameterisation}.
->>>>>>> Stashed changes
 
 \begin{ex}[The Gamma Distribution]
 \vspace{1cm}
@@ -1287,11 +1187,7 @@ And, though the first part is in the form for a member of the exponential family
 
 \subsubsection{Location-Scale Families}
 
-<<<<<<< Updated upstream
 $\quad$Let $Z$ be a r.v. distributed according to $f_Z(z)$. Let $X_1 = Z+\mu$ for some constant $\mu$. Then $X_1$ is a member of the same \underline{location family} as $Z$. Now let $X_2 = \sigma Z$ for some constant $\sigma$. Then $X_2$ is in a \underline{scale family} with $Z$. Finally, let $X = \sigma Z + \mu$; then $X$ is in a \underline{location-scale family} with $Z$. $\mu$ is called a \underline{location parameter}, $\sigma$ a \underline{scale parameter}.
-=======
-$\quad$Let $Z$ be a r.v. distributed according to $f_Z(z)$. Let $X_1 = Z+\mu$ for some constant $\mu$. Then $X_1$ is a member of the same \uline{location family} as $Z$. Now let $X_2 = \sigma Z$ for some constant $\sigma$. Then $X_2$ is in a \uline{scale family} with $Z$. Finally, let $X = \sigma Z + \mu$; then $X$ is in a \uline{location-scale family} with $Z$. $\mu$ is called a \uline{location parameter}, $\sigma$ a \uline{scale parameter}.
->>>>>>> Stashed changes
 
 It is no co\"incidence that we used $\mu$ and $\sigma$ for the constants; it is often convenient to relate a r.v. to the one obtained by subtracting the mean and then dividing by the standard deviation. This is typically some sort of standard version of the distribution. By the properties of expectation and variance proved earlier, if $E(Z) = 0$ and $Var(Z) = 1$, then for $X=\sigma Z + \mu$, $E(X) = \mu$ and $Var(X) = \sigma^2$. Even more importantly:
 $$P(a<X<b) = P\left(\frac{a-\mu}{\sigma}<Z<\frac{b-\mu}{\sigma}\right)$$
@@ -1308,14 +1204,10 @@ In this section, we will study how to model two (or more) r.v.s together with a 
 \begin{defn}[Joint Distribution Functions]
 \vspace{1cm}
 
-Let $X$ and $Y$ be discrete r.v.s. Then the \uline{joint mass function} of $X$ and $Y$ is:
+Let $X$ and $Y$ be discrete r.v.s. Then the \underline{joint mass function} of $X$ and $Y$ is:
 $$f_{X,Y}(x,y) = P(X=x \text{ and } Y=y) = P\{s \in S \; | \; X(s) = x \text{ and } Y(s) = y\}$$
 
-<<<<<<< Updated upstream
 Now let $X$ and $Y$ be continuous r.v.s. Then the \underline{joint density function} is any surface $f_{X,Y}(x,y)$ with the property that:
-=======
-Now let $X$ and $Y$ be continuous r.v.s. Then the \uline{joint density function} is any surface $f_{X,Y}(x,y)$ with the property that:
->>>>>>> Stashed changes
 $$P\{s \in S \; | \; (X(s),Y(s)) \in R\} = \iint\limits_R \! f_{X,Y}(x,y)\; \mathrm{d}R$$
 for any measurable region $R$.\par
 \vspace{1cm}
@@ -1336,11 +1228,7 @@ where the integrals are replaced with summations in the discrete case.
 
 \subsubsection{Marginal Distributions}
 
-<<<<<<< Updated upstream
 $\quad$Given $f_{X,Y}(x,y)$, we can find $f_X(x)$ and $f_Y(y)$; these are called the \underline{marginal distributions} of $X$ and $Y$. Consider first an example in the discrete case:
-=======
-$\quad$Given $f_{X,Y}(x,y)$, we can find $f_X(x)$ and $f_Y(y)$; these are called the \uline{marginal distributions} of $X$ and $Y$. Consider first an example in the discrete case:
->>>>>>> Stashed changes
 
 \begin{ex}[Sex and Age of U.S. College Students]
 \vspace{1cm}
@@ -1381,11 +1269,7 @@ Note that it is possible to have $X$ discrete and $Y$ continuous, say. In this c
 
 \subsection{Independence and Conditional Distributions}$\;$
 
-<<<<<<< Updated upstream
 Recall the conditional probability operator: $P(A|B) = P(A \cap B)/P(B)$. As the joint mass function of a dis\-crete, bi\-vari\-ate r.v. is sim\-ply a prob\-a\-bil\-ity, we can de\-fine the \underline{conditional p.m.f. of $X$ given $Y$} as:
-=======
-Recall the conditional probability operator: $P(A|B) = P(A \cap B)/P(B)$. As the joint mass function of a dis\-crete, bi\-vari\-ate r.v. is sim\-ply a prob\-a\-bil\-ity, we can de\-fine the \uline{conditional p.m.f. of $X$ given $Y$} as:
->>>>>>> Stashed changes
 \begin{align*}
 f_{X|Y}(x|y) &= P(X = x\; | \; Y = y)\\
 &= \frac{P(X = x \text{ and } Y = y)}{P(Y = y)}\\
@@ -1410,11 +1294,7 @@ P(Y\leq y\; | \; X=x) &= \lim_{h\rightarrow 0}\left[\frac{\int\limits_{-\infty}^
 \end{align*}
 by our definition of the conditional density function, so the conditional density function, as defined, integrates to give the appropriate conditional probability, justifying our definition as reasonable.
 
-<<<<<<< Updated upstream
 Recall the notion of \underline{independence} (section \ref{conditional and independence}). We can easily extend this to see that two r.v.s (whether discrete or continuous) are independent iff $f_{X|Y}(x|y) = f_X(x) \; \Leftrightarrow \; f_{X,Y}(x,y) = f_X(x)f_Y(y)$ \textbf{and} the support of $(X,Y)$ is not 'mixed' - e.g., is of a form such as $x>0,\; y>0$ rather than $x>y>0$. In the latter case, we can use indicator functions such as I\{x>y\} to rewrite the joint mass/density function in a form that does not factorise into the marginal distributions, so $X$ and $Y$ are \textbf{not} independent. This is an important point to remember.
-=======
-Recall the notion of \uline{independence} (section \ref{conditional and independence}). We can easily extend this to see that two r.v.s (whether discrete or continuous) are independent iff $f_{X|Y}(x|y) = f_X(x) \; \Leftrightarrow \; f_{X,Y}(x,y) = f_X(x)f_Y(y)$ \textbf{and} the support of $(X,Y)$ is not 'mixed' - e.g., is of a form such as $x>0,\; y>0$ rather than $x>y>0$. In the latter case, we can use indicator functions such as I\{x>y\} to rewrite the joint mass/density function in a form that does not factorise into the marginal distributions, so $X$ and $Y$ are \textbf{not} independent. This is an important point to remember.
->>>>>>> Stashed changes
 
 \begin{ex}[Independent and Non-Independent Bivariate R.V.s]
 
@@ -1436,15 +1316,9 @@ $$\Rightarrow X,\;Y \text{are independent.}$$
 
 \begin{defn}[Covariance and Correlation]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Given two r.v.s $X$ and $Y$ with means $\mu_X,\; \mu_Y$ and variances $\sigma_X^2,\; \sigma_Y^2$ respectively, the \underline{covariance} of $X$ and $Y$ is defined by:
 $$Cov(X,Y) = E_{X,Y}[(X-\mu_X)(Y-\mu_Y)]$$
 The \underline{correlation} is defined by:
-=======
-Given two r.v.s $X$ and $Y$ with means $\mu_X,\; \mu_Y$ and variances $\sigma_X^2,\; \sigma_Y^2$ respectively, the \uline{covariance} of $X$ and $Y$ is defined by:
-$$Cov(X,Y) = E_{X,Y}[(X-\mu_X)(Y-\mu_Y)]$$
-The \uline{correlation} is defined by:
->>>>>>> Stashed changes
 $$\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}$$
 \end{defn}
 
@@ -1571,11 +1445,7 @@ If $(X,Y)$ is continuous, suppose $g_1$ and $g_2$ are injective. Then we can def
 $$f_U(u) = f_X\left(g^{-1}(u)\right) \left| \frac{\diff}{\diff u}\left(g^{-1}(u)\right)\right|$$
 Now, in the bivariate case:
 $$f_{U,V}(u,v) = f_{X,Y}(x,y)|J|$$
-<<<<<<< Updated upstream
 where $J$ is the \underline{jacobian of the transformation}:
-=======
-where $J$ is the \uline{jacobian of the transformation}:
->>>>>>> Stashed changes
 \begingroup
 \renewcommand*{\arraystretch}{1.5}
 $$J = \left|\begin{array}{cc} \frac{\partial h_1}{\partial u}\quad & \frac{\partial h_1}{\partial v}\\ \frac{\partial h_2}{\partial u}\quad & \frac{\partial h_2}{\partial v}\end{array}\right|$$
@@ -1616,11 +1486,7 @@ f_{X,Y}(x,y) &= f_X(x)f_Y(y)\\
 &= \frac{1}{\Gamma(r)\Gamma(s)} (z_1^{r+s-1}e^{-z_1}) (z_2^{r-1}(1-z_2)^{s-1})\\
 \end{align*}
 
-<<<<<<< Updated upstream
 We see that the joint density function factorises and the supports are independent of one another, so $Z_1$ and $Z_2$ are independent. By examining the \underline{kernel of the distribution}, that is, the part of the density function \emph{dependent on the r.v.} without the normalising constant in front, we can see that $Z_1 \sim Gamma(r+s,1)$ and $Z_2 \sim Beta(r,s)$:
-=======
-We see that the joint density function factorises and the supports are independent of one another, so $Z_1$ and $Z_2$ are independent. By examining the \uline{kernel of the distribution}, that is, the part of the density function \emph{dependent on the r.v.} without the normalising constant in front, we can see that $Z_1 \sim Gamma(r+s,1)$ and $Z_2 \sim Beta(r,s)$:
->>>>>>> Stashed changes
 $$f_{Z_1}(z) = \frac{1}{\Gamma(r+s)}z^{r-1}e^{-z}\qquad\qquad f_{Z_2}(z) = \frac{\Gamma(r+s)}{\Gamma(r)\Gamma(s)}z^{r-1}(1-z)^{s-1}$$
 \hfill$Q.E.I.$
 
@@ -1629,15 +1495,9 @@ $$f_{Z_1}(z) = \frac{1}{\Gamma(r+s)}z^{r-1}e^{-z}\qquad\qquad f_{Z_2}(z) = \frac
 \begin{defn}[Mean and Variance-Covariance Matrix of a Random Vector]\vspace{1cm}
 
 We can conveniently represent sums (and, more generally, weighted sums) of r.v.s using vector notation.
-<<<<<<< Updated upstream
 Let $\vec{X} = (X_1,\; X_2,\; ...\; X_n)^T$ be a \underline{vector-valued} r.v. - that is, a random vector, so that each of its entries, $X_i$ are themselves random variables. Then the mean of $\vec{X}$ is:
 $$\vec{\mu_X} = \left(\begin{array}{c}\overline{X_1}\\ \overline{X_2}\\ \vdots\\ \overline{X_n} \end{array}\right)$$
 and the \underline{variance-covariance matrix} of $\vec{X}$ is:
-=======
-Let $\vec{X} = (X_1,\; X_2,\; ...\; X_n)^T$ be a \uline{vector-valued} r.v. - that is, a random vector, so that each of its entries, $X_i$ are themselves random variables. Then the mean of $\vec{X}$ is:
-$$\vec{\mu_X} = \left(\begin{array}{c}\overline{X_1}\\ \overline{X_2}\\ \vdots\\ \overline{X_n} \end{array}\right)$$
-and the \uline{variance-covariance matrix} of $\vec{X}$ is:
->>>>>>> Stashed changes
 $$\Sigma = \left( \begin{array}{cccc} Var(X_1)\quad& Cov(X_1,X_2)\quad& \hdots\quad& Cov(X_1,X_n)\\Cov(X_1,X_2)\quad& Var(X_2)\quad& \hdots\quad& Cov(X_2,X_n)\\ \vdots\quad& \vdots & \vdots\quad & \vdots\\ Cov(X_1,X_n) & Cov(X_2,X_n)\quad& \hdots& Var(X_n) \end{array}\right)$$
 that is, the matrix whose i-j element is the covariance of $X_i$ and $X_j$ - noting that the covariance of $X_i$ with itself is simply the variance.
 
@@ -1685,11 +1545,7 @@ $$f_{\vec{X}}(\vec{x}) = \frac{1}{\sqrt{2 \pi |\Sigma|}}e^{-\frac{1}{2}(\vec{x}-
 
 \begin{defn}[Order Statistics]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Suppose we wish to find the distribution of the maximum, minimum or median of a random sample. Given a random sample $X_1,\; X_2,\; ...\; X_n$ i.i.d., we define the \underline{order statistics} $X_{(i)}$ of that sample to be the sample values put in ascending order. That is:
-=======
-Suppose we wish to find the distribution of the maximum, minimum or median of a random sample. Given a random sample $X_1,\; X_2,\; ...\; X_n$ i.i.d., we define the \uline{order statistics} $X_{(i)}$ of that sample to be the sample values put in ascending order. That is:
->>>>>>> Stashed changes
 $$\{X_{(1)},\; X_{(2)},\; ...\; X_{(n)}\} = \{X_1,\; X_2,\; ...\; X_n\} \text{ where } X_{(1)}<X_{(2)}< ... < X_{(n)}$$
 \end{defn}
 
@@ -1744,11 +1600,7 @@ We can also, of course, derive $f_{A|X}(a|x)$, should we so desire.
 
 \end{ex}
 
-<<<<<<< Updated upstream
 Generally, \underline{mixture models} like the above model populations consisting of a mixture of subpopulations, each of which follows its own distribution for a particular r.v. They are a particular case of \underline{hierarchical models}, which model r.v.s whose parameters are themselves r.v.s (this is extremely useful for modelling uncertainty or measurement error in parameters).
-=======
-Generally, \uline{mixture models} like the above model populations consisting of a mixture of subpopulations, each of which follows its own distribution for a particular r.v. They are a particular case of \uline{hierarchical models}, which model r.v.s whose parameters are themselves r.v.s (this is extremely useful for modelling uncertainty or measurement error in parameters).
->>>>>>> Stashed changes
 
 \begin{thm}[Calculating Moments in Hierarchical Models]\label{iterated expectation}\vspace{1cm}
 
@@ -1808,16 +1660,12 @@ This is much easier than finding the moments by integrating, as we would normall
 
 \begin{defn}[Simple Random Samples]\vspace{1cm}
 
-A \uline{simple random sample} (or \uline{s.r.s.}) is a number of i.i.d. r.v.s from a given distribution:\\ $X_1,\;X_2,\; ...\; X_n \overset{\text{i.i.d.}}{\sim} f_X(x)$.
+A \underline{simple random sample} (or \underline{s.r.s.}) is a number of i.i.d. r.v.s from a given distribution:\\ $X_1,\;X_2,\; ...\; X_n \overset{\text{i.i.d.}}{\sim} f_X(x)$.
 \end{defn}
 
 \begin{defn}[Statistics and Sampling Distributions]\vspace{1cm}
 
-<<<<<<< Updated upstream
 A \underline{statistic} is any real-valued function of a s.r.s. A statistic may not involve the parameters of the distribution from which the sample is drawn, but may involve the size of the sample and its values. As a statistic is a function of r.v.s, it is itself a r.v. It's distribution is called the \underline{sampling distribution} for the statistic.
-=======
-A \uline{statistic} is any real-valued function of a s.r.s. A statistic may not involve the parameters of the distribution from which the sample is drawn, but may involve the size of the sample and its values. As a statistic is a function of r.v.s, it is itself a r.v. It's distribution is called the \uline{sampling distribution} for the statistic.
->>>>>>> Stashed changes
 
 \end{defn}
 
@@ -1891,11 +1739,7 @@ E(S^2) &= E\left[\frac{1}{n-1}\left(\sum_{i=1}^n X_i^2 -n\overline{X}^2\right)\r
 
 \begin{defn}[Estimators and Estimates]\vspace{1cm}
 
-<<<<<<< Updated upstream
 An \underline{estimator} of a parameter is a statistic used to estimate that parameter. As it is a statistic, it is a random variable. An \underline{estimate} is a value taken by an estimator.
-=======
-An \uline{estimator} of a parameter is a statistic used to estimate that parameter. As it is a statistic, it is a random variable. An \uline{estimate} is a value taken by an estimator.
->>>>>>> Stashed changes
 
 \end{defn}
 
@@ -1903,11 +1747,7 @@ $\overline{X}$ is an estimator of the mean $\mu$ and $S^2$ an estimator of the v
 
 \begin{defn}[The Bias of an Estimator]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Let there be a s.r.s. drawn from a distribution with some unknown parameter $\theta$. Let $T$ be an estimator of $\theta$. Then the \underline{bias} of $T$ is defined to be $E(T) - \theta$. If $E(T) = \theta$, we say that $T$ is an \underline{unbiased} estimator.
-=======
-Let there be a s.r.s. drawn from a distribution with some unknown parameter $\theta$. Let $T$ be an estimator of $\theta$. Then the \uline{bias} of $T$ is defined to be $E(T) - \theta$. If $E(T) = \theta$, we say that $T$ is an \uline{unbiased} estimator.
->>>>>>> Stashed changes
 
 \end{defn}
 
@@ -1923,11 +1763,7 @@ $\quad$Suppose we have a s.r.s. $X_1,\;\hdots\; X_n$ from a distribution with un
 \frac{1}{n}\sum_{i=1}^n X_i^k &\approx E(X^k)
 \end{align*}
 
-<<<<<<< Updated upstream
 As the expectations on the right-hand side can be expressed in terms of the $\theta_i$ and the statistics on the left-hand side are all readily calculable from the sample, we have $k$ equations in $k$ unknowns, so we can generally solve for all of the $\theta_i$. This will let us express each of the $\theta_i$ as a function of the above statistics, thus giving us an estimator for each $\theta_i$. This technique is called the \underline{Method of Moments} (M.o.M.).
-=======
-As the expectations on the right-hand side can be expressed in terms of the $\theta_i$ and the statistics on the left-hand side are all readily calculable from the sample, we have $k$ equations in $k$ unknowns, so we can generally solve for all of the $\theta_i$. This will let us express each of the $\theta_i$ as a function of the above statistics, thus giving us an estimator for each $\theta_i$. This technique is called the \uline{Method of Moments} (M.o.M.).
->>>>>>> Stashed changes
 
 \begin{ex}[The Method of Moments]\vspace{1cm}
 
@@ -1956,11 +1792,7 @@ A piece of notation: in the following we speak of the $argmax$ of a function. Th
 
 \begin{defn}[The Likelihood Function]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Given a s.r.s. $\vec{X} = (X_1,\; \hdots\; X_n)$ drawn from a distribution with unknown parameters \\$\vec{\theta}=(\theta_1,\;\hdots\; \theta_k)$, the \underline{likelihood} of $\theta$ given the sample is the function:
-=======
-Given a s.r.s. $\vec{X} = (X_1,\; \hdots\; X_n)$ drawn from a distribution with unknown parameters \\$\vec{\theta}=(\theta_1,\;\hdots\; \theta_k)$, the \uline{likelihood} of $\theta$ given the sample is the function:
->>>>>>> Stashed changes
 
 $$\mathcal{L}(\vec{\theta} | \vec{X}) = P(\vec{X} | \vec{\theta})$$
 
@@ -1970,11 +1802,7 @@ $$\mathcal{L}(\vec{\theta} | \vec{X}) = \prod_{i=1}^n P(X_i | \vec{\theta})$$
 
 Note that, although the function is written as a function of $\vec{\theta}$ conditional upon $\vec{X}$, it is in fact the opposite - a function of $\vec{X}$ conditional upon $\vec{\theta}$. This notation reflects a shift in emphasis, not in the actual direction of the conditioning. We are interested in the probability of a given value for the parameter given a sample and are using as a proxy for this the probability of the sample given values of the parameters, as described above.
 
-<<<<<<< Updated upstream
 As the likelihood function consists of a product of many terms, it is often convenient to take its logarithm (usually to the natural base) and thus convert the product into a sum. We thus define the \underline{loglikelihood} function:
-=======
-As the likelihood function consists of a product of many terms, it is often convenient to take its logarithm (usually to the natural base) and thus convert the product into a sum. We thus define the \uline{loglikelihood} function:
->>>>>>> Stashed changes
 
 \begin{align*}
 l(\vec{\theta} | \vec{X}) &=\log[\mathcal{L}(x)]\\
@@ -1985,11 +1813,7 @@ l(\vec{\theta} | \vec{X}) &=\log[\mathcal{L}(x)]\\
 
 \begin{defn}[Maximum Likelihood Estimation]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Given a s.r.s., the \underline{maximum likelihood estimate} (\underline{m.l.e.}), $\hat{\theta}$, of a parameter $\theta$ of the sampling distribution is the value that maximises the probability of drawing the sample that was, in fact, obtained:
-=======
-Given a s.r.s., the \uline{maximum likelihood estimate} (\uline{m.l.e.}), $\hat{\theta}$, of a parameter $\theta$ of the sampling distribution is the value that maximises the probability of drawing the sample that was, in fact, obtained:
->>>>>>> Stashed changes
 
 $$\hat{\theta} = argmax_\theta \left[\mathcal{L}\left(\vec{\theta} | \vec{X}\right)\right]$$
 
@@ -2025,22 +1849,14 @@ We must now confirm that this stationary point is indeed a maximum. This may be 
 
 \end{ex}
 
-<<<<<<< Updated upstream
 When the parameter can take any value in a continuous range, as above, we typically maximise by differentiating and setting the derivative equal to zero; when the parameter's values are constrained to a finite or countable set, some more subtle methods are required. It is often convenient to consider the \underline{forward difference operator} (see M1M2), which acts like a discrete analogue of the derivative, or a \underline{forward} \underline{quotient operator}, which can be more tractable in maximum likelihood problems because of cancellations. This is best illustrated by example.
-=======
-When the parameter can take any value in a continuous range, as above, we typically maximise by differentiating and setting the derivative equal to zero; when the parameter's values are constrained to a finite or countable set, some more subtle methods are required. It is often convenient to consider the \uline{forward difference operator} (see M1M2), which acts like a discrete analogue of the derivative, or a \uline{forward} \uline{quotient operator}, which can be more tractable in maximum likelihood problems because of cancellations. This is best illustrated by example.
->>>>>>> Stashed changes
 
 \begin{defn}[The Forward Difference and Quotient Operators]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Given any ordered (finite or countable) sequence of values $a_n$, the \underline{forward difference operator} $\Delta$ is defined by:
-=======
-Given any ordered (finite or countable) sequence of values $a_n$, the \uline{forward difference operator} $\Delta$ is defined by:
->>>>>>> Stashed changes
 $$\Delta(n) = a_{n+1}-a_n$$
 
-Similarly, the \uline{forward quotient operator} (or forward ratio operator) $R$ is defined by:
+Similarly, the \underline{forward quotient operator} (or forward ratio operator) $R$ is defined by:
 $$R(n) = \frac{a_{n+1}}{a_n}$$
 
 \end{defn}
@@ -2149,32 +1965,20 @@ We can then use this revised estimate to obtain $X_i^{(2)}$, the expected loglik
 
 \begin{defn}[Prior and Posterior Distributions]\vspace{1cm}
 
-<<<<<<< Updated upstream
 The \underline{prior distribution}, $f_\Theta(\theta)$ summarises our state of knowledge/belief about a parameter $\theta$ before we observe the data (from a sample). The \underline{posterior distribution} $f_{\Theta \mid X}(\theta \mid x)$ summarises our revised state of knowledge after observing the data.
-=======
-The \uline{prior distribution}, $f_\Theta(\theta)$ summarises our state of knowledge/belief about a parameter $\theta$ before we observe the data (from a sample). The \uline{posterior distribution} $f_{\Theta \mid X}(\theta \mid x)$ summarises our revised state of knowledge after observing the data.
->>>>>>> Stashed changes
 
 \end{defn}
 
 By Bayes' theorem:
 $$f_{\Theta \mid X}(\theta\mid x) = \frac{f_{X\mid\Theta}(x\mid \theta) \times f_{\Theta}(\theta)}{f_X(x)}$$
 
-<<<<<<< Updated upstream
 We can use the \underline{posterior mean}, $E_{\Theta|X}(\Theta | X)$ as an estimator of the mean and the posterior variance to model uncertainty in the estimate. We can then formulate a distribution for the r.v. explicitly in terms of the parameters for $\Theta$. Bayesian inference requires formulating a prior distribution for the unknown parameter(s). Cf. example \ref{envelope}.
-=======
-We can use the \uline{posterior mean}, $E_{\Theta|X}(\Theta | X)$ as an estimator of the mean and the posterior variance to model uncertainty in the estimate. We can then formulate a distribution for the r.v. explicitly in terms of the parameters for $\Theta$. Bayesian inference requires formulating a prior distribution for the unknown parameter(s). Cf. example \ref{envelope}.
->>>>>>> Stashed changes
 
 There is an important difference in philosophy between Bayesian inference and the two methods of parameter estimation covered above (M.o.M. and M.L.E.). In the two previous methods, the parameter to be estimated is regarded as an unknown constant. In Bayesian parameter estimation, it is instead treated as if it itself were a random variable. By using the uncertainty in the value of the parameter to model the parameter as a r.v., we can apply the techniques of probability, but this requires us to specify a prior distribution for the parameter, which can be problematic, and to use the more general, subjective interpretation of probability.
 
 \begin{ex}[Bayesian Inference in a Binomial Distribution]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Suppose $Y\mid\Theta \sim Binomial(n,\theta)$, where $n$ is known and we have a prior distribution for $\theta$: $\Theta \sim Beta(\alpha,\beta)$ (the Beta distribution is often useful for modelling probabilities, as its support is the interval $(0,1)$). $\alpha$ and $\beta$ are referred to as \underline{hyperparameters}. Given $\alpha$ and $\beta$, find the marginal distribution of $Y$ and its mean and variance.
-=======
-Suppose $Y\mid\Theta \sim Binomial(n,\theta)$, where $n$ is known and we have a prior distribution for $\theta$: $\Theta \sim Beta(\alpha,\beta)$ (the Beta distribution is often useful for modelling probabilities, as its support is the interval $(0,1)$). $\alpha$ and $\beta$ are referred to as \uline{hyperparameters}. Given $\alpha$ and $\beta$, find the marginal distribution of $Y$ and its mean and variance.
->>>>>>> Stashed changes
 
 The joint distribution of $Y$ and $\Theta$ is given by:
 
@@ -2229,17 +2033,13 @@ $$E_Y(Y) = \frac{n}{2} \qquad Var_Y(Y) = \frac{n}{12}(n+2)$$
 
 \begin{defn}[Conjugate Prior Distributions]\vspace{1cm}
 
-<<<<<<< Updated upstream
 If the prior and posterior distributions of a parameter of a particular sampling distribution are of the same family, we say that the prior distribution is the \underline{conjugate prior} to that sampling distribution.
-=======
-If the prior and posterior distributions of a parameter of a particular sampling distribution are of the same family, we say that the prior distribution is the \uline{conjugate prior} to that sampling distribution.
->>>>>>> Stashed changes
 
 \end{defn}
 
 \subsection{Confidence Intervals}$\;$
 
-Let $X \sim N(\mu,\sigma^2)$. Consider the interval $\mathscr{J}(X) = (X-1.96\sigma,X+1.96\sigma)$, which is an \emph{interval-valued} random variable, or \uline{random interval}. Recall that, for a Normal r.v., $95\%$ of the data lie within $1.96\sigma$ of the mean:
+Let $X \sim N(\mu,\sigma^2)$. Consider the interval $\mathscr{J}(X) = (X-1.96\sigma,X+1.96\sigma)$, which is an \emph{interval-valued} random variable, or \underline{random interval}. Recall that, for a Normal r.v., $95\%$ of the data lie within $1.96\sigma$ of the mean:
 $$P(\mu-1.96\sigma < X < \mu+1.96\sigma) = 95\%$$
 
 We are interested in when the interval $\mathscr{J}(X)$ contains $\mu$. Define $\mathcal{I}=\mathscr{J}(\mu) = (\mu-1.96\sigma,\mu+1.96\sigma)$. Then, clearly:
@@ -2290,11 +2090,7 @@ The quantity $(\bar{X}-\mu)\sqrt{n}/\sigma$ used above has a known distribution 
 
 \begin{defn}[Pivots]\vspace{1cm}
 
-<<<<<<< Updated upstream
 A \underline{pivot} is a function of a random sample, known population parameters, and precisely one unknown parameter, for which it is desired to find a C.I., which has a known distribution.
-=======
-A \uline{pivot} is a function of a random sample, known population parameters, and precisely one unknown parameter, for which it is desired to find a C.I., which has a known distribution.
->>>>>>> Stashed changes
 
 \end{defn}
 
@@ -2327,17 +2123,10 @@ So $T$ is a function of $\mu$ and known values only and follows a known distribu
 
 \begin{defn}[Convex and Concave Functions]\vspace{1cm}
 
-<<<<<<< Updated upstream
 A function $f$ is said to be \underline{convex} on an interval $I$ if:
 $$\forall x\in I\;f''(x) \geq 0$$\par\vspace{1cm}
 
 Conversely $f$ is said to be \underline{concave} on $I$ if:
-=======
-A function $f$ is said to be \uline{convex} on an interval $I$ if:
-$$\forall x\in I\;f''(x) \geq 0$$\par\vspace{1cm}
-
-Conversely $f$ is said to be \uline{concave} on $I$ if:
->>>>>>> Stashed changes
 $$\forall x \in I \; f''(x) \leq 0$$\par\vspace{1cm}
 
 \end{defn}
@@ -2413,11 +2202,7 @@ Generally speaking, bias is \emph{not} invariant under transformation. The excep
 
 \begin{defn}[Convergence in Distribution]\vspace{1cm}
 
-<<<<<<< Updated upstream
 A sequence of r.v.s $X_i$ is said to \underline{converge in distribution} to the r.v. $Y$ if:
-=======
-A sequence of r.v.s $X_i$ is said to \uline{converge in distribution} to the r.v. $Y$ if:
->>>>>>> Stashed changes
 $$\lim_{n\to\infty}\left[F_{X_n}(x)\right] = F_Y(x) \;\mbox{$\forall x$ at which $F_Y$ is continuous}$$
 
 We write: $X_n \xrightarrow{\mathscr{D}}Y$
@@ -2428,21 +2213,13 @@ We write: $X_n \xrightarrow{\mathscr{D}}Y$
 
 If $X_n \xrightarrow{\mathscr{D}} Y$ and $P(Y=c) = 1$ for some constant $c$, s.t.:
 $$F_Y(y) = \left\{\begin{array}{cc} 0\quad &:\quad x<c\\ 1\quad&:\quad x\geq c \end{array}\right.$$
-<<<<<<< Updated upstream
 then we say that the limiting distribution of $X_n$ is \underline{degenerate} at $c$ and write $X_n \xrightarrow{\mathscr{D}} c$
-=======
-then we say that the limiting distribution of $X_n$ is \uline{degenerate} at $c$ and write $X_n \xrightarrow{\mathscr{D}} c$
->>>>>>> Stashed changes
 
 \end{defn}
 
 \begin{defn}[Moment Generating Functions]\vspace{1cm}
 
-<<<<<<< Updated upstream
 Recall from M1S that the \underline{moment generatign function} (\underline{m.g.f.}) of the r.v. $X$ is:
-=======
-Recall from M1S that the \uline{moment generatign function} (\uline{m.g.f.}) of the r.v. $X$ is:
->>>>>>> Stashed changes
 $$M_X(t) = E_X(e^{tX})$$
 
 provided that this expectation exists in some neighbourhood of zero.
@@ -2670,11 +2447,7 @@ This example illustrates an important property of the median; that for a s.r.s. 
 
 \begin{defn}[Convergence in Probability]\vspace{1cm}
 
-<<<<<<< Updated upstream
 A sequence $X_1,\;X_2,\;\hdots$ of r.v.s is said to \underline{converge in probability} to the distribution of the r.v. $X$ if:
-=======
-A sequence $X_1,\;X_2,\;\hdots$ of r.v.s is said to \uline{converge in probability} to the distribution of the r.v. $X$ if:
->>>>>>> Stashed changes
 $$\forall\epsilon>0\;\lim_{n\to\infty} \left[P\left(\left|X_n-X\right|<\epsilon\right)\right] = 1$$
 
 or, equivalently:
@@ -2759,11 +2532,7 @@ E_X\left[g(X)\right] &= \int\limits_{\mathcal{X}}\!\! g(x)f_X(x)\;\diff x\\
 
 \begin{defn}[Consistent Estimators]\vspace{1cm}
 
-<<<<<<< Updated upstream
 If $T_n$ is a statistic used to estimate some parameter $\theta$, we say $T_n$ is a \underline{consistent estimator} if $T_n\xrightarrow{\mathscr{P}}\theta$
-=======
-If $T_n$ is a statistic used to estimate some parameter $\theta$, we say $T_n$ is a \uline{consistent estimator} if $T_n\xrightarrow{\mathscr{P}}\theta$
->>>>>>> Stashed changes
 
 \end{defn}
 
